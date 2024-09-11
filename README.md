@@ -51,10 +51,23 @@ We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can
 
 <h2>3. Process</h2>
 <h3><i>Data Exploration</i></h3>
+
 Before cleaning the data, it's beneficial to explore the data and see what we have to work with that will inform our cleansing process. Looking at the dataset, we see columns contain qualitative or descriptive data, also known as dimensions. These dimensions can be grouped into 3 categories: station data, ride data, and time (?) data. Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
 
 Let's see if this is the case:
 
+![start_station_id_count](https://github.com/user-attachments/assets/08d14de9-67ba-451e-8958-69005b6f85ac)
+
+```
+SELECT  
+  start_station_id,
+  COUNT(DISTINCT start_station_name) as start_station_name_count
+FROM `general-432301.wip.tripdata_test` 
+GROUP BY
+  start_station_id
+ORDER BY 
+  start_station_name_count DESC
+```
 ![count_start_station_id](https://github.com/user-attachments/assets/4495390a-37cd-438a-8a23-36842a4a04ef)
 
 
