@@ -41,11 +41,11 @@ Next, I will use the Google Cloud CLI to upload the first CSV file to the Big Qu
 
 and the command for uploading the first data set: 202308-divvy-tripdata.csv  
 
-```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
+```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
 To upload and merge the remaining 11 CSV files to the first one, I will replace the `replace` command with `noreplace` to add the taable to the bottom of the previous table instead of JOINing it. Instead of combinging data into new columns, we'll join them into new rows.
 
-``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
+``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
 Importing all 12 dataset gives us 5,715,693 rows. We can move on to the Processing part of the analysis.
 
