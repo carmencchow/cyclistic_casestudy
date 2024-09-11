@@ -47,12 +47,25 @@ To upload and merge the remaining 11 CSV files to the first one, I will replace 
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can move on to the Processing part of the analysis.
+We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can move on to the process the raw data.
 
 <h2>3. Process</h2>
-Let's take some time to explore our new `tripdata` dataset
+<h3><i>Data Exploration</i></h3>
+Before cleaning the data, it's beneficial to explore the data and see what we have to work with that will inform our cleansing process. Looking at the dataset, we see columns contain qualitative or descriptive data, also known as dimensions. These dimensions can be grouped into 3 categories: station data, ride data, and time (?) data. Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
 
+Let's see if this is the case:
 
+```
+SELECT  
+  start_station_id,
+  COUNT(DISTINCT start_station_name) as start_station_name_count
+FROM `general-432301.wip.tripdata_test` 
+GROUP BY
+  start_station_id
+ORDER BY 
+  start_station_name_count DESC
+```
+![station_id](https://github.com/user-attachments/assets/e57ad941-90ad-437e-858c-aec4eddc6c8c)
 
 <h2>4. Analyze</h2>
 <h2>5. Share</h2>
