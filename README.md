@@ -22,6 +22,8 @@ Understand how annual members and casual riders use Cyclistic bikes differently 
 <h3><b>Data Source</b></h3>
 I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical trip data, available at https://divvy-tripdata.s3.amazonaws.com/index.html  The data is structured in wide formats in records and fields with ride-related information about both casual riders and members, types of bikes, and the start and end station information (station id, station name, latitude and longitude coordinates) of each bike trip. The anonymized data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement .
 
+The second data source we will be using is the City of Chicago's Data Portal https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which provides a list of bicycle station ids and names.
+
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p>Reliable - Yes: the dataset is public and unbiased
 <p>Original - Yes: data is first-party data, collected by the company itself
@@ -54,14 +56,22 @@ We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can
 
 Before cleaning the data, it's beneficial to explore the data and see what we have to work with that will inform our cleansing process. Looking at the dataset, we see columns contain qualitative or descriptive data, also known as dimensions. These dimensions can be grouped into 3 categories: station data, ride data, and time (?) data. Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
 
-Let's see if this is the case:
+Let's run a query on start_station_id:
 
 ![start_station_id_code](https://github.com/user-attachments/assets/4d494c57-7945-4688-bace-5c39590f4417)
 
-Returns:
+Surprisingly, there are records of start_station_ids with more than one start_station_name associated with it.
 ![start_station_id_count](https://github.com/user-attachments/assets/d29b6182-03e7-4474-a36d-c5fb5d776c18)
 
+Let's run a query and filter on station '647':
 
+![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
+
+We get a result showing not 1 but 3 different station names! Entering the station id '647' in the Chicago Data Portal's website  https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data gives us the correct station name:
+
+
+
+https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations-Map/bk89-9dk7 
 
 <h2>4. Analyze</h2>
 <h2>5. Share</h2>
