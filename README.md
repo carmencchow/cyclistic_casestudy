@@ -15,12 +15,12 @@ collecting, analyzing, and reporting data that helps guide Cyclistic marketing s
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
-<b>Understand how annual members and casual riders use Cyclistic bikes differently in order to convert riders into annual members .</b>
+Understand how annual members and casual riders use Cyclistic bikes differently in order to convert riders into annual members.
 
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical trip data, available on divvy_tripdata (https://divvy-tripdata.s3.amazonaws.com/index.html).  The data is structured in wide formats in records and fields with ride-related information about both casual riders and members, types of bikes, and the start and end station information (station id, station name, latitude and longitude coordinates) of each bike trip. The anonymized data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement .
+I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical trip data, available at https://divvy-tripdata.s3.amazonaws.com/index.html  The data is structured in wide formats in records and fields with ride-related information about both casual riders and members, types of bikes, and the start and end station information (station id, station name, latitude and longitude coordinates) of each bike trip. The anonymized data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement .
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p>Reliable - Yes: the dataset is public and unbiased
@@ -33,23 +33,20 @@ I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publi
 A number of start_station_id and end_station_id's have NULL values. Due to the limitations of the free-tier version of Google Big Query, we'll be filtering out these values instead of deleting them from the dataset to handle the errors. Since the data ROCCCs, I've determined that it will be be enough for the Business Task. 
 
 <h2>2. Prepare</h2>
+Previewing the files in Excel show they are identical in structure and have the same columne names which means we will be unioning instead of joining the data sets. I've decided to use Google Big Query for my data cleansing and analysis due to it's ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types. 
 
-```gcloud auth login```
-```gcloud config set project your-project-id```
+![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
+
+Next, I will use the Google Cloud CLI to upload the first CSV file to the Big Query. Instructions for installing and running the Google Cloud CLI is available here: https://cloud.google.com/sdk/docs/install-sdk 
+
+and the command for uploading the first data set: 202308-divvy-tripdata.csv  
 
 ```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
-After the first file is uploaded to BigQuery, we will replace the replace command with `noreplace` in order to append or UNION the next 2023–09 (and all subsequent files)to the existing table to aggregate the next 11 data files (2023–09 to 2024–07) into one giant table. Essentially we are add new tables to the bottom of the first table instead of using a JOIN which creates columns side by side. The complete command looks like this:
+To upload the remaining 11 CSV files, I will replace the `replace` command with `noreplace` to add the taable to the bottom of the previous table instead of JOINing it.
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-
-
-
-
-![schema](https://github.com/user-attachments/assets/806f756c-55b1-4160-8d0d-425fdd4bc78b)
-
-
-![storage](https://github.com/user-attachments/assets/033f3527-bca0-4ed5-b3fc-0ac0f1cc5852)
+After uploading gives us 5,715,693 rows. We can move on to the Processing part of the analysis.
 
 ![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
