@@ -55,31 +55,9 @@ Before cleaning the data, it's beneficial to explore the data and see what we ha
 
 Let's see if this is the case:
 
-```
-SELECT  
-  start_station_id,
-  COUNT(DISTINCT start_station_name) as start_station_name_count
-FROM `general-432301.wip.tripdata_test` 
-GROUP BY
-  start_station_id
-ORDER BY 
-  start_station_name_count DESC
-```
+![count_start_station_id](https://github.com/user-attachments/assets/4495390a-37cd-438a-8a23-36842a4a04ef)
 
-```
-Row	
-start_station_id
-start_station_name_count
-1	
-647
-3
-2	
-15541
-3
-3	
-514
-2
-```
+
 ![station_id](https://github.com/user-attachments/assets/e57ad941-90ad-437e-858c-aec4eddc6c8c)
 
 <h2>4. Analyze</h2>
