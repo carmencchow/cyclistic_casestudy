@@ -262,13 +262,14 @@ start_dayofweek
 ORDER BY 
 num_rides DESC
 
-/* Trip duration by day of week */
+/* Trip duration by day */
 SELECT 
   member_casual,
   start_dayofweek,
   ROUND(SUM(trip_duration)/60,2) as total_tripduration_mins
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
+  -- member_casual = 'member'
   member_casual = 'casual' and
   trip_duration < 1440
 GROUP BY
