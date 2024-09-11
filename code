@@ -1,42 +1,56 @@
 /* Cyclistic Case Study (Google Big Query + Tableau) */
+SELECT 
+  COUNT(*)
+FROM 
+  `general-432301.wip.tripdata_test` 
+-- return 5,715,693 records
 
-/* Confirm ride_id values are unique */
-SELECT ride_id
-FROM `general-432301.wip.tripdata_test` 
-WHERE ride_id IS NULL
+SELECT 
+  ride_id
+FROM 
+  `general-432301.wip.tripdata_test` 
+WHERE 
+  ride_id IS NULL
+-- no NULL values found
 
-SELECT COUNT(DISTINCT ride_id)
-FROM `general-432301.wip.tripdata_test` 
+SELECT 
+  COUNT(DISTINCT ride_id)
+FROM 
+  `general-432301.wip.tripdata_test` 
+-- no duplicate values found
 
-SELECT ride_id
-COUNT(ride_id) as count_ride_id
-FROM `general-432301.wip.tripdata_test`
-GROUP BY ride_id
-ORDER BY count_ride_id desc
+SELECT 
+  LENGTH(ride_id) as ride_id_length, 
+  COUNT(ride_id) as row_count
+FROM 
+  `general-432301.wip.tripdata_test` 
+GROUP BY 
+  ride_id_length;
+-- length of ride_ids all the same
 
 
-/* Remove all start_station_ids that are NULL */
+-- SELECT ride_id
+-- COUNT(ride_id) as count_ride_id
+-- FROM `general-432301.wip.tripdata_test`
+-- GROUP BY ride_id
+-- ORDER BY count_ride_id desc
 
 
-/* Remove all start_station_ids are NULL or ' 'values */
+/* Instead of deleting rows, which the free version of Big Query does not handle, I opted to use filters on my queries */
 
-/* Remove all start_lat, start_lng, end_lat, and end_lng with NULL or ' ' values. */
-
-/* Remove all trip durations that were 60 seconds or less which could indicate they could have been false starts or users trying to redock their bikes */
-
-/* Remove all trip durations that were over a day (86400 seconds) */
-
-/* Applied consistent formatting to the started_at and ended_at columns */ 
-
-/* Check that each ride_id key is unique and 16 characters long */
+SELECT *
+FROM 
+  `general-432301.wip.tripdata_test` 
+WHERE 
+  TIMESTAMP_DIFF(ended_at, started_at, MINUTE) <= 1 OR
+  TIMESTAMP_DIFF(ended_at, started_at, MINUTE) >= 1440;
 
 /* Check that all members are either 'member' or 'casual' */
-
-/* Check that the bike types are either 'classic', 'electric', or 'docked' */
-
-/* Check that each station has 1 name, 1 longitatude and 1 latitude */
-
-/* Created six new columns: start_dayofweek, start_month, start_am_pm, start_hour, trip_duration, and distance_in_meters to conduct deeper analysis. */
+SELECT 
+  DISTINCT 
+    member_casual
+  FROM 
+    `general-432301.wip.tripdata_test` 
 
 /*  Check start_station_id */
 SELECT  
@@ -57,8 +71,6 @@ WHERE
 ORDER BY
   station_name ASC
 
-
-
 /* Rides per day */
 SELECT 
 start_station_id, 
@@ -67,17 +79,14 @@ start_dayofweek,
 COUNT(ride_id) as num_rides
 
 FROM `general-432301.wip.view_trip_data_report` 
-
 WHERE
   start_station_id = '13022'
-
 GROUP BY
-start_station_id, 
-start_station_name, 
-start_dayofweek
-
+  start_station_id, 
+  start_station_name, 
+  start_dayofweek
 ORDER BY 
-num_rides DESC
+  num_rides DESC
 
 
 /* Ride count */
@@ -85,7 +94,8 @@ SELECT
   start_station_id,  
   MAX(start_station_name) as start_station_name,
   COUNT(DISTINCT ride_id) as ride_count,  
-FROM `general-432301.wip.view_trip_data_report` 
+FROM 
+  `general-432301.wip.view_trip_data_report` 
 WHERE 
   start_station_id IS NOT NULL 
 GROUP BY
@@ -95,46 +105,30 @@ GROUP BY
 /* Rideable type */ 
 
 SELECT  
-ride_id,
-rideable_type,
-count(rideable_type) as count_types
-FROM `general-432301.wip.tripdata_test` 
-WHERE member_casual <> "casual" AND member_casual <> "member" 
+  ride_id,
+  rideable_type,
+  count(rideable_type) as count_types
+FROM 
+  `general-432301.wip.tripdata_test` 
+WHERE 
+  member_casual <> "casual" AND member_casual <> "member" 
 GROUP BY
-ride_id,
-rideable_type
+  ride_id,
+  rideable_type
 ORDER BY
-count_types DESC
+  count_types DESC
 
 SELECT 
   rideable_type,
   COUNT(DISTINCT ride_id) as num_rides
-FROM `general-432301.wip.view_trip_data_report` 
+FROM 
+  `general-432301.wip.view_trip_data_report` 
 GROUP BY
   rideable_type
 
-/* Monthly distance */
-SELECT 
-  member_casual,
-  start_month,
-  SUM(distance_in_meters) as total_distance 
-
-FROM `general-432301.wip.view_trip_data_report` 
-
-WHERE member_casual = 'member'
--- WHERE member_casual = 'casual'
-and start_station_id IS NOT NULL
-and trip_duration > 60 and trip_duration < 1440
-
-GROUP BY
-  member_casual,
-  start_month 
-
-ORDER BY
-  start_month asc
 
 
-/* Clean station data */
+/* Create station table with station_id as primary key */
 SELECT 
   station_id as station_id,
   ROUND(MAX(lat), 6) as lat,
@@ -148,7 +142,6 @@ FROM
   MAX(start_station_name) as station_name
 FROM
   `general-432301.wip.tripdata_test`
-
 GROUP BY
   station_id
 UNION ALL
@@ -159,43 +152,41 @@ SELECT
   MAX(end_station_name) as station_name
 FROM
   `general-432301.wip.tripdata_test`
-
 GROUP BY
   station_id)
   GROUP BY 
   station_id
 
-
-/* Cleaned data */
-SELECT  ride_id,
-MAX(rideable_type) as rideable_type,
-MAX(started_at) as started_at,
-MAX(ended_at) as ended_at,
-MAX(D1.station_name ) as start_station_name,
-MAX(start_station_id) as start_station_id,
-MAX(D2.station_name) as end_station_name,
-MAX(end_station_id) as end_station_id,
-MAX(D1.lat) as start_lat,
-MAX(D1.lng) as start_lng,
-MAX(D2.lat) as end_lat,
-MAX(D2.lng) as end_lng,
-MAX(member_casual) as member_casual,
- FROM
+/* Combine ride data table with station data table */
+SELECT  
+  ride_id,
+  MAX(rideable_type) as rideable_type,
+  MAX(started_at) as started_at,
+  MAX(ended_at) as ended_at,
+  MAX(D1.station_name ) as start_station_name,
+  MAX(start_station_id) as start_station_id,
+  MAX(D2.station_name) as end_station_name,
+  MAX(end_station_id) as end_station_id,
+  MAX(D1.lat) as start_lat,
+  MAX(D1.lng) as start_lng,
+  MAX(D2.lat) as end_lat,
+  MAX(D2.lng) as end_lng,
+  MAX(member_casual) as member_casual,
+FROM
 (SELECT
   ride_id,
-MAX(rideable_type) as rideable_type,
-MAX(started_at) as started_at,
-MAX(ended_at) as ended_at,
-MAX(start_station_name) as start_station_name,
-MAX(start_station_id) as start_station_id,
-MAX(end_station_name) as end_station_name,
-MAX(end_station_id) as end_station_id,
-MAX(start_lat) as start_lat,
-MAX(start_lng) as start_lng,
-MAX(end_lat) as end_lat,
-MAX(end_lng) as end_lng,
-MAX(member_casual) as member_casual,
-
+  MAX(rideable_type) as rideable_type,
+  MAX(started_at) as started_at,
+  MAX(ended_at) as ended_at,
+  MAX(start_station_name) as start_station_name,
+  MAX(start_station_id) as start_station_id,
+  MAX(end_station_name) as end_station_name,
+  MAX(end_station_id) as end_station_id,
+  MAX(start_lat) as start_lat,
+  MAX(start_lng) as start_lng,
+  MAX(end_lat) as end_lat,
+  MAX(end_lng) as end_lng,
+  MAX(member_casual) as member_casual,
 FROM
   `general-432301.wip.tripdata_test` GROUP BY ride_id) Q1
 LEFT OUTER JOIN
@@ -211,7 +202,8 @@ ON
   GROUP BY ride_id
 
 
-/* Clean, merged final trip data table - connect to Tableau */
+/* Final table with 6 new columns: start_dayofweek, start_month, start_am_pm, start_hour, trip_duration, and distance_in_meters; connect to Tableau for data viz*/
+
 SELECT  
   ride_id, 
   rideable_type, 
@@ -241,7 +233,7 @@ FROM `general-432301.wip.trip_data_clean`
 
 /* ------ Part 3: Analysis ----------- */
 
-/* Busiest month */
+/* Number of rides by month */
 SELECT  
   COUNT(ride_id) as count_rides,
   start_month
@@ -251,23 +243,26 @@ GROUP BY
 ORDER BY
   count_rides DESC
 
-/* Busiest day */
+/* Number of rides by day of week */
 SELECT 
-start_dayofweek,
-COUNT(DISTINCT ride_id) as num_rides
-FROM `general-432301.wip.view_trip_data_report` 
-WHERE start_station_id IS NOT NULL
+  start_dayofweek,
+  COUNT(DISTINCT ride_id) as num_rides
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL
 GROUP BY
-start_dayofweek
+  start_dayofweek
 ORDER BY 
-num_rides DESC
+  num_rides DESC
 
 /* Trip duration by day of week */
 SELECT 
   member_casual,
   start_dayofweek,
   ROUND(SUM(trip_duration)/60,2) as total_tripduration_mins
-FROM `general-432301.wip.view_trip_data_report` 
+FROM 
+  `general-432301.wip.view_trip_data_report` 
 WHERE
   member_casual = 'casual' and
   trip_duration < 1440
@@ -277,44 +272,56 @@ GROUP BY
 ORDER BY
   total_tripduration_mins desc
 
-/* Find 10 most popular start_stations */
+
+/* Total distance travelled each month */
+SELECT 
+  member_casual,
+  start_month,
+  SUM(distance_in_meters) as total_distance 
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  member_casual = 'member'
+-- WHERE member_casual = 'casual'
+  and start_station_id IS NOT NULL
+  and trip_duration > 60 and trip_duration < 1440
+GROUP BY
+  member_casual,
+  start_month 
+ORDER BY
+  start_month asc
+
+
+/* 10 most popular start_stations */
 SELECT 
   start_station_name,
   start_lat,
   start_lng,
   COUNT(DISTINCT ride_id) as num_rides
-
-FROM `general-432301.wip.view_trip_data_report` 
-
+FROM 
+  `general-432301.wip.view_trip_data_report` 
 WHERE
--- member_casual = 'member' 
+  -- member_casual = 'member' 
   member_casual = 'casual'
-
 GROUP BY
   start_station_id,
   start_station_name,
   start_lat,
   start_lng
-
 ORDER BY
   num_rides DESC
-
 LIMIT 10
 
-/* Find 10 least popular start_station */
+/* Find least popular start_station */
 SELECT 
   start_station_id,
   MIN(start_station_name),
   COUNT(ride_id) as num_rides
-
 FROM `general-432301.wip.view_trip_data_report` 
-
 GROUP BY
   start_station_id,
   start_station_name
-
 HAVING
   COUNT(ride_id) = 1
-
 ORDER BY
   start_station_name asc
