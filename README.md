@@ -1,4 +1,4 @@
-🚲 # Cyclistic Case Study
+# Cyclistic Case Study 🚲
 <p>Carmen Chow</p> 
 <p>September 2024</p>
 Medium: https://medium.com/p/2a1755a8b4e7/edit
