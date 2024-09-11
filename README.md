@@ -65,6 +65,21 @@ GROUP BY
 ORDER BY 
   start_station_name_count DESC
 ```
+
+```
+Row	
+start_station_id
+start_station_name_count
+1	
+647
+3
+2	
+15541
+3
+3	
+514
+2
+```
 ![station_id](https://github.com/user-attachments/assets/e57ad941-90ad-437e-858c-aec4eddc6c8c)
 
 <h2>4. Analyze</h2>
