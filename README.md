@@ -48,6 +48,9 @@ After the first file is uploaded to BigQuery, we will replace the replace comman
 
 
 
+![schema](https://github.com/user-attachments/assets/806f756c-55b1-4160-8d0d-425fdd4bc78b)
 
 
+![storage](https://github.com/user-attachments/assets/033f3527-bca0-4ed5-b3fc-0ac0f1cc5852)
 
+![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
