@@ -16,4 +16,38 @@ collecting, analyzing, and reporting data that helps guide Cyclistic marketing s
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
-Determine how annual members and casual riders use Cyclistic bikes differently.
+<b>Learn how annual members and casual riders use Cyclistic bikes differently to convert riders into annual members .</b>
+
+<h2>2. Prepare</h2>
+
+<h3><b>Data Source</b></h3>
+I'll be focusing on the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical data: https://divvy-tripdata.s3.amazonaws.com/index.html  The data is structured in wide formats in records and fields with ride-related information about the rider (casual or member), bike (classic, electric or docked), and the start and end station information (station id, station name, latitude and longitude coordinates). The data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement . It is accessible to the public and it does not include any personal identifiable information (PII). 
+
+<h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
+<p>Reliable - the dataset is public and unbiased
+<p>Original -data is considered first-party data because as it was collected by the company itself
+<p>Comprehensive - there's millions of rows or records of monthly data beginning in the year 2020 to the current month
+<p>Current - the data is up to date and includes the current month
+<p>Cited - the data is public, vetted, and available on the company's website, found here.
+
+<h3><b>Data Limitations</b></h3>
+There are a number of NULL values related to some start and end station records. These will need to be cleaned. Despite the errors, because the data ROCCCs, the data will be enough for data analyse and uncovering trends and insights that will enable me to answer the business question.
+
+<h2>2. Prepare</h2>
+
+```gcloud auth login```
+```gcloud config set project your-project-id```
+
+```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
+
+After the first file is uploaded to BigQuery, we will replace the replace command with `noreplace` in order to append or UNION the next 2023–09 (and all subsequent files)to the existing table to aggregate the next 11 data files (2023–09 to 2024–07) into one giant table. Essentially we are add new tables to the bottom of the first table instead of using a JOIN which creates columns side by side. The complete command looks like this:
+
+``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
+
+
+
+
+
+
+
+
