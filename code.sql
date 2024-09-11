@@ -5,6 +5,31 @@ FROM
   `general-432301.wip.tripdata_test` 
 -- return 5,715,693 records
 
+/*  Find start_station_id with 2 or more start_station_name */
+SELECT  
+  start_station_id,
+  COUNT(DISTINCT start_station_name) as start_station_name_count
+FROM `general-432301.wip.tripdata_test` 
+GROUP BY
+  start_station_id
+HAVING 
+  start_station_name_count >= 2
+ORDER BY 
+  start_station_name_count DESC
+
+
+/* Filter start_station_id by */
+SELECT  
+  DISTINCT start_station_name as station_name,
+FROM `general-432301.wip.tripdata_test` 
+WHERE
+  start_station_id = '647'
+ORDER BY
+  station_name ASC
+
+
+
+
 SELECT 
   ride_id
 FROM 
@@ -51,25 +76,6 @@ SELECT
     member_casual
   FROM 
     `general-432301.wip.tripdata_test` 
-
-/*  Check start_station_id */
-SELECT  
-  start_station_id,
-  COUNT(DISTINCT start_station_name) as start_station_name_count
-FROM `general-432301.wip.tripdata_test` 
-GROUP BY
-  start_station_id
-ORDER BY 
-  start_station_name_count DESC
-
-/* Filter start_station_id by */
-SELECT  
-  DISTINCT start_station_name as station_name,
-FROM `general-432301.wip.tripdata_test` 
-WHERE
-  start_station_id = '647'
-ORDER BY
-  station_name ASC
 
 /* Rides per day */
 SELECT 
