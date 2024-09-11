@@ -1,0 +1,12 @@
+-- Cyclistic
+
+SELECT  
+  start_station_id,
+  COUNT(DISTINCT start_station_name) as start_station_name_count
+
+FROM `general-432301.wip.tripdata_test` 
+
+GROUP BY
+  start_station_id
+ORDER BY 
+  start_station_name_count DESC
