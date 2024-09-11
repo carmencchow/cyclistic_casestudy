@@ -1,12 +1,11 @@
 # Cyclistic Case Study 🚲
 <p>Carmen Chow</p> 
-<p>September 2024</p>
-Medium: https://medium.com/p/2a1755a8b4e7/edit
+<p>August 2024</p>
 
 <h2>Background</h2>
-<p>Cyclistic is a bike-share company in Chicago. In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. Customers who purchase single-ride or full-day passes are referred to as <b>casual riders</b>. Customers who purchase annual memberships are Cyclistic <b>members</b>. 
+<p>Cyclistic is a successful bike-share company in Chicago. Since 2016, its program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. Customers who purchase single-ride or full-day passes are referred to as <b>casual riders</b> and those who purchase annual memberships are Cyclistic <b>members</b>. 
   
-The director of marketing believes the company's future success depends on maximizing the number of annual memberships. Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes differently. Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, the team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends.
+The director of marketing believes the company's future success depends on maximizing the number of annual memberships by converting casual riders into annual members. In order to do that, the team needs to better understand how casual riders and annual members use Cyclistic bikes differently. To do that, we will be analyzing the Cyclistic historical bike trip data to identify meaningful trends.
 
 <h2>Stakeholders</h2>
 <p>*  Lily Moreno: The director of marketing and your manager. </p>
@@ -16,22 +15,22 @@ collecting, analyzing, and reporting data that helps guide Cyclistic marketing s
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
-<b>Learn how annual members and casual riders use Cyclistic bikes differently to convert riders into annual members .</b>
+<b>Understand how annual members and casual riders use Cyclistic bikes differently in order to convert riders into annual members .</b>
 
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-I'll be focusing on the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical data: https://divvy-tripdata.s3.amazonaws.com/index.html  The data is structured in wide formats in records and fields with ride-related information about the rider (casual or member), bike (classic, electric or docked), and the start and end station information (station id, station name, latitude and longitude coordinates). The data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement . It is accessible to the public and it does not include any personal identifiable information (PII). 
+I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical trip data, available on divvy_tripdata (https://divvy-tripdata.s3.amazonaws.com/index.html).  The data is structured in wide formats in records and fields with ride-related information about both casual riders and members, types of bikes, and the start and end station information (station id, station name, latitude and longitude coordinates) of each bike trip. The anonymized data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement .
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
-<p>Reliable - the dataset is public and unbiased
-<p>Original -data is considered first-party data because as it was collected by the company itself
-<p>Comprehensive - there's millions of rows or records of monthly data beginning in the year 2020 to the current month
-<p>Current - the data is up to date and includes the current month
-<p>Cited - the data is public, vetted, and available on the company's website, found here.
+<p>Reliable - Yes: the dataset is public and unbiased
+<p>Original - Yes: data is first-party data, collected by the company itself
+<p>Comprehensive - Yes: > 5 million rows of historical trip data from the year 2020 
+<p>Current - Yes: data is up to date and includes the current month
+<p>Cited - Yes: data is public, vetted, and available on the company's website
 
 <h3><b>Data Limitations</b></h3>
-There are a number of NULL values related to some start and end station records. These will need to be cleaned. Despite the errors, because the data ROCCCs, the data will be enough for data analyse and uncovering trends and insights that will enable me to answer the business question.
+A number of start_station_id and end_station_id's have NULL values. Due to the limitations of the free-tier version of Google Big Query, we'll be filtering out these values instead of deleting them from the dataset to handle the errors. Since the data ROCCCs, I've determined that it will be be enough for the Business Task. 
 
 <h2>2. Prepare</h2>
 
