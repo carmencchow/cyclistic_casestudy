@@ -33,7 +33,7 @@ I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publi
 A number of start_station_id and end_station_id's have NULL values. Due to the limitations of the free-tier version of Google Big Query, we'll be filtering out these values instead of deleting them from the dataset to handle the errors. Since the data ROCCCs, I've determined that it will be be enough for the Business Task. 
 
 <h2>2. Prepare</h2>
-Previewing the files in Excel show they are identical in structure and have the same columne names which means we will be unioning instead of joining the data sets. I've decided to use Google Big Query for my data cleansing and analysis due to it's ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types. 
+Previewing the files in Excel show the the name and format of each column head is identical in structure and have the same columne names which means we will be unioning instead of joining the data sets. I've decided to use Google Big Query for my data cleansing and analysis due to it's ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types. 
 
 ![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
 
@@ -43,10 +43,20 @@ and the command for uploading the first data set: 202308-divvy-tripdata.csv
 
 ```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
-To upload the remaining 11 CSV files, I will replace the `replace` command with `noreplace` to add the taable to the bottom of the previous table instead of JOINing it.
+To upload and merge the remaining 11 CSV files to the first one, I will replace the `replace` command with `noreplace` to add the taable to the bottom of the previous table instead of JOINing it. Instead of combinging data into new columns, we'll join them into new rows.
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est "C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-After uploading gives us 5,715,693 rows. We can move on to the Processing part of the analysis.
+Importing all 12 dataset gives us 5,715,693 rows. We can move on to the Processing part of the analysis.
+
+<h2>3. Process</h2>
+
+
+
+
+<h2>4. Analyze</h2>
+<h2>5. Share</h2>
+<h2>6. Act</h2>
+
 
 ![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
