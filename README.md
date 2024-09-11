@@ -56,22 +56,25 @@ We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can
 
 Before cleaning the data, it's beneficial to explore the data and see what we have to work with that will inform our cleansing process. Looking at the dataset, we see columns contain qualitative or descriptive data, also known as dimensions. These dimensions can be grouped into 3 categories: station data, ride data, and time (?) data. Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
 
-Let's run a query on start_station_id:
+Let's run a query on start_station_id to see if there are instances where start_station_id and start_station_name have a 1 to many relationship:
 
-![start_station_id_code](https://github.com/user-attachments/assets/4d494c57-7945-4688-bace-5c39590f4417)
+![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-Surprisingly, there are records of start_station_ids with more than one start_station_name associated with it.
-![start_station_id_count](https://github.com/user-attachments/assets/d29b6182-03e7-4474-a36d-c5fb5d776c18)
+There are, in fact, 83 records of start_station_ids with more than one start_station_name associated with it.
 
-Let's run a query and filter on station '647':
+![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
+
+Let's run a query and filter on the first result, the station with the id '647':
 
 ![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
 
-We get a result showing not 1 but 3 different station names! Entering the station id '647' in the Chicago Data Portal's website  https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data gives us the correct station name:
+We have three different names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website  https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which gives us the correct station name when we look up '647'
 
-
+![647](https://github.com/user-attachments/assets/42f4d0f6-0765-4394-9819-98fcf62ce780)
 
 https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations-Map/bk89-9dk7 
+
+We're able to establish that <i>Racine Ave. & 57th St.</i> is the station 647's correct station name, finding the 
 
 <h2>4. Analyze</h2>
 <h2>5. Share</h2>
