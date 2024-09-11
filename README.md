@@ -26,7 +26,7 @@ I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publi
 <p>Reliable - Yes: the dataset is public and unbiased
 <p>Original - Yes: data is first-party data, collected by the company itself
 <p>Comprehensive - Yes: > 5 million rows of historical trip data from the year 2020 
-<p>Current - Yes: data is up to date and includes the current month
+<p>Current - Yes: data is from the past 12 months
 <p>Cited - Yes: data is public, vetted, and available on the company's website
 
 <h3><b>Data Limitations</b></h3>
@@ -47,10 +47,10 @@ To upload and merge the remaining 11 CSV files to the first one, I will replace 
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-Importing all 12 dataset gives us 5,715,693 rows. We can move on to the Processing part of the analysis.
+We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can move on to the Processing part of the analysis.
 
 <h2>3. Process</h2>
-
+Let's take some time to explore our new `tripdata` dataset
 
 
 
