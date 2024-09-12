@@ -94,11 +94,8 @@ For our purposes, we can use Chicago's website to retrieve the correct station n
 
 We'll treat both `start_station_id` and `end_station_id` as `station_id` which will be the primary key used to join the results of the inner queries.
 
-```
-
 ![dim](https://github.com/user-attachments/assets/f35475e5-f424-4e95-b9f4-b02b2dd47c23)
 
-```
 
 
 
