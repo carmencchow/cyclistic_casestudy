@@ -180,13 +180,15 @@ GROUP BY
   station_id
 
 
-/* 2. Ride Data Table - Create a dimension table that contains aggregated ride data with ride_id as the primary key */
+/* 2. Ride Data Table - Create a dimension table that contains aggregated ride_data with ride_id as the primary key */
 
 SELECT
   ride_id,
   MAX(rideable_type) as rideable_type,
   MAX(started_at) as started_at,
   MAX(ended_at) as ended_at,
+  MAX(start_station_id) as start_station_id,
+  MAX(end_station_id) as end_station_id,
   MAX(member_casual) as member_casual,
 FROM
   `general-432301.wip.tripdata_test`
@@ -194,7 +196,7 @@ GROUP BY
   ride_id
 
 
-/* 3. Merge ride data and start and end station data */
+/* 3. Merge ride_data with start_station and end_station data on start_station_id with two left joins */
 
 SELECT  
   ride_id,
@@ -202,24 +204,22 @@ SELECT
   member_casual,
   started_at,
   ended_at,
-  start_station.station_name as start_station_name,
-  end_station.station_name as end_station_name,
   start_station_id,
   end_station_id,
-  start_station.lat as start_lat,
-  end_station.lng as start_lng,
-  start_station.lat as end_lat,
-  end_station.lng as end_lng
+  start_data.station_name as start_station_name,
+  end_data.station_name as end_station_name,
+  start_data.lat as start_lat,
+  start_data.lng as start_lng,
+  end_data.lat as end_lat,
+  end_data.lng as end_lng
 FROM
   `general-432301.wip.ride_data`
-LEFT OUTER JOIN
-  `general-432301.wip.dim_station` as start_station
-ON 
-  start_station.station_id = `general-432301.wip.ride_data`.start_station_id
-LEFT OUTER JOIN
-  `general-432301.wip.dim_station` as end_station
-ON
-  end_station.station_id =  `general-432301.wip.ride_data`.end_station_id
+LEFT JOIN
+  `general-432301.wip.dim_station` as start_data
+  ON start_station_id = start_data.station_id
+LEFT JOIN
+  `general-432301.wip.dim_station` as end_data
+  ON end_station_id =  end_data.station_id
 
 /* Final table with 6 new columns: start_dayofweek, start_month, start_am_pm, start_hour, trip_duration, and distance_in_meters; connect to Tableau for data viz*/
 
