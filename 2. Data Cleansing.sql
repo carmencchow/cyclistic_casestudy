@@ -1,5 +1,4 @@
 /* ------- Data Cleansing: Create separate tables -----------*/
-/* NOTE: The free-tier version of Big Query does not permit data deletion, so instead of deleting rows with NULL, we will filter out NULL values and create a new table with only non-NULL results. */
 
 /* 1. Station Data Table - Create a dimension table that contains aggregated start and end station data that we will union with station_id as the primary key */
 

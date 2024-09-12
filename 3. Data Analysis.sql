@@ -1,6 +1,3 @@
-
-/* --------------------- Data Analysis ---------------------*/
-
 SELECT  *
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
@@ -10,8 +7,25 @@ WHERE
   end_station_name IS NOT NULL
 -- returns 4,241,241 records from the original 5,715,693 records
 
+/* NOTE: The free-tier version of Big Query does not permit data deletion, so I will use the WHERE clause to filter out NULL values */
 
-/* Number of rides by day of week */
+/* 1. Total rides by membership type */
+SELECT 
+  member_casual,
+  COUNT(DISTINCT ride_id) as num_rides
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL
+GROUP BY
+  member_casual
+-- 1,490,342 casual rides
+-- 2,750,899 member rides
+
+/* 2. Total rides by day of week */
 SELECT 
   start_dayofweek,
   COUNT(DISTINCT ride_id) as num_rides
@@ -19,23 +33,108 @@ FROM
   `general-432301.wip.view_trip_data_report` 
 WHERE 
   start_station_id IS NOT NULL and
-  start_station_name IS NOT NULL
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL
 GROUP BY
   start_dayofweek
 ORDER BY 
   num_rides DESC
 
-/* Number of rides each month */
+/* 3. Total daily rides by membership */
+SELECT 
+  start_dayofweek,
+  COUNT(DISTINCT ride_id) as num_rides
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and 
+  member_casual = 'casual'
+  -- and member_casual = 'member'
+
+GROUP BY
+  start_dayofweek
+ORDER BY 
+  num_rides DESC
+-- CASUAL: Saturday (307,441) and Sunday (254,483) 
+-- MEMBER: Wednesday (463,411), Tuesday (444,178), and Thursday (432,910) 
+
+/* 4. Total monthly rides */
 SELECT  
   COUNT(ride_id) as count_rides,
   start_month
 FROM `general-432301.wip.view_trip_data_report` 
+WHERE
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL 
 GROUP BY
   start_month
 ORDER BY
   count_rides DESC
+-- August (584,960), July (540,794), September (506,635)
 
-/* Trip duration by day of week */
+/* 5. Total monthly rides by membership type */
+SELECT  
+  COUNT(ride_id) as count_rides,
+  start_month
+FROM `general-432301.wip.view_trip_data_report` 
+WHERE
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  member_casual = 'casual'
+  -- member_casual = 'member'
+GROUP BY
+  start_month
+ORDER BY
+  count_rides DESC
+-- CASUAL: August (233,897), July (231,879) the busiest 
+-- MEMBER: August (351,063), September (309,671) the busiest
+-- CASUAL: January (17,713)
+-- MEMBER: January (96,095) 
+
+/* 6. Total rides by hour */
+SELECT  
+  start_hour,
+  COUNT(ride_id) as count_rides,
+FROM `general-432301.wip.view_trip_data_report` 
+WHERE
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL 
+GROUP BY
+  start_hour
+ORDER BY
+  count_rides DESC
+-- 5pm (445,479) and 4pm (393,901)
+
+/* 7. Total rides by hour by member type*/
+SELECT  
+  start_hour,
+  COUNT(ride_id) as count_rides,
+FROM `general-432301.wip.view_trip_data_report` 
+WHERE
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  member_casual = 'casual'
+  -- member_casual = 'member'
+GROUP BY
+  start_hour
+ORDER BY
+  count_rides DESC
+-- CASUAL: 5pm (144,957) and 4pm (135,739), all pm
+-- MEMBER: 5pm (300,522) and 4pm (258,162), 3-7pm and 7-9am
+
+/* 8. Trip duration by day of week */
 SELECT 
   member_casual,
   start_dayofweek,
