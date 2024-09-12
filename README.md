@@ -70,11 +70,24 @@ Let's run a query and filter on the first result, the station with the id '647':
 
 We have three different names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website  https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which gives us the correct station name when we look up '647'
 
-![647](https://github.com/user-attachments/assets/42f4d0f6-0765-4394-9819-98fcf62ce780)
+![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations-Map/bk89-9dk7 
+We're able to establish that <i>Racine Ave. & 57th St.</i> is the station 647's correct station name. Now, let's see if there are instances of a 1 to many relationship between our station_id and start_lat:
 
-We're able to establish that <i>Racine Ave. & 57th St.</i> is the station 647's correct station name, finding the 
+![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
+
+We have ....
+
+![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
+
+Filtering on a result:
+
+![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
+
+
+<h3><i>Data Cleansing</i></h3>
+However, performing this lookup for all 83 results would not be time efficient.
+
 
 <h2>4. Analyze</h2>
 <h2>5. Share</h2>
