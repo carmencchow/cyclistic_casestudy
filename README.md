@@ -114,7 +114,7 @@ Now let's run a query twice: once on our cleaned data and the other on our dirty
 
 Let's view our new table with the new rows:
 
-![final_join](https://github.com/user-attachments/assets/35561a1f-b65d-493b-a2b9-07e0c7f42b3f)
+![final](https://github.com/user-attachments/assets/5772fec2-5999-4102-8a6d-8e88f4d2a1e5)
 
 
 <h2>4. Analyze</h2>
