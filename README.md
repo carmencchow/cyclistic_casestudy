@@ -94,9 +94,22 @@ For our purposes, we can use Chicago's website to retrieve the correct station n
 
 We'll treat both `start_station_id` and `end_station_id` as `station_id` which will be the primary key used to join the results of the inner queries.
 
-![dim](https://github.com/user-attachments/assets/f35475e5-f424-4e95-b9f4-b02b2dd47c23)
+Create ride_data table:
 
+<b> Joining the cleaned table to main table
 
+<p>Applying the same thinking, we'll use `MAX()` again, this time to aggregate the following columns from our main `tripdata` table: `rideable_type`, `started_at`, `ended_at`, `member_casual`, etc  for each `ride_id`. 
+  
+<p><i>Note: <b>rideable_type</b> - classic_bike, electric_bike, or docked), </p>
+<p><b>member_casual</b> - member or casual</p>
+
+<p>We'll join the results of our aggregate `tripdata` table with the previous dimension table twice, in order to combine the `start_station` and `end_station` details.</p>
+
+![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
+
+Now let's run a query twice: once on our cleaned data and the other on our dirty data to see the difference. We should return a single row for each station_id:
+
+Let's view our new table with the new rows:
 
 
 <h2>4. Analyze</h2>
