@@ -85,8 +85,19 @@ Filtering on a result:
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
 
+
 <h3><i>Data Cleansing</i></h3>
 We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
+
+We'll create a dimension table with `start_station_id` as the primary key that we will later rejoin to the main table. Since the `SUM()` is only used on numerical values, we'll aggregate data for each `start_station_id` using the `MAX()` function to find the MAX values for `lat`, `lng`, and `station_name`. We'll do the same for end_station. Then we'll combine the results of the two inner queries with the `UNION ALL` operator to put the rows underneath. In doing so, we'll aggregate the combined results to get a single record for each 'start_station_id`. Note that using the `MIN()` function would also work in this case.
+For our purposes, we can use Chicago's website to retrieve the correct station name in the latter part of our analyis for the top 10 stations; however for now, we just want SQL to return a single value for for the station's name, latitude, and longitude which an aggregate function will accomplish. 
+
+
+```
+
+
+```
+
 
 
 <h2>4. Analyze</h2>
