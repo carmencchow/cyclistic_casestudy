@@ -96,7 +96,7 @@ We'll treat both `start_station_id` and `end_station_id` as `station_id` which w
 
 Create ride_data table:
 
-<b> Joining the cleaned table to main table
+<b> Joining the cleaned table to main table</b>
 
 <p>Applying the same thinking, we'll use `MAX()` again, this time to aggregate the following columns from our main `tripdata` table: `rideable_type`, `started_at`, `ended_at`, `member_casual`, etc  for each `ride_id`. 
   
@@ -109,7 +109,12 @@ Create ride_data table:
 
 Now let's run a query twice: once on our cleaned data and the other on our dirty data to see the difference. We should return a single row for each station_id:
 
+
+![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
+
 Let's view our new table with the new rows:
+
+![final_join](https://github.com/user-attachments/assets/35561a1f-b65d-493b-a2b9-07e0c7f42b3f)
 
 
 <h2>4. Analyze</h2>
