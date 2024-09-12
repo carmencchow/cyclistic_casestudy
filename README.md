@@ -86,7 +86,7 @@ Filtering on a result:
 
 
 <h3><i>Data Cleansing</i></h3>
-However, performing this lookup for all 83 results would not be time efficient.
+We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. 
 
 
 <h2>4. Analyze</h2>
