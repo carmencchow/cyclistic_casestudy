@@ -192,11 +192,8 @@ SELECT
   MAX(member_casual) as member_casual,
 FROM
   `general-432301.wip.tripdata_test`
-GROUP BY
-  ride_id
 
-
-/* 3. Merge ride_data with start_station and end_station data on start_station_id with two left joins */
+/* 3. Merge ride_data with start_station and end_station data on station_id with two left joins */
 
 SELECT  
   ride_id,
@@ -221,7 +218,7 @@ LEFT JOIN
   `general-432301.wip.dim_station` as end_data
   ON end_station_id =  end_data.station_id
 
-/* Final table with 6 new columns: start_dayofweek, start_month, start_am_pm, start_hour, trip_duration, and distance_in_meters; connect to Tableau for data viz*/
+/* Clean  up final table: format dates and add 6 new columns: start_dayofweek, start_month, start_am_pm, start_hour, trip_duration, and distance_in_meters; connect to Tableau for data viz*/
 
 SELECT  
   ride_id, 
