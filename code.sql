@@ -5,7 +5,7 @@ FROM
   `general-432301.wip.tripdata_test` 
 -- return 5,715,693 records
 
-/*  Find start_station_id with 2 or more start_station_name */
+/*  Find stations with 2 or more station names */
 SELECT  
   start_station_id,
   COUNT(DISTINCT start_station_name) as start_station_name_count
@@ -16,6 +16,18 @@ HAVING
   start_station_name_count >= 2
 ORDER BY 
   start_station_name_count DESC
+
+/* Data Exploration: Find startions with 2 or more latitude and longitude coordinations */
+SELECT  
+  start_station_id,
+  COUNT(DISTINCT start_lat) as lat_count
+FROM `general-432301.wip.tripdata_test` 
+GROUP BY
+  start_station_id
+HAVING 
+  lat_count >= 2
+ORDER BY 
+  lat_count DESC
 
 
 /* Filter start_station_id by */
@@ -134,79 +146,80 @@ GROUP BY
 
 
 
-/* Create station table with station_id as primary key */
+/* 1. Station Data Table - Create a dimension table that contains aggregated start and end station data with station_id as the primary key */
 SELECT 
-  station_id as station_id,
+  station_id,
   ROUND(MAX(lat), 6) as lat,
-  MAX(lng) as lng,
+  ROUND(MAX(lng), 6) as lng,
   MAX(station_name) as station_name 
 FROM
-(SELECT
-  start_station_id as station_id,
-  MAX(start_lat) as lat,
-  MAX(start_lng) as lng,
-  MAX(start_station_name) as station_name
-FROM
-  `general-432301.wip.tripdata_test`
-GROUP BY
-  station_id
-UNION ALL
-SELECT
-  end_station_id as station_id,
-  MAX(end_lat) as lat,
-  MAX(end_lng) as lng,
-  MAX(end_station_name) as station_name
-FROM
-  `general-432301.wip.tripdata_test`
-GROUP BY
-  station_id)
-  GROUP BY 
+(
+  SELECT /* aggregate start_station data */
+    start_station_id as station_id,
+    MAX(start_lat) as lat,
+    MAX(start_lng) as lng,
+    MAX(start_station_name) as station_name
+  FROM
+    `general-432301.wip.tripdata_test`
+  GROUP BY
+    station_id
+
+  UNION ALL
+
+  SELECT /* aggregate end_station data */
+    end_station_id as station_id,
+    MAX(end_lat) as lat,
+    MAX(end_lng) as lng,
+    MAX(end_station_name) as station_name
+  FROM
+    `general-432301.wip.tripdata_test`
+  GROUP BY
+    station_id
+)
+GROUP BY 
   station_id
 
-/* Combine ride data table with station data table */
+
+/* 2. Ride Data Table - Create a dimension table that contains aggregated ride data with ride_id as the primary key */
+
+SELECT
+  ride_id,
+  MAX(rideable_type) as rideable_type,
+  MAX(started_at) as started_at,
+  MAX(ended_at) as ended_at,
+  MAX(member_casual) as member_casual,
+FROM
+  `general-432301.wip.tripdata_test`
+GROUP BY
+  ride_id
+
+
+/* 3. Merge ride data and start and end station data */
+
 SELECT  
   ride_id,
-  MAX(rideable_type) as rideable_type,
-  MAX(started_at) as started_at,
-  MAX(ended_at) as ended_at,
-  MAX(D1.station_name ) as start_station_name,
-  MAX(start_station_id) as start_station_id,
-  MAX(D2.station_name) as end_station_name,
-  MAX(end_station_id) as end_station_id,
-  MAX(D1.lat) as start_lat,
-  MAX(D1.lng) as start_lng,
-  MAX(D2.lat) as end_lat,
-  MAX(D2.lng) as end_lng,
-  MAX(member_casual) as member_casual,
+  rideable_type,
+  member_casual,
+  started_at,
+  ended_at,
+  start_station.station_name as start_station_name,
+  end_station.station_name as end_station_name,
+  start_station_id,
+  end_station_id,
+  start_station.lat as start_lat,
+  end_station.lng as start_lng,
+  start_station.lat as end_lat,
+  end_station.lng as end_lng
 FROM
-(SELECT
-  ride_id,
-  MAX(rideable_type) as rideable_type,
-  MAX(started_at) as started_at,
-  MAX(ended_at) as ended_at,
-  MAX(start_station_name) as start_station_name,
-  MAX(start_station_id) as start_station_id,
-  MAX(end_station_name) as end_station_name,
-  MAX(end_station_id) as end_station_id,
-  MAX(start_lat) as start_lat,
-  MAX(start_lng) as start_lng,
-  MAX(end_lat) as end_lat,
-  MAX(end_lng) as end_lng,
-  MAX(member_casual) as member_casual,
-FROM
-  `general-432301.wip.tripdata_test` GROUP BY ride_id) Q1
+  `general-432301.wip.ride_data`
 LEFT OUTER JOIN
-  `general-432301.wip.dim_station` D1 
+  `general-432301.wip.dim_station` as start_station
 ON 
-  Q1.start_station_id = D1.station_id
-
-  LEFT OUTER JOIN
-  `general-432301.wip.dim_station` D2
+  start_station.station_id = `general-432301.wip.ride_data`.start_station_id
+LEFT OUTER JOIN
+  `general-432301.wip.dim_station` as end_station
 ON
-  Q1.end_station_id = D2.station_id
-
-  GROUP BY ride_id
-
+  end_station.station_id =  `general-432301.wip.ride_data`.end_station_id
 
 /* Final table with 6 new columns: start_dayofweek, start_month, start_am_pm, start_hour, trip_duration, and distance_in_meters; connect to Tableau for data viz*/
 
