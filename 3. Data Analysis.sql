@@ -89,7 +89,7 @@ ORDER BY
 
 /* 4. Total monthly rides */
 SELECT  
-  COUNT(ride_id) as count_rides,
+  COUNT(DISTINCT ride_id) as num_rides
   start_month
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
@@ -106,7 +106,7 @@ ORDER BY
 
 /* 5. Total monthly rides by membership type */
 SELECT  
-  COUNT(ride_id) as count_rides,
+  COUNT(DISTINCT ride_id) as num_rides
   start_month
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
@@ -127,7 +127,7 @@ ORDER BY
 /* 6. Total rides by hour */
 SELECT  
   start_hour,
-  COUNT(ride_id) as count_rides,
+  COUNT(DISTINCT ride_id) as num_rides
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
   start_station_id IS NOT NULL and
@@ -144,7 +144,7 @@ ORDER BY
 /* 7. Total rides by hour by member type*/
 SELECT  
   start_hour,
-  COUNT(ride_id) as count_rides,
+  COUNT(DISTINCT ride_id) as num_rides
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
   start_station_id IS NOT NULL and
