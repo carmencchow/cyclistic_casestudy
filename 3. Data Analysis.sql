@@ -18,16 +18,17 @@
 
 ----------------------------------------- */
 
-SELECT  *
+SELECT *
 FROM `general-432301.wip.view_trip_data_report` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
-  end_station_name IS NOT NULL
--- returns 4,241,241 NON-NULL records from the original 5,715,693 records. 
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400
+-- returns 4,178,369 records from the original 5,715,693. 
 
-/* NOTE: The free-tier version of Big Query does not permit data deletion, so I will use the WHERE clause to filter out the NULL and negative values */
+/* NOTE: The free-tier version of Big Query does not permit data deletion, so I will use the WHERE clause to filter out the NULL values and rides that were less than 1min and over 24h  */
 
 /* 1. Total rides by membership type */
 SELECT 
@@ -39,12 +40,13 @@ WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
-  end_station_name IS NOT NULL
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400
 GROUP BY
   member_casual
--- 1,490,342 casual rides
--- 2,750,899 member rides 
--- 4,241,241 rides in total
+-- CASUAL: 1,469,640 casual rides
+-- MEMBER: 2,708,729 member rides 
+-- TOTAL: 4,178,369 rides in total
 
 /* 2. Total rides by day of week */
 SELECT 
@@ -57,11 +59,12 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL
+  trip_duration > 60 and trip_duration < 86400
 GROUP BY
   start_dayofweek
 ORDER BY 
   num_rides DESC
--- Wednesday (654,057) and Saturday (647,547) busiest
+-- Wednesday (644,558) and Saturday (637,324) busiest
 
 /* 3. Total daily rides by membership */
 SELECT 
@@ -74,15 +77,15 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and 
+  trip_duration > 60 and trip_duration < 86400 and
   member_casual = 'casual'
   -- and member_casual = 'member'
-
 GROUP BY
   start_dayofweek
 ORDER BY 
   num_rides DESC
--- CASUAL: Saturday (307,441) and Sunday (254,483) 
--- MEMBER: Wednesday (463,411), Tuesday (444,178), and Thursday (432,910) 
+-- CASUAL: Saturday (302,899) and Sunday (250,730) 
+-- MEMBER: Wednesday (456,583), Tuesday (437,680), and Thursday (426,346) 
 
 /* 4. Total monthly rides */
 SELECT  
@@ -93,12 +96,13 @@ WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
-  end_station_name IS NOT NULL 
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400
 GROUP BY
   start_month
 ORDER BY
   count_rides DESC
--- August (584,960), July (540,794), September (506,635)
+-- August (574,402), July (537,496), September (498,069)
 
 /* 5. Total monthly rides by membership type */
 SELECT  
@@ -110,16 +114,15 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 and
   member_casual = 'casual'
   -- member_casual = 'member'
 GROUP BY
   start_month
 ORDER BY
   count_rides DESC
--- CASUAL: August (233,897), July (231,879) the busiest 
--- MEMBER: August (351,063), September (309,671) the busiest
--- CASUAL: January (17,713) least busy
--- MEMBER: January (96,095) lesat busy
+-- CASUAL: August (230,175), July (230,057) the busiest 
+-- MEMBER: August (344,227), July (307,439) the busiest
 
 /* 6. Total rides by hour */
 SELECT  
@@ -130,12 +133,13 @@ WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
-  end_station_name IS NOT NULL 
+  end_station_name IS NOT NULL and 
+  trip_duration > 60 and trip_duration < 86400
 GROUP BY
   start_hour
 ORDER BY
   count_rides DESC
--- 5pm (445,479) and 4pm (393,901)
+-- 5pm (439,099) and 4pm (388,154)
 
 /* 7. Total rides by hour by member type*/
 SELECT  
@@ -147,20 +151,20 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 and
   member_casual = 'casual'
   -- member_casual = 'member'
 GROUP BY
   start_hour
 ORDER BY
   count_rides DESC
--- CASUAL: 5pm (144,957) and 4pm (135,739), all afternoon
--- MEMBER: 5pm (300,522) and 4pm (258,162), 3-7pm and 7-9am
+-- CASUAL: 5pm (142,998) and 4pm (133,903), all afternoon
+-- MEMBER: 5pm (296,101) and 4pm (254,251), 4-6pm and 7-8am
 
 
 /* 8. Total distance travelled on rides > 1 min and < 24h */
 SELECT 
-  SUM(distance_in_meters) as total_distance_m 
-  -- SUM(distance_in_meters)/1000 as total_distance_km 
+  ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
   `general-432301.wip.view_trip_data_report` 
 WHERE 
@@ -169,11 +173,12 @@ WHERE
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
   trip_duration > 60 and trip_duration < 86400 /* these are seconds */
--- 23,306,068,143.69 metres or 23,306,068.14 kilometers
+-- 23,306,068.14 kilometers
 
 /* 9. Total distance travelled by member type */ 
 SELECT 
-  SUM(distance_in_meters)/1000 as total_distance_km 
+  member_casual,
+  ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
   `general-432301.wip.view_trip_data_report` 
 WHERE 
@@ -181,17 +186,17 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
-  trip_duration > 60 and trip_duration < 86400 /* these are seconds */ and
-  -- member_casual = 'member'
-  member_casual = 'casual'
--- CASUAL: 8713622.16 kilometres
--- MEMBER: 14592445.97 kilometres
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  member_casual
+-- CASUAL: 8,713,622.16 kilometres
+-- MEMBER: 14,592,445.97 kilometres
 -- TOTAL: 23,306,068.14 kilometers
 
 /* 10. Average distance by member type */
 SELECT 
-  AVG(distance_in_meters)/1000 as avg_distance_km 
-  -- AVG(distance_in_meters) as avg_distance_m 
+  member_casual,
+  ROUND(AVG(distance_in_meters)/1000,2) as avg_distance_km  
 FROM 
   `general-432301.wip.view_trip_data_report` 
 WHERE 
@@ -199,16 +204,16 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
-  trip_duration > 60 and trip_duration < 86400 /* these are seconds */ and
-  -- member_casual = 'casual'
-  member_casual = 'member'
--- CASUAL: 5.929 km
--- MEMBER: 5.387 km 
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  member_casual
+-- CASUAL: 5.93 km
+-- MEMBER: 5.39 km 
 
 /* 11. Total distance travelled each hour */
 SELECT 
   start_hour,
-  SUM(distance_in_meters)/1000 as total_distance_km 
+  ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
   `general-432301.wip.view_trip_data_report` 
 WHERE 
@@ -216,7 +221,7 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
-  trip_duration > 60 and trip_duration < 86400 /* these are seconds */ and
+  trip_duration > 60 and trip_duration < 86400 and
   -- member_casual = 'member'
   member_casual = 'casual'
 GROUP BY
@@ -229,7 +234,7 @@ ORDER BY
 /* 12. Total distance travelled each day */
 SELECT 
   start_dayofweek,
-  SUM(distance_in_meters)/1000 as total_distance_km 
+  ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
   `general-432301.wip.view_trip_data_report` 
 WHERE 
@@ -237,7 +242,7 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
-  trip_duration > 60 and trip_duration < 86400 /* these are seconds */ and
+  trip_duration > 60 and trip_duration < 86400 
   member_casual = 'member'
   -- member_casual = 'casual'
 GROUP BY
@@ -258,7 +263,7 @@ WHERE
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
-  trip_duration > 60 and trip_duration < 86400 /* these are seconds */ and
+  trip_duration > 60 and trip_duration < 86400 
   -- member_casual = 'member'
   member_casual = 'casual'
 GROUP BY
@@ -268,12 +273,98 @@ ORDER BY
 -- CASUAL: September (1,436,710.96), then July, Aug, June
 -- MEMBER: September (1,783,198.48), then Aug, July, May
 
-/*14 
+/* 14. Average ride time in minutes */
+SELECT 
+  member_casual,
+  ROUND(AVG(trip_duration)/60, 1) as avg_ridetime_min
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  member_casual
+-- CASUAL: 24.3 minutes
+-- MEMBER: 12.7 minutes
 
+/* 15. Average ride time by day */
+SELECT 
+  start_dayofweek,
+  ROUND(AVG(trip_duration)/60, 1) as  avg_ridetime_min
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 and
+  member_casual = 'casual'
+  -- member_casual = 'member' 
+GROUP BY
+  start_dayofweek
+ORDER BY
+  avg_ridetime_min desc
+-- CASUAL: Sunday (28.0 min) and Saturday (27.5 min); M-F 21.1 - 23.6 mins.
+-- MEMBER: Sunday (14.2 min) and Saturday (14.2 min); M-F 12.0 - 12.5 mins.
 
+/* 16. Avg ride time by hour */
+SELECT 
+  start_hour,
+  ROUND(AVG(trip_duration)/60, 1) as  avg_ridetime_min
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 and
+  -- member_casual = 'casual'
+  member_casual = 'member' 
+GROUP BY
+  start_hour
+ORDER BY
+  avg_ridetime_min desc
+-- CASUAL: 10-11am (29.5 min)
+-- MEMBER: 5-6pm (13.5 min)
 
+/* 17. Total trips by bike type */
+SELECT 
+  rideable_type,
+  COUNT(DISTINCT ride_id) as num_rides
+FROM `general-432301.wip.view_trip_data_report` 
+WHERE
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400
+GROUP BY
+  rideable_type
+-- Electric (1,341,175), Classic (2,821,820), Docked (15,374)
 
-/* 10 most popular start_stations */
+/* 18. Average ride speed */
+SELECT 
+  member_casual,
+  ROUND(AVG(distance_in_meters/trip_duration),2) as avg_speed_metres_per_sec
+FROM 
+  `general-432301.wip.view_trip_data_report` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  member_casual
+-- CASUAL: 8.67 m/s
+-- MEMBER: 12.18 m/s
+
+/* 19. Most popular stations */
 SELECT 
   start_station_name,
   start_lat,
@@ -292,100 +383,6 @@ GROUP BY
 ORDER BY
   num_rides DESC
 LIMIT 10
+-- CASUAL: Streeter Dr. & Grand Ave, DuSable Lake Shore
+-- MEMBER: Clinton St & Washington Blvd, Kingsbury St & Kinzie
 
-/* Find least popular start_station */
-SELECT 
-  start_station_id,
-  MIN(start_station_name),
-  COUNT(ride_id) as num_rides
-FROM `general-432301.wip.view_trip_data_report` 
-GROUP BY
-  start_station_id,
-  start_station_name
-HAVING
-  COUNT(ride_id) = 1
-ORDER BY
-  start_station_name asc
-
-
-
-
-
-
-
-
-  
-===================================================
-
-
-
-SELECT *
-FROM 
-  `general-432301.wip.tripdata_test` 
-WHERE 
-  TIMESTAMP_DIFF(ended_at, started_at, MINUTE) <= 1 OR
-  TIMESTAMP_DIFF(ended_at, started_at, MINUTE) >= 1440;
-
-/* Check that all members are either 'member' or 'casual' */
-SELECT 
-  DISTINCT 
-    member_casual
-  FROM 
-    `general-432301.wip.tripdata_test` 
-
-
-===================================================
-
-/* Rides per day */
-SELECT 
-start_station_id, 
-start_station_name, 
-start_dayofweek,
-COUNT(ride_id) as num_rides
-
-FROM `general-432301.wip.view_trip_data_report` 
-WHERE
-  start_station_id = '13022'
-GROUP BY
-  start_station_id, 
-  start_station_name, 
-  start_dayofweek
-ORDER BY 
-  num_rides DESC
-
-
-/* Ride count */
-SELECT  
-  start_station_id,  
-  MAX(start_station_name) as start_station_name,
-  COUNT(DISTINCT ride_id) as ride_count,  
-FROM 
-  `general-432301.wip.view_trip_data_report` 
-WHERE 
-  start_station_id IS NOT NULL 
-GROUP BY
-  start_station_id
-
-
-/* Rideable type */ 
-SELECT  
-  ride_id,
-  rideable_type,
-  count(rideable_type) as count_types
-FROM 
-  `general-432301.wip.tripdata_test` 
-WHERE 
-  member_casual <> "casual" AND member_casual <> "member" 
-GROUP BY
-  ride_id,
-  rideable_type
-ORDER BY
-  count_types DESC
-
-SELECT 
-  rideable_type,
-  COUNT(DISTINCT ride_id) as num_rides
-FROM 
-  `general-432301.wip.view_trip_data_report` 
-GROUP BY
-  rideable_type
