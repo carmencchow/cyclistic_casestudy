@@ -347,24 +347,7 @@ GROUP BY
   rideable_type
 -- Electric (1,341,175), Classic (2,821,820), Docked (15,374)
 
-/* 18. Average ride speed */
-SELECT 
-  member_casual,
-  ROUND(AVG(distance_in_meters/trip_duration),2) as avg_speed_metres_per_sec
-FROM 
-  `general-432301.wip.final_cyclistic_dataset` 
-WHERE 
-  start_station_id IS NOT NULL and
-  start_station_name IS NOT NULL and
-  end_station_id IS NOT NULL and
-  end_station_name IS NOT NULL and
-  trip_duration > 60 and trip_duration < 86400 
-GROUP BY
-  member_casual
--- CASUAL: 8.67 m/s
--- MEMBER: 12.18 m/s
-
-/* 19. Most popular stations */
+/* 18. Most popular stations */
 SELECT 
   start_station_name,
   start_lat,
@@ -386,3 +369,130 @@ LIMIT 10
 -- CASUAL: Streeter Dr. & Grand Ave, DuSable Lake Shore
 -- MEMBER: Clinton St & Washington Blvd, Kingsbury St & Kinzie
 
+/* 19. Average ride speed by rider type*/
+SELECT 
+  member_casual,
+  COUNT(DISTINCT ride_id) as num_rides,
+  ROUND(AVG(distance_in_meters/trip_duration),2) as avg_speed_metres_per_sec
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  member_casual
+-- CASUAL: 8.67 m/s
+-- MEMBER: 12.18 m/s
+
+/* 20. Average ride speed by bike type */
+SELECT 
+  rideable_type,
+  COUNT(DISTINCT ride_id) as num_rides,
+  ROUND(AVG(distance_in_meters/trip_duration),2) as avg_speed_metres_per_sec
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  rideable_type
+-- classic: 10.8 m/s, 2,821,820 total rides
+-- electric: 11.31 m/s, 1,341,175 total rides
+-- docked: 5.75 m/s, 15,372 total rides
+
+/* 21. Total distance (km) by bike type */
+SELECT 
+  rideable_type,
+  COUNT(DISTINCT ride_id) as num_rides,
+  ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  rideable_type
+-- classic: 16,224,696.81 km
+-- electric: 6,991,816.42 km
+-- docked: 89,557.6 km
+
+/* 22. Average ride time (minutes) by bike type */
+SELECT 
+  rideable_type,
+  COUNT(DISTINCT ride_id) as num_rides,
+  ROUND(AVG(trip_duration)/60,2) as avg_ride_time_mins
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  rideable_type
+-- docked: 56.15 mins
+-- classic: 18.52 mins
+-- electric: 12.6 mins
+
+/* without filters */
+SELECT 
+  rideable_type,
+  COUNT(DISTINCT ride_id) as num_rides,
+  ROUND(AVG(trip_duration)/60,2) as avg_ride_time_mins
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+GROUP BY
+  rideable_type
+-- docked: 260.62 mins (!!!)
+-- classic: 22.23 mins
+-- electric: 12.41 mins
+
+/* 23: Total ride time (minutes) by bike type */
+SELECT 
+  rideable_type,
+  COUNT(DISTINCT ride_id) as num_rides,
+  ROUND(SUM(trip_duration)/3600,2) as total_ride_time_hours
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+WHERE 
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400 
+GROUP BY
+  rideable_type
+-- classic: 871,031.16 hours
+-- electric: 281,626.97 hours
+-- docked: 14,386.79 hours
+
+
+/* Q: What exactly is a docked_bike and why are members not using them?? */
+SELECT *
+FROM `general-432301.wip.final_cyclistic_dataset` 
+WHERE
+  rideable_type = 'docked_bike'and
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and
+  trip_duration > 60 and trip_duration < 86400
+  --15,374 rows and only used by casual riders.
+
+/* Q: Why are all the longest rides on docked bikes? */
+SELECT *
+FROM 
+  `general-432301.wip.final_cyclistic_dataset` 
+ORDER BY
+  trip_duration desc
+-- top 274 results had trip_durations > 105,922 seconds = 29.2 hours!!
