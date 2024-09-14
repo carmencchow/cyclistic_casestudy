@@ -1,4 +1,4 @@
-/* ----------- DATA ANALYSIS ------------
+WHERE/* ----------- DATA ANALYSIS ------------
 #1: Total rides 
 #2: Total daily rides 
 #3: Total hourly rides
@@ -19,14 +19,14 @@
 ----------------------------------------- */
 
 SELECT *
-FROM `general-432301.wip.view_trip_data_report` 
+FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
   end_station_id IS NOT NULL and
   end_station_name IS NOT NULL and
   trip_duration > 60 and trip_duration < 86400
--- returns 4,178,369 records from the original 5,715,693. 
+-- returns 4,178,369 records from the original 5,715,482. 
 
 /* NOTE: The free-tier version of Big Query does not permit data deletion, so I will use the WHERE clause to filter out the NULL values and rides that were less than 1min and over 24h  */
 
@@ -35,7 +35,7 @@ SELECT
   member_casual,
   COUNT(DISTINCT ride_id) as num_rides
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -53,7 +53,7 @@ SELECT
   start_dayofweek,
   COUNT(DISTINCT ride_id) as num_rides
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -71,7 +71,7 @@ SELECT
   start_dayofweek,
   COUNT(DISTINCT ride_id) as num_rides
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -91,7 +91,7 @@ ORDER BY
 SELECT  
   COUNT(DISTINCT ride_id) as num_rides
   start_month
-FROM `general-432301.wip.view_trip_data_report` 
+FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -108,7 +108,7 @@ ORDER BY
 SELECT  
   COUNT(DISTINCT ride_id) as num_rides
   start_month
-FROM `general-432301.wip.view_trip_data_report` 
+FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -128,7 +128,7 @@ ORDER BY
 SELECT  
   start_hour,
   COUNT(DISTINCT ride_id) as num_rides
-FROM `general-432301.wip.view_trip_data_report` 
+FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -145,7 +145,7 @@ ORDER BY
 SELECT  
   start_hour,
   COUNT(DISTINCT ride_id) as num_rides
-FROM `general-432301.wip.view_trip_data_report` 
+FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -166,7 +166,7 @@ ORDER BY
 SELECT 
   ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -180,7 +180,7 @@ SELECT
   member_casual,
   ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -198,7 +198,7 @@ SELECT
   member_casual,
   ROUND(AVG(distance_in_meters)/1000,2) as avg_distance_km  
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -215,7 +215,7 @@ SELECT
   start_hour,
   ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -236,7 +236,7 @@ SELECT
   start_dayofweek,
   ROUND(SUM(distance_in_meters)/1000,2) as total_distance_km 
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -257,7 +257,7 @@ SELECT
   start_month,
   SUM(distance_in_meters)/1000 as total_distance_km 
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -278,7 +278,7 @@ SELECT
   member_casual,
   ROUND(AVG(trip_duration)/60, 1) as avg_ridetime_min
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -295,7 +295,7 @@ SELECT
   start_dayofweek,
   ROUND(AVG(trip_duration)/60, 1) as  avg_ridetime_min
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -316,7 +316,7 @@ SELECT
   start_hour,
   ROUND(AVG(trip_duration)/60, 1) as  avg_ridetime_min
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -336,7 +336,7 @@ ORDER BY
 SELECT 
   rideable_type,
   COUNT(DISTINCT ride_id) as num_rides
-FROM `general-432301.wip.view_trip_data_report` 
+FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -352,7 +352,7 @@ SELECT
   member_casual,
   ROUND(AVG(distance_in_meters/trip_duration),2) as avg_speed_metres_per_sec
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE 
   start_station_id IS NOT NULL and
   start_station_name IS NOT NULL and
@@ -371,7 +371,7 @@ SELECT
   start_lng,
   COUNT(DISTINCT ride_id) as num_rides
 FROM 
-  `general-432301.wip.view_trip_data_report` 
+  `general-432301.wip.final_cyclistic_dataset` 
 WHERE
   -- member_casual = 'member' 
   member_casual = 'casual'

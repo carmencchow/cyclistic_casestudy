@@ -47,6 +47,8 @@ SELECT
   MAX(member_casual) as member_casual,
 FROM
   `general-432301.wip.tripdata_test`
+GROUP BY 
+  ride_id
 
 /* 3. Merge ride_data with start_station and end_station data on station_id with two left joins */
 
