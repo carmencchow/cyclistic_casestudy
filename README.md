@@ -21,7 +21,11 @@ Understand how annual members and casual riders use Cyclistic bikes differently 
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly available historical trip data, available at https://divvy-tripdata.s3.amazonaws.com/index.html.  The wide format data contains information such as bike type (classic, electric, or docked), station names and ids, and their latitudes and longitudes. The anonymized data is made available by Motivate International Inc. under this license https://divvybikes.com/data-license-agreement. Our second data source will be the City of Chicago's Data Portal at https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which provides a list of bicycle station ids and names.
+We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly available historical trip data, which contains information such as bike type (classic, electric, or docked), station names and ids, and their latitudes and longitudes. The anonymized data is made available by Motivate International Inc. Our second data source will be the City of Chicago's Data Portal which provides a list of bicycle station ids and station names.
+
+Cyclistic historical trip data: https://divvy-tripdata.s3.amazonaws.com/index.html
+Motivate International Inc. license: https://divvybikes.com/data-license-agreement.
+Chicago's Data Portal: https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p><b>R</b>eliable - Yes, the dataset is public and unbiased.
@@ -34,19 +38,19 @@ We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly 
 The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. The free-tier version of Google Big Query I will be using prevents data deletion, so I will be filtering out these values instead to avoid any inaccurate conclusions from our data. Since the data ROCCCs, the filtered data will be enough for completing the Business Task. 
 
 <h2>2. Prepare</h2>
-Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. I've decided to use Google Big Query for my data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
 
 ![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
 
-Instructions for installing and running the Google Cloud CLI is available here: https://cloud.google.com/sdk/docs/install-sdk . We'll use the following `bq` command to load the first file, 202308-divvy-tripdata.csv to BigQuery: 
+Instructions for installing and running the Google Cloud CLI are available here: https://cloud.google.com/sdk/docs/install-sdk . We'll use the following `bq` command to load the first file, <i>202308-divvy-tripdata.csv</i> to BigQuery: 
 
 ```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
-The remaining 11 CSV files will be loaded and unioned to the bottom of our new table with the `noreplace` command, creating new rows instead of columns of data. Here's the complete command:
+The remaining 11 CSV files will be loaded and unioned to the bottom of our new table with the `noreplace` command, which will create new rows instead of columns of data. Here's the complete command:
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-We have now imported and merged all 12 datasets giving us 5,715,482 rows. Let's go ahead and process the data.
+We have now imported and merged all 12 datasets giving us <i>5,715,482</i> rows of data. Let's go ahead and process the data.
 
 <h2>3. Process</h2>
 <h3><i>Data Exploration</i></h3>
