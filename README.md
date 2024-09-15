@@ -84,8 +84,6 @@ Filtering on a result:
 
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
-
-
 <h3><i>Data Cleansing</i></h3>
 We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
 
@@ -134,18 +132,29 @@ Count:
 Rides by member type:
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
-We also see that annual riders log 3,078,812 total rides in the last 12 months versus casual riders who logged 1,689,668 (1.69M) rides. Rides totalled 4,768,480 with annual rides comprising 64.57% of rides and casual riders making up 35.43% of rides.
-
-
-Hourly Rides: 
-![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
+We also see that annual riders log <b>2,708,729</b> total rides in the last 12 months versus casual riders who logged <b>1,469,640 rides</b>. Rides totalled <b>4,178,369 rides</b> in totalwith annual rides comprising 64.83%of rides and casual riders making up 35.17% of rides.
 
 Daily Rides:
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
+Weekends buiest for casuals members. Casual riders take longer rides on weekends compared to member riders. In fact casual riders logged 11,896.32 hours more on Sunday than their member counterparts.
+
+![total_daily_rides](https://github.com/user-attachments/assets/5a2c8aa6-7116-4baf-bd25-c2dbdbdb7319) (check for accuracy with newest track)
+
+To get a closer analyze of our rider profile and what might be influencing their riding patterns let's drill down into the chart and look at their hourly at their riding activity spread through a single day. Let's take a look at the ride activity for member over a 24 hour period.
+
+Hourly Rides: 
+![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
+
+Comparing casual and member riders, we can see that activity increases from 6–9 amd peaking at 8am. The times from 4pm to 7pm we see a similar heightened activity peaking am and 5pm throughout a given day. This could coincide with tms when riders leave for work and return home at the end of the day. This could lead support to the argument that our member riders primarly use the bike for to commute to work whereas casual members could be using it for leisure or sightseeing. Ride activities on weekend show the same periods of inactivity
+
+
+
 
 Monthyly rides:
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
+
+For annual riders most trips occrs ......
 
 
 Distance:
@@ -156,6 +165,8 @@ Day:
 
 Month: ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
 
+
+
 ![distancebymonth](https://github.com/user-attachments/assets/98c62ff4-7005-4867-9834-e81335f4cf73)
 
 
@@ -163,19 +174,37 @@ Month: ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a
 Ride Time:
 ![avg ride time hour](https://github.com/user-attachments/assets/e3cd72eb-351f-42c4-a1ba-c26552cd6cfe)
 
+Seasonality changes, casual ridership increase from April to May (Summer months). In April the total distance was _________ and it went up to _________ in  _________, an increase of  _________ and drops from _________ metres to  _________ metres from S _________. 
+Compared to annual ridership which has a wider spread but also peask in August and September.
+
 
 Speed: 
+
+We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
+Bike Prefercnes:
+
+Both casual and annual members prefer the classic bikes over the electric bikes: Casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. 
+
+
 Stations:
 
-![top_10_casual_stations](https://github.com/user-attachments/assets/d03735fb-5d3d-42f3-9faa-1346d46c0704)
+I used the Chicago Data Portal website to plot the start stations most frequented by both groups of riders: 
+
+For casual riders, the most popular bike station was Streeter Dr. & Grand Ave with  DuSable Lake Shore & Monroe St.
+
+
+![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
 
 
 ![casual_station_map](https://github.com/user-attachments/assets/e105abd6-eb7c-47f9-9e2f-ff51efd91a50)
 
-![top_10_members_station](https://github.com/user-attachments/assets/c75687f2-df9d-4a45-ba48-3a6e3287befd)
+Annual members top station was Clinton St & Washington Blvd, Kingsbury St & Kinzie
+
+![top_10_members_station](https://github.com/user-attachments/assets/530efb66-a505-4e70-84f3-344b4a23edf9)
+
 
 ![member_station_map](https://github.com/user-attachments/assets/510c9e6a-110f-402f-a133-8344fcd3a27a)
 
@@ -185,10 +214,75 @@ Stations:
 Tableau 
 Google Slides
 
+Based on our findings, it would appear that casual riders could be tourists, leisure riders.
+
 <h2>6. Act</h2>
 
+Based on the analysis of my findings, I'll return to the original business question posed by the company's marketing manager, Lily Moreno, that will drive the company's upcoming marketing campaign aimed at converted casual members to annual members.
 
 ![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
 
+Key Findings
+My analysis shows key differences in how casual riders and member riders use Cyclistic's bikes. Namely, casual riders primarily use the bikes for leisure or sightseeing purposes. I determined 
+Casual Rider
+Most active on weekends from 12–5pm
+Preferred start stations near tourist attractions
+Average ride time m/s
+Average speed 
+
+Member Riders
+Most active day of the week and hour:
+Preferred start stations away fro tourist attractions spread across - 
+Average ride time m/s
+Average speed 
+
+Based on these conclusion I'll meka the following recommndatsion to Moreno and the marketing team.
+Targeting Marketing Campaign and timed Advertisements - Having  in-person arond the top 10 stations where casual members most frequent. Remove barries that may make it inconvenience for members to join, have kiosks, a marketing capaing. 
+
+Having  in-person arond the top 10 stations where casual members most frequent. REmove barries that may make it inconvenience for members to join, have kiosks, a marketing capaing. These camapignes and advertiseements could begin right before the surge in casual ridership which 
+Partnerships
+
+Partner with local business to offer discounts on admissions to local attractions that casual members are known to frequent . If we had data regarding the income/employment of our causal readers arntering ewith university to offer students and staff discounts. Opening and installing bike share stations on campuses or expanding to area where the core of riders work and live to connect to their riders convenience. Partnering with businesses along routes with the most traffic and offering discounts at those businesses (exclusive deals for Cyclistic annual members).
+Partnering iwth local restaurants and businesses contribute to the local economy while supporting local retailers. These businesses could be where people shop, run errands
+Location Expansion
+
+Removing bikes from least popular areas (a total of 67 stations only logged 1 ride in the last 12 months for example from July 2023 - August 2024) and building to ensure people in underserviced areas can find a ike. Ensure equity is met by providing bikes to underserved communities?
+Partnering with Offering a youth pilot program with schools. Many primary and high schools also have walkathons/ lunch and afterschool walking clubs that would go hand in hand with the bike program. 
+
+Opening stations around gyms/fitness centres to promote a healthier alternative / replace car trips
+
+Tiered Membership and Pricing Structure 
+
+For riders who are not ready to make the leap from a casual member to an annual member, a monthly program at a fixed, reduced price can be successful in eventually transitioning this demographic to an annual membership. Running campaigns that highlight the dollar cost money saved, something along the lines of "1 Divvy bike trip is equal to 1 ride" 
+To further incentive the annual memberhips, introduce a cost to casual riders by either increase after a certain distance quota is reached. For omparison sake - introduce a new rate structure, let's take a look at Chicago's Divvy Bike structure: Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
+Although Cyclistiic is a fictional company, we can draw comparisons to Chicgago's DIvvy bikeshare program whose pay structure is posted ont heir website: https://divvybikes.com/pricing 
+
+https://divvybikes.com/pricing
+
+Suggestion #2:
+
+Seasonality/Short-term options  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
+Introducing a new pricing structure that would logically move people from causal to annual memberhipsj. Offering sign-up discounts or incentives to incentive causal membership to purchase annual memberships to increase enrollment.
+
+Other groups (particually students or low-income would be encouraged a a monthly membership or quarterly.
+Offer a two-teired annual plan where members have teh option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
+Offering member-only perks such as community events, longer ride times etc.
+
 <h2> Final Thoughts</h2>
-Docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes?
+
+Docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes? Classic bikes are the preferred bikes by both member and casual riders, and only casual members use docked bikes. Of the rides taken on docked bikes, several were multiday trips that didn't have end_stations. These outliers will be removed.
+
+Conclusion
+
+Since the dataset containes only anonymized data. In addition to sensitive PII, the dataset also excludes any non-sensitive PII such as riders' gender, date of birth, educational and work background which would have provided a more granular user profile that could lead to potentially impactful targeted advertisements specific to our riders' needs.
+Examples of how Cyclistics could use this additional ifnormation: 
+  
+  * Offering a subsized program for and youths low-income 
+  * Offering family discounts
+  * Opening new bike stations on university campuses for to provide greater access for students 
+  * Partnering with some of Chicago's largest employers to offer discounted member passes to employees
+
+In conclusion, focusing on marketing camaptings that highlight the savings and the helath and environen benefits. casual members will make when switching to a full membership
+partnering with local businesses by providing dicscounts on attractions etc, and restructing their pricing plan will incentive casual members to take the lead to full membership. 
+
+These insights will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable green alaterative. 
