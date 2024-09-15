@@ -119,6 +119,14 @@ Let's view our new table with the new rows:
 
 <h2>4. Analyze</h2>
 
+For our analysis we'll be filtering out NULL values for <b>start_station_id, end_station_id, start_station_name, and end_station_name</b>. These missing values would indicate that bikes were not properly check out or docked. There are records where the end time was earlier than the start time, resulting in a negative <b>trip_duration</b> value. We will also filter out any rides that were over 24 h long. With these removals we'll be looking at <b>4,178,369 records from the original 5,715,482</b>
+
+I used Tableau to visualize my analysis and return to our original question:
+
+<b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
+
+Let's take a look at how members vs. casual's ride activity differ over the period of a day, a week, and a year. Annual riders are most active on Wednesday. Removing all start_station_ids that have a value of NULL, we can see that casual riders riding activity is pretty consisiten Monday to Friday while logging slightly higher number of rides on the weekend. For annual riders, Wednesday and Saturdays see the highest number of activity. Whereas casual riders are most active on the weekend.
+
 Count:
 
 Rides by member type:
@@ -161,8 +169,8 @@ Stations:
 
 ![top_10_casual_stations](https://github.com/user-attachments/assets/d03735fb-5d3d-42f3-9faa-1346d46c0704)
 
-![casual_station_map](https://github.com/user-attachments/assets/26b19c3e-3a78-49df-a1e0-
-067a5756ea5e)
+
+![casual_station_map](https://github.com/user-attachments/assets/e105abd6-eb7c-47f9-9e2f-ff51efd91a50)
 
 ![top_10_members_station](https://github.com/user-attachments/assets/c75687f2-df9d-4a45-ba48-3a6e3287befd)
 
