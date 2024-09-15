@@ -118,8 +118,66 @@ Let's view our new table with the new rows:
 
 
 <h2>4. Analyze</h2>
+
+Count:
+
+Rides by member type:
+![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
+
+
+
+Hourly Rides: 
+![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
+
+Daily Rides:
+![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
+
+
+Monthyly rides:
+![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
+
+
+Distance:
+
+Day: 
+![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
+
+
+Month: ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
+
+![distancebymonth](https://github.com/user-attachments/assets/98c62ff4-7005-4867-9834-e81335f4cf73)
+
+
+
+Ride Time:
+![avg ride time hour](https://github.com/user-attachments/assets/e3cd72eb-351f-42c4-a1ba-c26552cd6cfe)
+
+
+Speed: 
+![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
+![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
+
+Stations:
+
+![top_10_casual_stations](https://github.com/user-attachments/assets/d03735fb-5d3d-42f3-9faa-1346d46c0704)
+
+![casual_station_map](https://github.com/user-attachments/assets/26b19c3e-3a78-49df-a1e0-
+067a5756ea5e)
+
+![top_10_members_station](https://github.com/user-attachments/assets/c75687f2-df9d-4a45-ba48-3a6e3287befd)
+
+![member_station_map](https://github.com/user-attachments/assets/510c9e6a-110f-402f-a133-8344fcd3a27a)
+
+
 <h2>5. Share</h2>
+
+Tableau 
+Google Slides
+
 <h2>6. Act</h2>
 
 
 ![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
+
+<h2> Final Thoughts</h2>
+Docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes?
