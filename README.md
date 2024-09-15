@@ -256,7 +256,7 @@ Although Cyclistiic is a fictional company, we can draw comparisons to Chicgago'
 
 https://divvybikes.com/pricing
 
-Suggestion #2:
+<b>Suggestion #2:</b>
 
 Seasonality/Short-term options  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
 Introducing a new pricing structure that would logically move people from causal to annual memberhipsj. Offering sign-up discounts or incentives to incentive causal membership to purchase annual memberships to increase enrollment.
@@ -268,8 +268,6 @@ Offering member-only perks such as community events, longer ride times etc.
 <h2> Final Thoughts</h2>
 
 Docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes? Classic bikes are the preferred bikes by both member and casual riders, and only casual members use docked bikes. Of the rides taken on docked bikes, several were multiday trips that didn't have end_stations. These outliers will be removed.
-
-Conclusion
 
 Since the dataset containes only anonymized data. In addition to sensitive PII, the dataset also excludes any non-sensitive PII such as riders' gender, date of birth, educational and work background which would have provided a more granular user profile that could lead to potentially impactful targeted advertisements specific to our riders' needs.
 Examples of how Cyclistics could use this additional ifnormation: 
