@@ -1,4 +1,4 @@
-# Cyclistic Case Study 🚲 ![cyclistic_logo](https://github.com/user-attachments/assets/28027ed7-1c6d-4e5c-9ad4-ae23ad59c1cf)
+# Cyclistic Case Study 🚲 
 
 <p>Carmen Chow</p> 
 <p>August 2024</p>
