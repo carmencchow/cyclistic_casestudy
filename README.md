@@ -1,8 +1,7 @@
-# Cyclistic Case Study 🚲
+# Cyclistic Case Study 🚲 ![cyclistic_logo](https://github.com/user-attachments/assets/28027ed7-1c6d-4e5c-9ad4-ae23ad59c1cf)
+
 <p>Carmen Chow</p> 
 <p>August 2024</p>
-
-![cyclistic_logo](https://github.com/user-attachments/assets/28027ed7-1c6d-4e5c-9ad4-ae23ad59c1cf)
 
 <h2>Background</h2>
 <p>Cyclistic is a successful bike-share company in Chicago. Since 2016, its program has grown to a fl![Uploading cyclistic_logo.png…]()
@@ -26,11 +25,11 @@ Understand how annual members and casual riders use Cyclistic bikes differently 
 We will look at 12 months (August 2023 - July 2024) of Cyclistic's publically available historical trip data, available at https://divvy-tripdata.s3.amazonaws.com/index.html.  The wide format data contains information such as bike type (classic, electric, or docked), station names and ids, and their latitudes and longitudes. The anonymized data is made available by Motivate International Inc. under this license https://divvybikes.com/data-license-agreement. Our second data source will be the City of Chicago's Data Portal at https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which provides a list of bicycle station ids and names.
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
-<p>Reliable - Yes, the dataset is public and unbiased.
-<p>Original - Yes, the data is first-party data, collected by the company itself.
-<p>Comprehensive - Yes, there are over 5 million rows of historical trip data from the year 2020 to now. 
-<p>Current - Yes, the data is from the past 12 months.
-<p>Cited - Yes, the data is public, vetted, and available on the company's website.
+<p><b>R</b>eliable - Yes, the dataset is public and unbiased.
+<p><b>O</b>riginal - Yes, the data is first-party data, collected by the company itself.
+<p><b>C</b>omprehensive - Yes, there are over 5 million rows of historical trip data from the year 2020 to now. 
+<p><b>C</b>urrent - Yes, the data is from the past 12 months.
+<p><b>C</b>ited - Yes, the data is public, vetted, and available on the company's website.
 
 <h3><b>Data Limitations</b></h3>
 The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. To avoid misleading results, I will be filtering out these values to avoid any inaccurate conclusions from our data. Since the data ROCCCs, I've determined that the filtered data will be enough for completing the Business Task. 
@@ -38,21 +37,19 @@ The dataset has over 5.7 million records, over 1.5 million of which contain NULL
 ** <i>Note the free-tier version of Google Big Query prevents data deletion, which is why I am filtering the results instead. </i>**
 
 <h2>2. Prepare</h2>
-Previewing the files in Excel show the the name and format of each column head is identical in structure and have the same columne names which means we will be unioning instead of joining the data sets. I've decided to use Google Big Query for my data cleansing and analysis due to it's ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types. 
+Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. I've decided to use Google Big Query for my data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
 
 ![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
 
-Next, I will use the Google Cloud CLI to upload the first CSV file to the Big Query. Instructions for installing and running the Google Cloud CLI is available here: https://cloud.google.com/sdk/docs/install-sdk 
-
-and the command for uploading the first data set: 202308-divvy-tripdata.csv  
+Instructions for installing and running the Google Cloud CLI is available here: https://cloud.google.com/sdk/docs/install-sdk . We'll use the following `bq` command to load the first file, 202308-divvy-tripdata.csv to BigQuery: 
 
 ```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
-To upload and merge the remaining 11 CSV files to the first one, I will replace the `replace` command with `noreplace` to add the taable to the bottom of the previous table instead of JOINing it. Instead of combinging data into new columns, we'll join them into new rows.
+The remaining 11 CSV files will be loaded and unioned to the bottom of our new table with the `noreplace` command, creating new rows instead of columns of data. Here's the complete command:
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can move on to the process the raw data.
+We have now imported and merged all 12 datasets giving us 5,715,482 rows. Let's go ahead and process the data.
 
 <h2>3. Process</h2>
 <h3><i>Data Exploration</i></h3>
