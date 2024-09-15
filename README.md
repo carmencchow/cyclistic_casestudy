@@ -156,7 +156,6 @@ Monthyly rides:
 
 For annual riders most trips occrs ......
 
-
 Distance:
 
 Day: 
@@ -165,12 +164,6 @@ Day:
 
 Month: ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
 
-
-
-![distancebymonth](https://github.com/user-attachments/assets/98c62ff4-7005-4867-9834-e81335f4cf73)
-
-
-
 Ride Time:
 ![avg ride time hour](https://github.com/user-attachments/assets/e3cd72eb-351f-42c4-a1ba-c26552cd6cfe)
 
@@ -178,18 +171,18 @@ Seasonality changes, casual ridership increase from April to May (Summer months)
 Compared to annual ridership which has a wider spread but also peask in August and September.
 
 
-Speed: 
+<b>Speed:</b> 
 
 We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
-Bike Prefercnes:
+<b>Bike Preferences:</b>
 
 Both casual and annual members prefer the classic bikes over the electric bikes: Casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. 
 
 
-Stations:
+<b>Stations:</b>
 
 I used the Chicago Data Portal website to plot the start stations most frequented by both groups of riders: 
 
@@ -220,24 +213,27 @@ Based on our findings, it would appear that casual riders could be tourists, lei
 
 My analysis shows key differences in how casual riders and member riders use Cyclistic's bikes. Namely, casual riders primarily use the bikes for leisure or sightseeing purposes. I determined 
 
-Casual Rider
+<b>Casual Rider</b>
+* Most active on weekends from 12–5pm
+* Preferred start stations near tourist attractions
+* Average ride time m/s
+* Average speed 
 
-Most active on weekends from 12–5pm
-Preferred start stations near tourist attractions
-Average ride time m/s
-Average speed 
-
-Member Riders
-Most active day of the week and hour:
-Preferred start stations away fro tourist attractions spread across - 
-Average ride time m/s
-Average speed 
+<b>Member Riders</b>
+* Most active day of the week and hour:
+* Preferred start stations away fro tourist attractions spread across - 
+* Average ride time m/s
+* Average speed 
 
 Based on these conclusion I'll meka the following recommndatsion to Moreno and the marketing team.
-Targeting Marketing Campaign and timed Advertisements - Having  in-person arond the top 10 stations where casual members most frequent. Remove barries that may make it inconvenience for members to join, have kiosks, a marketing capaing. 
 
-Having  in-person arond the top 10 stations where casual members most frequent. REmove barries that may make it inconvenience for members to join, have kiosks, a marketing capaing. These camapignes and advertiseements could begin right before the surge in casual ridership which 
-Partnerships
+<i>Suggestion #1:</i>
+<b>Seasonality/Short-term options</b>  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
+
+Introducing a new pricing structure that would logically move people from causal to annual memberhipsj. Offering sign-up discounts or incentives to incentive causal membership to purchase annual memberships to increase enrollment.
+
+
+<b>Suggestion #2:</b>
 
 Partner with local business to offer discounts on admissions to local attractions that casual members are known to frequent . If we had data regarding the income/employment of our causal readers arntering ewith university to offer students and staff discounts. Opening and installing bike share stations on campuses or expanding to area where the core of riders work and live to connect to their riders convenience. Partnering with businesses along routes with the most traffic and offering discounts at those businesses (exclusive deals for Cyclistic annual members).
 Partnering iwth local restaurants and businesses contribute to the local economy while supporting local retailers. These businesses could be where people shop, run errands
@@ -248,20 +244,21 @@ Partnering with Offering a youth pilot program with schools. Many primary and hi
 
 Opening stations around gyms/fitness centres to promote a healthier alternative / replace car trips
 
+
+
 Tiered Membership and Pricing Structure 
 
 For riders who are not ready to make the leap from a casual member to an annual member, a monthly program at a fixed, reduced price can be successful in eventually transitioning this demographic to an annual membership. Running campaigns that highlight the dollar cost money saved, something along the lines of "1 Divvy bike trip is equal to 1 ride" 
+
 To further incentive the annual memberhips, introduce a cost to casual riders by either increase after a certain distance quota is reached. For omparison sake - introduce a new rate structure, let's take a look at Chicago's Divvy Bike structure: Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
 Although Cyclistiic is a fictional company, we can draw comparisons to Chicgago's DIvvy bikeshare program whose pay structure is posted ont heir website: https://divvybikes.com/pricing 
 
 https://divvybikes.com/pricing
 
-<b>Suggestion #2:</b>
 
-Seasonality/Short-term options  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
-Introducing a new pricing structure that would logically move people from causal to annual memberhipsj. Offering sign-up discounts or incentives to incentive causal membership to purchase annual memberships to increase enrollment.
 
 Other groups (particually students or low-income would be encouraged a a monthly membership or quarterly.
+
 Offer a two-teired annual plan where members have teh option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
 Offering member-only perks such as community events, longer ride times etc.
 
