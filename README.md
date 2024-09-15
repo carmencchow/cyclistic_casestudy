@@ -32,9 +32,7 @@ We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicall
 <p><b>C</b>ited - Yes, the data is public, vetted, and available on the company's website.
 
 <h3><b>Data Limitations</b></h3>
-The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. To avoid misleading results, I will be filtering out these values to avoid any inaccurate conclusions from our data. Since the data ROCCCs, I've determined that the filtered data will be enough for completing the Business Task. 
-
-** <i>Note the free-tier version of Google Big Query prevents data deletion, which is why I am filtering the results instead. </i>**
+The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. The free-tier version of Google Big Query I will be using prevents data deletion, so I will be filtering out these values instead to avoid any inaccurate conclusions from our data. Since the data ROCCCs, the filtered data will be enough for completing the Business Task. 
 
 <h2>2. Prepare</h2>
 Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. I've decided to use Google Big Query for my data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
@@ -54,7 +52,12 @@ We have now imported and merged all 12 datasets giving us 5,715,482 rows. Let's 
 <h2>3. Process</h2>
 <h3><i>Data Exploration</i></h3>
 
-Before cleaning the data, it's beneficial to explore the data and see what we have to work with that will inform our cleansing process. Looking at the dataset, we see columns contain qualitative or descriptive data, also known as dimensions. These dimensions can be grouped into 3 categories: station data, ride data, and time (?) data. Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
+Before cleaning the data, it's beneficial to explore the data and see what exactly we're working with. Looking at our data, we can group our columns into three categories of qualitative or descriptive data: data about station information, data about ride information, and data related to start and end times. Here's an overview of our columns:
+
+![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
+![schema2](https://github.com/user-attachments/assets/7cdf1dac-c948-4cfc-aee3-07514ab4f710)
+
+Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
 
 Let's run a query on start_station_id to see if there are instances where start_station_id and start_station_name have a 1 to many relationship:
 
