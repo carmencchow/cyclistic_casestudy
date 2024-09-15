@@ -59,9 +59,10 @@ We have now imported and merged all 12 datasets giving us <i>5,715,482</i> rows 
 Before cleaning the data, it's beneficial to explore the data and see what exactly we're working with. Looking at our data, we can group our columns into three categories of qualitative or descriptive data: data about station information, data about ride information, and data related to start and end times. Here's an overview of our columns:
 
 ![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
-![schema2](https://github.com/user-attachments/assets/56954db9-8dce-4b64-91a6-28ad84dcc593)
+![schema2](https://github.com/user-attachments/assets/4f7db312-05fe-4b09-8c96-ae2e8a94a4f9)
 
-Looking at the column We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
+
+We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
 
 Let's run a query on start_station_id to see if there are instances where start_station_id and start_station_name have a 1 to many relationship:
 
