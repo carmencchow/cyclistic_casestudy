@@ -98,7 +98,7 @@ Create ride_data table:
 
 <p>Applying the same thinking, we'll use `MAX()` again, this time to aggregate the following columns from our main `tripdata` table: `rideable_type`, `started_at`, `ended_at`, `member_casual`, etc  for each `ride_id`. 
   
-<p><i>Note: <b>rideable_type</b> - classic_bike, electric_bike, or docked), </p>
+<p><i>Note: <b>rideable_type</b> - classic_bike, electric_bike, or docked), </i></p>
 <p><b>member_casual</b> - member or casual</p>
 
 <p>We'll join the results of our aggregate `tripdata` table with the previous dimension table twice, in order to combine the `start_station` and `end_station` details.</p>
@@ -218,13 +218,10 @@ Based on our findings, it would appear that casual riders could be tourists, lei
 
 <h2>6. Act</h2>
 
-Based on the analysis of my findings, I'll return to the original business question posed by the company's marketing manager, Lily Moreno, that will drive the company's upcoming marketing campaign aimed at converted casual members to annual members.
-
-![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
-
-Key Findings
 My analysis shows key differences in how casual riders and member riders use Cyclistic's bikes. Namely, casual riders primarily use the bikes for leisure or sightseeing purposes. I determined 
+
 Casual Rider
+
 Most active on weekends from 12–5pm
 Preferred start stations near tourist attractions
 Average ride time m/s
