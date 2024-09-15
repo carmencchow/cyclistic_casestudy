@@ -23,9 +23,11 @@ Understand how annual members and casual riders use Cyclistic bikes differently 
 <h3><b>Data Source</b></h3>
 We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly available historical trip data, which contains information such as bike type (classic, electric, or docked), station names and ids, and their latitudes and longitudes. The anonymized data is made available by Motivate International Inc. Our second data source will be the City of Chicago's Data Portal which provides a list of bicycle station ids and station names.
 
-Cyclistic historical trip data: https://divvy-tripdata.s3.amazonaws.com/index.html
-Motivate International Inc. license: https://divvybikes.com/data-license-agreement.
-Chicago's Data Portal: https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
+<br>
+
+<p>Cyclistic historical trip data: https://divvy-tripdata.s3.amazonaws.com/index.html
+<p>Motivate International Inc. license: https://divvybikes.com/data-license-agreement.
+<p>Chicago's Data Portal: https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p><b>R</b>eliable - Yes, the dataset is public and unbiased.
