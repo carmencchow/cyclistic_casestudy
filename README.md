@@ -228,43 +228,42 @@ My analysis shows key differences in how casual riders and member riders use Cyc
 Based on these conclusion I'll meka the following recommndatsion to Moreno and the marketing team.
 
 <i>Suggestion #1:</i>
-<b>Seasonality/Short-term options</b>  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
+<p><b>Seasonality/Short-term options</b>  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
 
 Introducing a new pricing structure that would logically move people from causal to annual memberhipsj. Offering sign-up discounts or incentives to incentive causal membership to purchase annual memberships to increase enrollment.
-
-
-<b>Suggestion #2:</b>
-
-Partner with local business to offer discounts on admissions to local attractions that casual members are known to frequent . If we had data regarding the income/employment of our causal readers arntering ewith university to offer students and staff discounts. Opening and installing bike share stations on campuses or expanding to area where the core of riders work and live to connect to their riders convenience. Partnering with businesses along routes with the most traffic and offering discounts at those businesses (exclusive deals for Cyclistic annual members).
-Partnering iwth local restaurants and businesses contribute to the local economy while supporting local retailers. These businesses could be where people shop, run errands
-Location Expansion
-
-Removing bikes from least popular areas (a total of 67 stations only logged 1 ride in the last 12 months for example from July 2023 - August 2024) and building to ensure people in underserviced areas can find a ike. Ensure equity is met by providing bikes to underserved communities?
-Partnering with Offering a youth pilot program with schools. Many primary and high schools also have walkathons/ lunch and afterschool walking clubs that would go hand in hand with the bike program. 
-
-Opening stations around gyms/fitness centres to promote a healthier alternative / replace car trips
-
-
 
 Tiered Membership and Pricing Structure 
 
 For riders who are not ready to make the leap from a casual member to an annual member, a monthly program at a fixed, reduced price can be successful in eventually transitioning this demographic to an annual membership. Running campaigns that highlight the dollar cost money saved, something along the lines of "1 Divvy bike trip is equal to 1 ride" 
 
 To further incentive the annual memberhips, introduce a cost to casual riders by either increase after a certain distance quota is reached. For omparison sake - introduce a new rate structure, let's take a look at Chicago's Divvy Bike structure: Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
-Although Cyclistiic is a fictional company, we can draw comparisons to Chicgago's DIvvy bikeshare program whose pay structure is posted ont heir website: https://divvybikes.com/pricing 
-
-https://divvybikes.com/pricing
-
-
-
+Although Cyclistiic is a fictional company, we can draw comparisons to Chicgago's DIvvy bikeshare program whose pay structure is posted ont heir website: 
+https://divvybikes.com/pricing 
 Other groups (particually students or low-income would be encouraged a a monthly membership or quarterly.
 
 Offer a two-teired annual plan where members have teh option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
 Offering member-only perks such as community events, longer ride times etc.
 
+
+
+<b>Suggestion #2:</b>
+<p><b>Partner with Entertainment </b></p>
+Partner with local business to offer discounts on admissions to local attractions that casual members are known to frequent . If we had data regarding the income/employment of our causal readers arntering ewith university to offer students and staff discounts. Opening and installing bike share stations on campuses or expanding to area where the core of riders work and live to connect to their riders convenience. Partnering with businesses along routes with the most traffic and offering discounts at those businesses (exclusive deals for Cyclistic annual members).
+Partnering iwth local restaurants and businesses contribute to the local economy while supporting local retailers. These businesses could be where people shop, run errands
+Location Expansion
+
+<b>Suggestion #3: </b>
+Opening stations around gyms/fitness centres to promote a healthier alternative / replace car trips
+This could be done by removing bikes from least popular areas (a total of 67 stations only logged 1 ride in the last 12 months for example from July 2023 - August 2024) and building to ensure people in underserviced areas can find a ike. Ensure equity is met by providing bikes to underserved communities?
+
+![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
+
+
+Partnering with Offering a youth pilot program with schools. Many primary and high schools also have walkathons/ lunch and afterschool walking clubs that would go hand in hand with the bike program. 
+
 <h2> Final Thoughts</h2>
 
-Docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes? Classic bikes are the preferred bikes by both member and casual riders, and only casual members use docked bikes. Of the rides taken on docked bikes, several were multiday trips that didn't have end_stations. These outliers will be removed.
+More information needs to be gathered about docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes? Classic bikes are the preferred bikes by both member and casual riders, and only casual members use docked bikes. Of the rides taken on docked bikes, several were multiday trips that didn't have end_stations. These outliers will be removed.
 
 Since the dataset containes only anonymized data. In addition to sensitive PII, the dataset also excludes any non-sensitive PII such as riders' gender, date of birth, educational and work background which would have provided a more granular user profile that could lead to potentially impactful targeted advertisements specific to our riders' needs.
 Examples of how Cyclistics could use this additional ifnormation: 
