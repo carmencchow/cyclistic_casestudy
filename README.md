@@ -39,8 +39,10 @@ We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly 
 <h3><b>Data Limitations</b></h3>
 The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. The free-tier version of Google Big Query I will be using prevents data deletion, so I will be filtering out these values instead to avoid any inaccurate conclusions from our data. Since the data ROCCCs, the filtered data will be enough for completing the Business Task. 
 
-Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+<p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+  
 <p>
+
 ![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
 
 Instructions for installing and running the Google Cloud CLI are available here: https://cloud.google.com/sdk/docs/install-sdk . We'll use the following `bq` command to load the first file, <i>202308-divvy-tripdata.csv</i> to BigQuery: 
@@ -61,37 +63,43 @@ Before cleaning the data, it's beneficial to explore the data and see what exact
 ![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
 ![schema2](https://github.com/user-attachments/assets/8c034d55-782b-43bc-bffc-2095c9c6cac6)
 
-We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
-
-Let's run a query on start_station_id to see if there are instances where start_station_id and start_station_name have a 1 to many relationship:
+Let's explore the relationships between some of our columns and see if they are one-to-one or one-to-many relationships. For example, it would be reasonable to expect a bike station to have only one station name associated with it, in other words `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to see if there are instances when a `start_station_id` has more than one `start_station_name` associated with it. 
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-There are, in fact, 83 records of start_station_ids with more than one start_station_name associated with it.
+We see there are, in fact, 83 records of `start_station_id`s with more than one `start_station_name`. 
 
 ![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
 
-Let's run a query and filter on the first result, the station with the id '647':
+Let's examine the first result, the station with the id `647`:
 
 ![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
 
-We have three different names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website  https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which gives us the correct station name when we look up '647'
+This returns three different station names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website (link provided above) and look up station id 647 in its database:
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-We're able to establish that <i>Racine Ave. & 57th St.</i> is the station 647's correct station name. Now, let's see if there are instances of a 1 to many relationship between our station_id and start_lat:
+It looks like Racine Ave. & 57th is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure a more effective way of ensuring a single name for each station_id.
+
+Out of curiosity, let's see if there is are any one-to-many relationships between `start_station_id` and `start_lat` (latitude):
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
-We have ....
+Our query returns 1588 records, with the first row showing station WL-012 with 7,232 different latitudes. 
 
 ![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
 
-Filtering on a result:
+Let's filter on the first restuls, WL-012:
 
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
+We see that the 7,232 different latitudes are a results of inconsistent decimal formatting. 
+
+Our short exploration of the data gives us an idea of the types of data cleansing and data transformation processes we will need to ensure that we don't have one-to-many relationships that cause duplicates and inaccurate analysis. 
+
+
 <h3><i>Data Cleansing</i></h3>
+
 We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
 
 We'll create a dimension table with `start_station_id` as the primary key that we will later rejoin to the main table. Since the `SUM()` is only used on numerical values, we'll aggregate data for each `start_station_id` using the `MAX()` function to find the MAX values for `lat`, `lng`, and `station_name`. We'll do the same for end_station. Then we'll combine the results of the two inner queries with the `UNION ALL` operator to put the rows underneath. In doing so, we'll aggregate the combined results to get a single record for each 'start_station_id`. Note that using the `MIN()` function would also work in this case.
