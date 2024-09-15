@@ -119,7 +119,7 @@ Let's view our new table with the new rows:
 
 For our analysis we'll be filtering out NULL values for <b>start_station_id, end_station_id, start_station_name, and end_station_name</b>. These missing values would indicate that bikes were not properly check out or docked. There are records where the end time was earlier than the start time, resulting in a negative <b>trip_duration</b> value. We will also filter out any rides that were over 24 h long. With these removals we'll be looking at <b>4,178,369 records from the original 5,715,482</b> 
 
-** <i>I'm using the free tier version of BigQuery which doesn't permit data deletion; for this reason I'll be handling errors by filtering out NULL and negative results
+** <i>I'm using the free tier version of BigQuery which doesn't permit data deletion; for this reason I'll be handling errors by filtering out NULL and negative results</i>
 
 I used Tableau to visualize my analysis and return to our original question:
 
