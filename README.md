@@ -122,7 +122,7 @@ Now, let's create a separate table for our ride-related fields, we'll apply the 
 
 ![ride_data ](https://github.com/user-attachments/assets/183fad2c-f6b2-45d4-9e1e-f3103e5d61cc)
 
-<b> With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. </b>
+With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. 
 
 ![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
 
