@@ -1,22 +1,4 @@
-WHERE/* ----------- DATA ANALYSIS ------------
-#1: Total rides 
-#2: Total daily rides 
-#3: Total hourly rides
-#4: Total monthly rides 
-
-#5: Total ride distance 
-#6: Total ride distance by hour
-#7: Total ride distance by month
-#8: Average ride distance 
-
-#9: Average ride time > 1min and < 24h
-#10: Average ride time by day 
-#10: Average ride speed 
-#11: Top 10 start stations 
-#12: Total trips by bike type
-#13: Total round trips
-
------------------------------------------ */
+/* ----------- DATA ANALYSIS ------------ */
 
 SELECT *
 FROM `general-432301.wip.final_cyclistic_dataset` 
@@ -335,6 +317,7 @@ ORDER BY
 /* 17. Total trips by bike type */
 SELECT 
   rideable_type,
+  casual_member,
   COUNT(DISTINCT ride_id) as num_rides
 FROM `general-432301.wip.final_cyclistic_dataset` 
 WHERE
@@ -344,29 +327,33 @@ WHERE
   end_station_name IS NOT NULL and
   trip_duration > 60 and trip_duration < 86400
 GROUP BY
-  rideable_type
+  rideable_type,
+  casual_member,
 -- Electric (1,341,175), Classic (2,821,820), Docked (15,374)
 
 /* 18. Most popular stations */
 SELECT 
   start_station_name,
-  start_lat,
-  start_lng,
+  start_station_id,
   COUNT(DISTINCT ride_id) as num_rides
-FROM 
-  `general-432301.wip.final_cyclistic_dataset` 
+
+FROM `general-432301.wip.view_trip_data_report` 
+
 WHERE
-  -- member_casual = 'member' 
-  member_casual = 'casual'
+  start_station_id IS NOT NULL and
+  start_station_name IS NOT NULL and
+  end_station_id IS NOT NULL and
+  end_station_name IS NOT NULL and 
+  trip_duration > 60 and trip_duration < 86400 and
+  member_casual = 'member'
+  -- member_casual = 'casual'
 GROUP BY
   start_station_id,
-  start_station_name,
-  start_lat,
-  start_lng
+  start_station_name
 ORDER BY
   num_rides DESC
 LIMIT 10
--- CASUAL: Streeter Dr. & Grand Ave, DuSable Lake Shore
+-- CASUAL: Streeter Dr. & Grand Ave, DuSable Lake Shore & Monroe St.
 -- MEMBER: Clinton St & Washington Blvd, Kingsbury St & Kinzie
 
 /* 19. Average ride speed by rider type*/
@@ -389,6 +376,7 @@ GROUP BY
 
 /* 20. Average ride speed by bike type */
 SELECT 
+  member_casual,
   rideable_type,
   COUNT(DISTINCT ride_id) as num_rides,
   ROUND(AVG(distance_in_meters/trip_duration),2) as avg_speed_metres_per_sec
@@ -401,10 +389,10 @@ WHERE
   end_station_name IS NOT NULL and
   trip_duration > 60 and trip_duration < 86400 
 GROUP BY
+  member_casual,
   rideable_type
--- classic: 10.8 m/s, 2,821,820 total rides
--- electric: 11.31 m/s, 1,341,175 total rides
--- docked: 5.75 m/s, 15,372 total rides
+-- CASUAL: 8.17m/s (classic), 9.75m/s (electric)
+-- MEMBER: 12.17m/s (classic), 12.21m/s (electric)
 
 /* 21. Total distance (km) by bike type */
 SELECT 
