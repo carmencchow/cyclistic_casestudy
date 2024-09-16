@@ -144,44 +144,43 @@ visualize the relationship between different dimensions. Let's return to the ori
 <b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Out of that number, rides by annual members made up 64.8% (or <b>2,708,729</b>) and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
 
 
-<b> Bike Preferences:</b>
+<b>Bike Preferences</b>
 
 Both casual and annual members prefer the classic bikes over the electric bikes. For casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. Regarding docked bikes, not only were they only used by casual customers, but several of them logged multiday trips, had missing end station ids and names. Thi..
 
-<i> Daily Trends </i>
+<b> Daily Trends </b>
 
+We can see that the number of annual member bike rides was fairly consistent from Monday to Friday, with a decrease on the weekends and the highest number on Wednesday.  For casual riders, they took the most number of rides on the weekend.
 
-Let's take a look at how members vs. casual's ride activity differ over the period of a day, a week, and a year. Annual riders are most active on Wednesday.  we can see that casual riders riding activity is pretty consisiten Monday to Friday while logging slightly higher number of rides on the weekend. For annual riders, Wednesday and Saturdays see the highest number of activity. Whereas casual riders are most active on the weekend.
-
-Count:
-
-
-Daily Rides:
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
-Weekends buiest for casuals members. Casual riders take longer rides on weekends compared to member riders. In fact casual riders logged 11,896.32 hours more on Sunday than their member counterparts.
+<i>---need chart for 'Average Ride Time by Day' ---</i>
 
-![total_daily_rides](https://github.com/user-attachments/assets/5a2c8aa6-7116-4baf-bd25-c2dbdbdb7319) (check for accuracy with newest track)
 
-To get a closer analyze of our rider profile and what might be influencing their riding patterns let's drill down into the chart and look at their hourly at their riding activity spread through a single day. Let's take a look at the ride activity for member over a 24 hour period.
+
+
+
+
+We can see that casual riders also take longer rides on weekends compared to member riders. In fact casual riders logged 11,896.32 hours more on Sunday than their member counterparts.
+
+<i> Distance by Day </i>
+![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
+
+This chart shows that casual riders take longer rides on the weekend, covering 1,775,955 kilometres on Sundays, where as member rider's kilometres start decreasing from Thursday to Sunday before pickup again on from Monday to Thursday. 
+
+Let's take a look at the ride activity over a 24 hour period.
 
 Hourly Rides: 
 ![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
 
-Comparing casual and member riders, we can see that activity increases from 6–9 amd peaking at 8am. The times from 4pm to 7pm we see a similar heightened activity peaking am and 5pm throughout a given day. This could coincide with tms when riders leave for work and return home at the end of the day. This could lead support to the argument that our member riders primarly use the bike for to commute to work whereas casual members could be using it for leisure or sightseeing. Ride activities on weekend show the same periods of inactivity
+The chart above shows two peaks of high activity for annual members: between 6-8am and 4-6pm, with the most active hour being 8am and 5pm, which could indicate when members are heading to and from work. On the other hand, the majority of casual bike rides take place between 8am and 7pm, beginning with a steady increase from 8am to 5pm.
 
-
-
-
-Monthyly rides:
+Monthly rides:
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
 
-For annual riders most trips occrs ......
 
 Distance:
 
-Day: 
-![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
 
 
 Month: ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
