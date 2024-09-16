@@ -127,58 +127,36 @@ Now, let's create a separate table for our ride-related fields, we'll apply the 
 
 ![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
 
-<p>We'll also create new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters`</p>
+<p>We've also created new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters` that will help us in our analysis.
 
 ![newcols](https://github.com/user-attachments/assets/97021d57-a9b8-4e10-9aa3-e7724312637b)
 
 
-```
-SELECT  
-  ride_id, 
-  rideable_type, 
-  member_casual,
-  started_at, 
-  ended_at, 
-  CONCAT(FORMAT_DATETIME('%u', started_at),"-",FORMAT_DATETIME('%a', started_at)) as      
-  start_dayofweek,
-  FORMAT_DATETIME('%G', started_at) as start_year_id,
-  CONCAT(FORMAT_DATETIME('%m', started_at),"-",FORMAT_DATETIME('%h', started_at)) as start_month,
-  FORMAT_DATETIME('%P', started_at) as start_am_pm,
-  EXTRACT(HOUR FROM started_at) as start_hour,
-  start_station_id, 
-  start_station_name, 
-  end_station_id, 
-  end_station_name, 
-  start_lat, 
-  start_lng,
-  end_lat, 
-  end_lng, 
-  DATETIME_DIFF(ended_at, started_at, second) as trip_duration,
-  ST_DISTANCE(ST_GEOGPOINT(start_lng, start_lat), ST_GEOGPOINT(end_lng, end_lat)) as    
-  distance_in_meters
-
-FROM `general-432301.wip.clean_cyclistic_dataset` 
-
-```
-
 <h2>4. Analyze</h2>
 
-For our analysis we'll be filtering out NULL values for <b>start_station_id, end_station_id, start_station_name, and end_station_name</b>. These missing values would indicate that bikes were not properly check out or docked. There are records where the end time was earlier than the start time, resulting in a negative <b>trip_duration</b> value. We will also filter out any rides that were over 24 h long. With these removals we'll be looking at <b>4,178,369 records from the original 5,715,482</b> 
-
-** <i>I'm using the free tier version of BigQuery which doesn't permit data deletion; for this reason I'll be handling errors by filtering out NULL and negative results</i>
-
-I used Tableau to visualize my analysis and return to our original question:
+After connecting a new Tableau workbook to our Google Big Query server, we can start to 
+visualize the relationship between different dimensions. Let's return to the origin question:
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
-Let's take a look at how members vs. casual's ride activity differ over the period of a day, a week, and a year. Annual riders are most active on Wednesday. Removing all start_station_ids that have a value of NULL, we can see that casual riders riding activity is pretty consisiten Monday to Friday while logging slightly higher number of rides on the weekend. For annual riders, Wednesday and Saturdays see the highest number of activity. Whereas casual riders are most active on the weekend.
+<b> Ride Count: Casual Riders vs. Annual Members
+
+![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
+
+<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Out of that number, rides by annual members made up 64.8% (or <b>2,708,729</b>) and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
+
+
+<b> Bike Preferences:</b>
+
+Both casual and annual members prefer the classic bikes over the electric bikes. For casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. Regarding docked bikes, not only were they only used by casual customers, but several of them logged multiday trips, had missing end station ids and names. Thi..
+
+<i> Daily Trends </i>
+
+
+Let's take a look at how members vs. casual's ride activity differ over the period of a day, a week, and a year. Annual riders are most active on Wednesday.  we can see that casual riders riding activity is pretty consisiten Monday to Friday while logging slightly higher number of rides on the weekend. For annual riders, Wednesday and Saturdays see the highest number of activity. Whereas casual riders are most active on the weekend.
 
 Count:
 
-Rides by member type:
-![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
-
-We also see that annual riders log <b>2,708,729</b> total rides in the last 12 months versus casual riders who logged <b>1,469,640 rides</b>. Rides totalled <b>4,178,369 rides</b> in totalwith annual rides comprising 64.83%of rides and casual riders making up 35.17% of rides.
 
 Daily Rides:
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
@@ -222,10 +200,6 @@ Compared to annual ridership which has a wider spread but also peask in August a
 We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
-
-<b>Bike Preferences:</b>
-
-Both casual and annual members prefer the classic bikes over the electric bikes: Casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. 
 
 
 <b>Stations:</b>
