@@ -131,6 +131,36 @@ Now, let's create a separate table for our ride-related fields, we'll apply the 
 
 ![newcols](https://github.com/user-attachments/assets/97021d57-a9b8-4e10-9aa3-e7724312637b)
 
+
+```
+SELECT  
+  ride_id, 
+  rideable_type, 
+  member_casual,
+  started_at, 
+  ended_at, 
+  CONCAT(FORMAT_DATETIME('%u', started_at),"-",FORMAT_DATETIME('%a', started_at)) as      
+  start_dayofweek,
+  FORMAT_DATETIME('%G', started_at) as start_year_id,
+  CONCAT(FORMAT_DATETIME('%m', started_at),"-",FORMAT_DATETIME('%h', started_at)) as start_month,
+  FORMAT_DATETIME('%P', started_at) as start_am_pm,
+  EXTRACT(HOUR FROM started_at) as start_hour,
+  start_station_id, 
+  start_station_name, 
+  end_station_id, 
+  end_station_name, 
+  start_lat, 
+  start_lng,
+  end_lat, 
+  end_lng, 
+  DATETIME_DIFF(ended_at, started_at, second) as trip_duration,
+  ST_DISTANCE(ST_GEOGPOINT(start_lng, start_lat), ST_GEOGPOINT(end_lng, end_lat)) as    
+  distance_in_meters
+
+FROM `general-432301.wip.clean_cyclistic_dataset` 
+
+```
+
 <h2>4. Analyze</h2>
 
 For our analysis we'll be filtering out NULL values for <b>start_station_id, end_station_id, start_station_name, and end_station_name</b>. These missing values would indicate that bikes were not properly check out or docked. There are records where the end time was earlier than the start time, resulting in a negative <b>trip_duration</b> value. We will also filter out any rides that were over 24 h long. With these removals we'll be looking at <b>4,178,369 records from the original 5,715,482</b> 
