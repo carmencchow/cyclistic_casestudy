@@ -118,9 +118,9 @@ Now let's run the earlier query that filtered on station_id '647' again. However
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
 <b>Ride data table</b>
-Now, let's create a separate table for our ride-related fields, we'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
+<p>Now, let's create a separate table for our ride-related fields, we'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
 
-![ride_data ](https://github.com/user-attachments/assets/183fad2c-f6b2-45d4-9e1e-f3103e5d61cc)
+![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
 With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. 
 
