@@ -269,9 +269,9 @@ Emphasize Cyclistic's role in contributing to a healthier lifestyle by expanding
 
 Since the dataset only contained anonymized information, we don't have a complete picture of casual riders ... Examples of how Cyclistics could use this additional ifnormation: 
   
-  * Offering a subsized program for and youths low-income 
-  * Offering family discounts
-  * Opening new bike stations on university campuses for to provide greater access for students 
-  * Partnering with some of Chicago's largest employers to offer discounted member passes to employees
+  * Youth/low-income: Offering a subsized program
+  * Family members: Offering family discounts bundles
+  * University students: Opening new bike stations on university campuses for to provide greater access for students 
+  * Workers: Partnering with the city's largest employers to offer discounted member passes to employees
 
-These insights will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable green alaterative. 
+Based on the ride patterns and seasonal trends, by following these recommendations will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service that their riders can enjoy. 
