@@ -1,11 +1,12 @@
-# Cyclistic Case Study 🚲
+# Cyclistic Case Study 🚲 
+
 <p>Carmen Chow</p> 
 <p>August 2024</p>
 
 <h2>Background</h2>
 <p>Cyclistic is a successful bike-share company in Chicago. Since 2016, its program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. Customers who purchase single-ride or full-day passes are referred to as <b>casual riders</b> and those who purchase annual memberships are Cyclistic <b>members</b>. 
   
-The director of marketing believes the company's future success depends on maximizing the number of annual memberships by converting casual riders into annual members. In order to do that, the team needs to better understand how casual riders and annual members use Cyclistic bikes differently. To do that, we will be analyzing the Cyclistic historical bike trip data to identify meaningful trends.
+The director of marketing believes the company's future success depends on maximizing the number of annual memberships by converting casual riders into annual members. In order to do that, the team needs to better understand how casual riders and annual members use Cyclistic bikes differently by analyzing historical bike trip data to identify trends.
 
 <h2>Stakeholders</h2>
 <p>*  Lily Moreno: The director of marketing and your manager. </p>
@@ -15,111 +16,280 @@ collecting, analyzing, and reporting data that helps guide Cyclistic marketing s
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
-Understand how annual members and casual riders use Cyclistic bikes differently in order to convert riders into annual members.
+Understand how annual members and casual riders use Cyclistic bikes differently in order to convert casual riders into annual members.
 
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-I will use the last 12 months (August 2023 - July 2024) of Cyclistic's publically available historical trip data, available at https://divvy-tripdata.s3.amazonaws.com/index.html  The data is structured in wide formats in records and fields with ride-related information about both casual riders and members, types of bikes, and the start and end station information (station id, station name, latitude and longitude coordinates) of each bike trip. The anonymized data is made available by Motivate International Inc. under this license - https://divvybikes.com/data-license-agreement .
+We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly available historical trip data, which contains information such as bike type (classic, electric, or docked), station names and ids, and their latitudes and longitudes. The anonymized data is made available by Motivate International Inc. Our second data source will be the City of Chicago's Data Portal which provides a list of bicycle station ids and station names.
 
-The second data source we will be using is the City of Chicago's Data Portal https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which provides a list of bicycle station ids and names.
+<p>
+
+<p>Cyclistic historical trip data: https://divvy-tripdata.s3.amazonaws.com/index.html
+<p>Motivate International Inc. license: https://divvybikes.com/data-license-agreement.
+<p>Chicago's Data Portal: https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
-<p>Reliable - Yes: the dataset is public and unbiased
-<p>Original - Yes: data is first-party data, collected by the company itself
-<p>Comprehensive - Yes: > 5 million rows of historical trip data from the year 2020 
-<p>Current - Yes: data is from the past 12 months
-<p>Cited - Yes: data is public, vetted, and available on the company's website
+<p><b>R</b>eliable - Yes, the dataset is public and unbiased.
+<p><b>O</b>riginal - Yes, the data is first-party data, collected by the company itself.
+<p><b>C</b>omprehensive - Yes, there are over 5 million rows of historical trip data from the year 2020 to now. 
+<p><b>C</b>urrent - Yes, the data is from the past 12 months.
+<p><b>C</b>ited - Yes, the data is public, vetted, and available on the company's website.
 
 <h3><b>Data Limitations</b></h3>
-A number of start_station_id and end_station_id's have NULL values. Due to the limitations of the free-tier version of Google Big Query, we'll be filtering out these values instead of deleting them from the dataset to handle the errors. Since the data ROCCCs, I've determined that it will be be enough for the Business Task. 
+The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. The free-tier version of Google Big Query I will be using prevents data deletion, so I will be filtering out these values instead to avoid any inaccurate conclusions from our data. Since the data ROCCCs, the filtered data will be enough for completing the Business Task. 
 
-<h2>2. Prepare</h2>
-Previewing the files in Excel show the the name and format of each column head is identical in structure and have the same columne names which means we will be unioning instead of joining the data sets. I've decided to use Google Big Query for my data cleansing and analysis due to it's ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types. 
+<p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+  
+<p>
 
 ![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
 
-Next, I will use the Google Cloud CLI to upload the first CSV file to the Big Query. Instructions for installing and running the Google Cloud CLI is available here: https://cloud.google.com/sdk/docs/install-sdk 
-
-and the command for uploading the first data set: 202308-divvy-tripdata.csv  
+Instructions for installing and running the Google Cloud CLI are available here: https://cloud.google.com/sdk/docs/install-sdk . We'll use the following `bq` command to load the first file, <i>202308-divvy-tripdata.csv</i> to BigQuery: 
 
 ```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
-To upload and merge the remaining 11 CSV files to the first one, I will replace the `replace` command with `noreplace` to add the taable to the bottom of the previous table instead of JOINing it. Instead of combinging data into new columns, we'll join them into new rows.
+The remaining 11 CSV files will be loaded and unioned to the bottom of our new table with the `noreplace` command, which will create new rows instead of columns of data. Here's the complete command:
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-We have now imported and merged all 12 datasets giving us 5,715,693 rows. We can move on to the process the raw data.
+We have now imported and merged all 12 datasets giving us <i>5,715,482</i> rows of data. Let's go ahead and process the data.
 
 <h2>3. Process</h2>
-<h3><i>Data Exploration</i></h3>
+<h3>Data Exploration</h3>
 
-Before cleaning the data, it's beneficial to explore the data and see what we have to work with that will inform our cleansing process. Looking at the dataset, we see columns contain qualitative or descriptive data, also known as dimensions. These dimensions can be grouped into 3 categories: station data, ride data, and time (?) data. Our table has columns for `ride_id`, `start_station_id`, and `end_station_id`. We would reasonably expect each bike trip to start at a single station and end at a single station, and for those stations to have their own station name. In other words, we would expect `start_station_id` to have a 1 to 1 relationship with `start_station_name`, likewise with `end_station_id` and `end _station_name`.
+Before cleaning the data, it's beneficial to explore the data and see what exactly we're working with. Looking at our data, we can group our columns into three categories of qualitative or descriptive data: data about station information, data about ride information, and data related to start and end times. Here's an overview of our columns:
 
-Let's run a query on start_station_id to see if there are instances where start_station_id and start_station_name have a 1 to many relationship:
+![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
+![schema2](https://github.com/user-attachments/assets/8c034d55-782b-43bc-bffc-2095c9c6cac6)
+
+Let's explore the relationships between some of our columns and see if they are one-to-one or one-to-many relationships. For example, it would be reasonable to expect a bike station to have only one station name associated with it, in other words `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to see if there are instances when a `start_station_id` has more than one `start_station_name` associated with it. 
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-There are, in fact, 83 records of start_station_ids with more than one start_station_name associated with it.
+We see there are, in fact, 83 records of `start_station_id`s with more than one `start_station_name`. 
 
 ![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
 
-Let's run a query and filter on the first result, the station with the id '647':
+Let's examine the first result, the station with the id `647`:
 
 ![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
 
-We have three different names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website  https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data which gives us the correct station name when we look up '647'
+This returns three different station names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website (link provided above) and look up station id 647 in its database:
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-We're able to establish that <i>Racine Ave. & 57th St.</i> is the station 647's correct station name. Now, let's see if there are instances of a 1 to many relationship between our station_id and start_lat:
+It looks like Racine Ave. & 57th is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure a more effective way of ensuring a single name for each station_id.
+
+Out of curiosity, let's see if there is are any one-to-many relationships between `start_station_id` and `start_lat` (latitude):
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
-We have ....
+Our query returns 1588 records, with the first row showing station WL-012 with 7,232 different latitudes. 
 
 ![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
 
-Filtering on a result:
+Let's filter on the first restuls, WL-012:
 
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
+We see that the 7,232 different latitudes are a results of inconsistent decimal formatting. 
+
+Our short exploration of the data gives us an idea of the types of data cleansing and data transformation processes we will need to ensure that we don't have one-to-many relationships that cause duplicates and inaccurate analysis. 
 
 
-<h3><i>Data Cleansing</i></h3>
+<h3>Data Cleansing</h3>
+
 We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
 
-We'll create a dimension table with `start_station_id` as the primary key that we will later rejoin to the main table. Since the `SUM()` is only used on numerical values, we'll aggregate data for each `start_station_id` using the `MAX()` function to find the MAX values for `lat`, `lng`, and `station_name`. We'll do the same for end_station. Then we'll combine the results of the two inner queries with the `UNION ALL` operator to put the rows underneath. In doing so, we'll aggregate the combined results to get a single record for each 'start_station_id`. Note that using the `MIN()` function would also work in this case.
-For our purposes, we can use Chicago's website to retrieve the correct station name in the latter part of our analyis for the top 10 stations; however for now, we just want SQL to return a single value for for the station's name, latitude, and longitude which an aggregate function will accomplish. We'll also format the lat and lng values by rounding them to 6 decimal places.
+To do this, we'll create a new table with `start_station_id` as the primary key and we will bring in only station-related data. After processing this data, we will rejoin the cleaned data with the origin main table. 
 
-We'll treat both `start_station_id` and `end_station_id` as `station_id` which will be the primary key used to join the results of the inner queries.
+<i>Why aggregate our data?</i>
+Aggregating will allow us to consolidate multiple rows of data into one and enforce that one-to-one relationship that makes our records unique. Common aggregation functions are `SUM(), MIN(), MAX()` and `AVG()`, however `SUM()` and `AVG()` only work with numeric values, we will aggregate data for each `start_station_id` string type using the `MAX()` function. We'll apply the same function to all other station-related fields:
 
-Create ride_data table:
+We will do the same for `end_station` information before combining the results of the . We'll also format the lat and lng values by rounding them to 6 decimal places. We'll treat both `start_station_id` and `end_station_id` as `station_id` which will be the primary key used to join the results of the inner queries.
 
-<b> Joining the cleaned table to main table</b>
+Create station_data table by unioning our aggregated start and end_station data:
 
-<p>Applying the same thinking, we'll use `MAX()` again, this time to aggregate the following columns from our main `tripdata` table: `rideable_type`, `started_at`, `ended_at`, `member_casual`, etc  for each `ride_id`. 
-  
-<p><i>Note: <b>rideable_type</b> - classic_bike, electric_bike, or docked), </p>
-<p><b>member_casual</b> - member or casual</p>
+![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
-<p>We'll join the results of our aggregate `tripdata` table with the previous dimension table twice, in order to combine the `start_station` and `end_station` details.</p>
-
-![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
-
-Now let's run a query twice: once on our cleaned data and the other on our dirty data to see the difference. We should return a single row for each station_id:
-
+Now let's run the earlier query that filtered on station_id '647' again. However, this time we will run it twice: once on our cleaned data and the other on our original dataset  to see the difference. On the left, we've returned the original results, while the right we've cleaned up rows with multiple records. 
 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
-Let's view our new table with the new rows:
+<b>Ride data table</b>
+<p>Now, let's create a separate table for our ride-related fields, we'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
 
-![final](https://github.com/user-attachments/assets/5772fec2-5999-4102-8a6d-8e88f4d2a1e5)
+![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
+With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. 
+
+![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
+
+<p>We've also created new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters` that will help us in our analysis.
+
+![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
 
 <h2>4. Analyze</h2>
+
+After connecting a new Tableau workbook to our Google Big Query server, we can start to 
+visualize the relationship between different dimensions. Let's return to the origin question:
+
+<b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
+
+<b> Ride Count: Casual Riders vs. Annual Members</b>
+
+![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
+
+<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Out of that number, rides by annual members made up 64.8% (or <b>2,708,729</b>) and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
+
+
+<b>Bike Preferences</b>
+
+Both casual and annual members prefer the classic bikes over the electric bikes. For casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. Regarding docked bikes, not only were they only used by casual customers, but several of them logged multiday trips, had missing end station ids and names. Thi..
+
+<b> Daily Trends </b>
+
+We can see that the number of annual member bike rides was fairly consistent from Monday to Friday, with a decrease on the weekends and the highest number on Wednesday.  For casual riders, they took the most number of rides on the weekend.
+
+![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
+
+<i>---need chart for 'Average Ride Time by Day' ---</i>
+
+
+
+
+
+
+We can see that casual riders also take longer rides on weekends compared to member riders. In fact casual riders logged 11,896.32 hours more on Sunday than their member counterparts.
+
+<i> Distance by Day </i>
+![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
+
+This chart shows that casual riders take longer rides on the weekend, covering 1,775,955 kilometres on Sundays, where as member rider's kilometres start decreasing from Thursday to Sunday before pickup again on from Monday to Thursday. 
+
+Let's take a look at the ride activity over a 24 hour period.
+
+Hourly Rides: 
+![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
+
+The chart above shows two peaks of high activity for annual members: between 6-8am and 4-6pm, with the most active hour being 8am and 5pm, which could indicate when members are heading to and from work. On the other hand, the majority of casual bike rides take place between 8am and 7pm, beginning with a steady increase from 8am to 5pm.
+
+Monthly rides:
+![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
+
+
+Distance:
+
+
+
+Month: ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
+
+Ride Time:
+![avg ride time hour](https://github.com/user-attachments/assets/e3cd72eb-351f-42c4-a1ba-c26552cd6cfe)
+
+Seasonality changes, casual ridership increase from April to May (Summer months). In April the total distance was _________ and it went up to _________ in  _________, an increase of  _________ and drops from _________ metres to  _________ metres from S _________. 
+Compared to annual ridership which has a wider spread but also peask in August and September.
+
+
+<b>Speed:</b> 
+
+We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
+![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
+![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
+
+<b>Stations:</b>
+
+I used the Chicago Data Portal website to plot the start stations most frequented by both groups of riders: 
+
+For casual riders, the most popular bike station was Streeter Dr. & Grand Ave with  DuSable Lake Shore & Monroe St.
+
+
+![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
+
+
+![casual_station_map](https://github.com/user-attachments/assets/e105abd6-eb7c-47f9-9e2f-ff51efd91a50)
+
+Annual members top station was Clinton St & Washington Blvd, Kingsbury St & Kinzie
+
+![top_10_members_station](https://github.com/user-attachments/assets/530efb66-a505-4e70-84f3-344b4a23edf9)
+
+
+![member_station_map](https://github.com/user-attachments/assets/510c9e6a-110f-402f-a133-8344fcd3a27a)
+
+
 <h2>5. Share</h2>
+
+Tableau 
+Google Slides
+
+Based on our findings, it would appear that casual riders could be tourists, leisure riders.
+
 <h2>6. Act</h2>
 
+My analysis shows key differences in how casual riders and member riders use Cyclistic's bikes. Namely, casual riders primarily use the bikes for leisure or sightseeing purposes. I determined 
 
-![avg_spee](https://github.com/user-attachments/assets/479beb74-ad8d-4667-8bc4-3aeb8525e5e9)
+<b>Casual Rider</b>
+* Most active on weekends from 12–5pm
+* Preferred start stations near tourist attractions
+* Average ride time m/s
+* Average speed 
+
+<b>Member Riders</b>
+* Most active day of the week and hour:
+* Preferred start stations away fro tourist attractions spread across - 
+* Average ride time m/s
+* Average speed 
+
+Based on these conclusion I'll meka the following recommndatsion to Moreno and the marketing team.
+
+<i>Suggestion #1:</i>
+<p><b>Seasonality/Short-term options</b>  - Campaigns target at causal member advertisting upgrades to annual memberships that highlight cost of savings, distance et. A discounted rate or other attractivee offers such advertisements at specific hotspots (See the top 10 visited stations) .
+
+Introducing a new pricing structure that would logically move people from causal to annual memberhipsj. Offering sign-up discounts or incentives to incentive causal membership to purchase annual memberships to increase enrollment.
+
+Tiered Membership and Pricing Structure 
+
+For riders who are not ready to make the leap from a casual member to an annual member, a monthly program at a fixed, reduced price can be successful in eventually transitioning this demographic to an annual membership. Running campaigns that highlight the dollar cost money saved, something along the lines of "1 Divvy bike trip is equal to 1 ride" 
+
+To further incentive the annual memberhips, introduce a cost to casual riders by either increase after a certain distance quota is reached. For omparison sake - introduce a new rate structure, let's take a look at Chicago's Divvy Bike structure: Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
+Although Cyclistiic is a fictional company, we can draw comparisons to Chicgago's DIvvy bikeshare program whose pay structure is posted ont heir website: 
+https://divvybikes.com/pricing 
+Other groups (particually students or low-income would be encouraged a a monthly membership or quarterly.
+
+Offer a two-teired annual plan where members have teh option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
+Offering member-only perks such as community events, longer ride times etc.
+
+
+
+<b>Suggestion #2:</b>
+<p><b>Partner with Entertainment </b></p>
+Partner with local business to offer discounts on admissions to local attractions that casual members are known to frequent . If we had data regarding the income/employment of our causal readers arntering ewith university to offer students and staff discounts. Opening and installing bike share stations on campuses or expanding to area where the core of riders work and live to connect to their riders convenience. Partnering with businesses along routes with the most traffic and offering discounts at those businesses (exclusive deals for Cyclistic annual members).
+Partnering iwth local restaurants and businesses contribute to the local economy while supporting local retailers. These businesses could be where people shop, run errands
+Location Expansion
+
+<b>Suggestion #3: </b>
+Opening stations around gyms/fitness centres to promote a healthier alternative / replace car trips
+This could be done by removing bikes from least popular areas (a total of 67 stations only logged 1 ride in the last 12 months for example from July 2023 - August 2024) and building to ensure people in underserviced areas can find a ike. Ensure equity is met by providing bikes to underserved communities?
+
+![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
+
+
+Partnering with Offering a youth pilot program with schools. Many primary and high schools also have walkathons/ lunch and afterschool walking clubs that would go hand in hand with the bike program. 
+
+<h2> Final Thoughts</h2>
+
+More information needs to be gathered about docked bikes - on average log rides that are over 24 hours long, outliers that brought up the average. Were they mislabelled, either classic or electric bikes? Classic bikes are the preferred bikes by both member and casual riders, and only casual members use docked bikes. Of the rides taken on docked bikes, several were multiday trips that didn't have end_stations. These outliers will be removed.
+
+Since the dataset containes only anonymized data. In addition to sensitive PII, the dataset also excludes any non-sensitive PII such as riders' gender, date of birth, educational and work background which would have provided a more granular user profile that could lead to potentially impactful targeted advertisements specific to our riders' needs.
+Examples of how Cyclistics could use this additional ifnormation: 
+  
+  * Offering a subsized program for and youths low-income 
+  * Offering family discounts
+  * Opening new bike stations on university campuses for to provide greater access for students 
+  * Partnering with some of Chicago's largest employers to offer discounted member passes to employees
+
+In conclusion, focusing on marketing camaptings that highlight the savings and the helath and environen benefits. casual members will make when switching to a full membership
+partnering with local businesses by providing dicscounts on attractions etc, and restructing their pricing plan will incentive casual members to take the lead to full membership. 
+
+These insights will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable green alaterative. 
