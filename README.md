@@ -130,6 +130,8 @@ With both table removed of duplicates and ensuring uniqueness, we can rejoin the
 
 ![newcols](https://github.com/user-attachments/assets/242bc20f-51a3-4302-86c8-8c13be1f312e)
 
+![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
+
 <h2>4. Analyze</h2>
 
 After connecting a new Tableau workbook to our Google Big Query server, we can start to 
