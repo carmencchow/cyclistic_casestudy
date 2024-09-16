@@ -124,7 +124,7 @@ Now let's run the earlier query that filtered on station_id '647' again. However
 
 With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. 
 
-![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
+![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
 <p>We've also created new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters` that will help us in our analysis.
 
@@ -199,7 +199,6 @@ Compared to annual ridership which has a wider spread but also peask in August a
 We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
-
 
 <b>Stations:</b>
 
