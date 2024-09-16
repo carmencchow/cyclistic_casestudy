@@ -100,6 +100,7 @@ Our short exploration of the data gives us an idea of the types of data cleansin
 
 <h3><i>Data Cleansing</i></h3>
 
+<b>Station data table</b>
 We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
 
 To do this, we'll create a new table with `start_station_id` as the primary key and we will bring in only station-related data. After processing this data, we will rejoin the cleaned data with the origin main table. 
@@ -107,31 +108,28 @@ To do this, we'll create a new table with `start_station_id` as the primary key 
 <i>Why aggregate our data?</i>
 Aggregating will allow us to consolidate multiple rows of data into one and enforce that one-to-one relationship that makes our records unique. Common aggregation functions are `SUM(), MIN(), MAX()` and `AVG()`, however `SUM()` and `AVG()` only work with numeric values, we will aggregate data for each `start_station_id` string type using the `MAX()` function. We'll apply the same function to all other station-related fields:
 
-
-
 We will do the same for `end_station` information before combining the results of the . We'll also format the lat and lng values by rounding them to 6 decimal places. We'll treat both `start_station_id` and `end_station_id` as `station_id` which will be the primary key used to join the results of the inner queries.
 
-Create ride_data table:
+Create station_data table by unioning our aggregated start and end_station data:
 
 ![station_data](https://github.com/user-attachments/assets/18493621-a5fa-4076-8f49-e8988459b776)
 
-<b> Joining the cleaned table to main table</b>
-
-<p>Applying the same thinking, we'll use `MAX()` again, this time to aggregate the following columns from our main `tripdata` table: `rideable_type`, `started_at`, `ended_at`, `member_casual`, etc  for each `ride_id`. 
-  
-<p><i>Note: <b>rideable_type</b> - classic_bike, electric_bike, or docked), </i></p>
-<p><b>member_casual</b> - member or casual</p>
-
-<p>We'll join the results of our aggregate `tripdata` table with the previous dimension table twice, in order to combine the `start_station` and `end_station` details.</p>
-
-![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
-
-Now let's run a query twice: once on our cleaned data and the other on our dirty data to see the difference. We should return a single row for each station_id:
-
+Now let's run the earlier query that filtered on station_id '647' again. However, this time we will run it twice: once on our cleaned data and the other on our original dataset  to see the difference. On the left, we've returned the original results, while the right we've cleaned up rows with multiple records. 
 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
-Let's view our new table with the new rows:
+<b>Ride data table</b>
+Now, let's create a separate table for our ride-related fields, we'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
+
+![ride_table](https://github.com/user-attachments/assets/85fc1c68-b6d5-4a98-bcc7-922293e44c31)
+
+<b> With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. We will also add 6 new columns for a deeper analysis </b>
+
+![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
+
+Our new talbe now has the following columns:
+
+
 
 ![final](https://github.com/user-attachments/assets/5772fec2-5999-4102-8a6d-8e88f4d2a1e5)
 
