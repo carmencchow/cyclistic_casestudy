@@ -123,9 +123,26 @@ Now, let's create a separate table for our ride-related fields, we'll apply the 
 
 ![ride_table](https://github.com/user-attachments/assets/85fc1c68-b6d5-4a98-bcc7-922293e44c31)
 
-<b> With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. We will also add 6 new columns for a deeper analysis </b>
+<b> With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. We will also add 6 new columns for a deeper analysis: </b>
+
+```
+  CONCAT(FORMAT_DATETIME('%u', started_at),"-",FORMAT_DATETIME('%a', started_at)) as    
+  start_dayofweek,
+  FORMAT_DATETIME('%G', started_at) as start_year_id,
+  CONCAT(FORMAT_DATETIME('%m', started_at),"-",FORMAT_DATETIME('%h', started_at)) as   start_month,
+  FORMAT_DATETIME('%P', started_at) as start_am_pm,
+  EXTRACT(HOUR FROM started_at) as start_hour,
+  DATETIME_DIFF(ended_at, started_at, second) as trip_duration,
+  ST_DISTANCE(ST_GEOGPOINT(start_lng, start_lat), ST_GEOGPOINT(end_lng, end_lat)) as    
+  distance_in_meters
+
+```
+
 
 ![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
+
+
+
 
 Our new talbe now has the following columns:
 
