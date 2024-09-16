@@ -128,8 +128,6 @@ With both table removed of duplicates and ensuring uniqueness, we can rejoin the
 
 <p>We've also created new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters` that will help us in our analysis.
 
-![newcols](https://github.com/user-attachments/assets/242bc20f-51a3-4302-86c8-8c13be1f312e)
-
 ![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
 
 <h2>4. Analyze</h2>
