@@ -111,7 +111,7 @@ We will do the same for `end_station` information before combining the results o
 
 Create station_data table by unioning our aggregated start and end_station data:
 
-![station_data](https://github.com/user-attachments/assets/18493621-a5fa-4076-8f49-e8988459b776)
+![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
 Now let's run the earlier query that filtered on station_id '647' again. However, this time we will run it twice: once on our cleaned data and the other on our original dataset  to see the difference. On the left, we've returned the original results, while the right we've cleaned up rows with multiple records. 
 
