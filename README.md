@@ -121,32 +121,13 @@ Now let's run the earlier query that filtered on station_id '647' again. However
 <b>Ride data table</b>
 Now, let's create a separate table for our ride-related fields, we'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
 
-![ride_table](https://github.com/user-attachments/assets/85fc1c68-b6d5-4a98-bcc7-922293e44c31)
+![ride_data ](https://github.com/user-attachments/assets/183fad2c-f6b2-45d4-9e1e-f3103e5d61cc)
 
-<b> With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. We will also add 6 new columns for a deeper analysis: </b>
-
-```
-  CONCAT(FORMAT_DATETIME('%u', started_at),"-",FORMAT_DATETIME('%a', started_at)) as    
-  start_dayofweek,
-  FORMAT_DATETIME('%G', started_at) as start_year_id,
-  CONCAT(FORMAT_DATETIME('%m', started_at),"-",FORMAT_DATETIME('%h', started_at)) as   start_month,
-  FORMAT_DATETIME('%P', started_at) as start_am_pm,
-  EXTRACT(HOUR FROM started_at) as start_hour,
-  DATETIME_DIFF(ended_at, started_at, second) as trip_duration,
-  ST_DISTANCE(ST_GEOGPOINT(start_lng, start_lat), ST_GEOGPOINT(end_lng, end_lat)) as    
-  distance_in_meters
-
-```
-
+<b> With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. </b>
 
 ![final_join](https://github.com/user-attachments/assets/c2ae5f80-e7a1-49c6-871a-a70f3bfb8270)
 
-
-
-
-Our new talbe now has the following columns:
-
-
+<p>We'll also create new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters`</p>
 
 ![final](https://github.com/user-attachments/assets/5772fec2-5999-4102-8a6d-8e88f4d2a1e5)
 
