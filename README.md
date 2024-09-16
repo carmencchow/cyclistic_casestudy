@@ -129,8 +129,7 @@ Now, let's create a separate table for our ride-related fields, we'll apply the 
 
 <p>We'll also create new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters`</p>
 
-![final](https://github.com/user-attachments/assets/5772fec2-5999-4102-8a6d-8e88f4d2a1e5)
-
+![newcols](https://github.com/user-attachments/assets/97021d57-a9b8-4e10-9aa3-e7724312637b)
 
 <h2>4. Analyze</h2>
 
