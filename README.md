@@ -98,9 +98,8 @@ We see that the 7,232 different latitudes are a results of inconsistent decimal 
 Our short exploration of the data gives us an idea of the types of data cleansing and data transformation processes we will need to ensure that we don't have one-to-many relationships that cause duplicates and inaccurate analysis. 
 
 
-<h3><i>Data Cleansing</i></h3>
+<h3>Data Cleansing</h3>
 
-<b>Station data table</b>
 We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
 
 To do this, we'll create a new table with `start_station_id` as the primary key and we will bring in only station-related data. After processing this data, we will rejoin the cleaned data with the origin main table. 
@@ -139,7 +138,7 @@ visualize the relationship between different dimensions. Let's return to the ori
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
-<b> Ride Count: Casual Riders vs. Annual Members
+<b> Ride Count: Casual Riders vs. Annual Members</b>
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
