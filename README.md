@@ -147,11 +147,10 @@ visualize the relationships between different dimensions. Let's return to the or
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
-<b> Ride Count: Casual Riders vs. Annual Members</b>
+<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Out of that number, rides by annual members made up 64.8% (or <b>2,708,729</b>) and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
-<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Out of that number, rides by annual members made up 64.8% (or <b>2,708,729</b>) and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
 
 
 <b>Bike Preferences</b>
