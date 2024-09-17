@@ -37,7 +37,7 @@ We will look at 12 months of Cyclistic's publicly available historical trip data
 <p><b>C</b>ited - Yes, the data is public, vetted, and available on the company's website.
 
 <h3><b>Data Limitations</b></h3>
-The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. The free-tier version of Google Big Query does not allow data deletion, so I will be filtering out these values to avoid drawing any inaccurate conclusions from the data. Since the data still meets ROCCC standards, the filtered data will be enough for completing the Business Task. 
+The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. The free-tier version of Google Big Query does not allow data deletion, so I will be filtering out these values to avoid drawing any inaccurate conclusions from the data. Since the data still meets ROCCC standards, the filtered data will be enough for completing the Business Task. 
 
 <p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
