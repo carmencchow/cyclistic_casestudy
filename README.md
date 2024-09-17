@@ -38,7 +38,7 @@ We will look at 12 months of Cyclistic's publicly available historical trip data
 
 <h3><b>Data Limitations</b></h3>
 
-The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. The free-tier version of Google Big Query does not allow data deletion, so I will be filtering out these values to avoid drawing any inaccurate conclusions from the data. Since the data still meets ROCCC standards, the filtered data will be enough for completing the Business Task. 
+The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. The free-tier version of Google Big Query does not allow data deletion, so I will be filtering out these values to avoid drawing any inaccurate conclusions. 
 
 <p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
@@ -59,12 +59,12 @@ We have now imported and merged all 12 datasets giving us <i>5,715,482</i> rows 
 <h2>3. Process</h2>
 <h3>Data Exploration</h3>
 
-Before cleaning the data, it's beneficial to explore the data and see what exactly we're working with. Looking at our data, we can group our columns into three categories of qualitative or descriptive data: data about station information, data about ride information, and data related to start and end times. Here's an overview of our columns:
+Before cleaning the data, it's beneficial to explore the data and see what exactly we're working with. Looking at our table,  we can divide our columns into three categories of qualitative data: data about station information, data about ride information, and data related to start and end times. Here's an overview of our columns:
 
 ![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
 ![schema2](https://github.com/user-attachments/assets/8c034d55-782b-43bc-bffc-2095c9c6cac6)
 
-Let's explore the relationships between some of our columns and see if they are one-to-one or one-to-many relationships. For example, it would be reasonable to expect a bike station to have only one station name associated with it, in other words `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to see if there are instances when a `start_station_id` has more than one `start_station_name` associated with it. 
+Let's explore the relationships between some of our columns and see if they are one-to-one or one-to-many relationships. It would be reasonable to expect a bike station to have only one station name associated with it, in other words `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to see if there are instances when a `start_station_id` has more than one `start_station_name` associated with it. 
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
@@ -82,26 +82,26 @@ This returns three different station names. In order to find the correct name, w
 
 It looks like Racine Ave. & 57th is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure a more effective way of ensuring a single name for each station_id.
 
-Out of curiosity, let's see if there is are any one-to-many relationships between `start_station_id` and `start_lat` (latitude):
+Let's explore the relationship between `start_station_id` and `start_lat`:
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
-Our query returns 1588 records, with the first row showing station WL-012 with 7,232 different latitudes. 
+Our query returns 1,588 records of a single `start_station_id` with multiple `start_lat`s. 
 
 ![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
 
-Let's filter on the first restuls, WL-012:
+Let's filter on the first result, station <i>WL-012</i>:
 
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
-We see that the 7,232 different latitudes are a results of inconsistent decimal formatting. 
+We see that the 7,232 different latitudes are results of inconsistent number formatting. 
 
-Our short exploration of the data gives us an idea of the types of data cleansing and data transformation processes we will need to ensure that we don't have one-to-many relationships that cause duplicates and inaccurate analysis. 
+We now have an idea of the types of data cleansing and data transformation processes we will need to ensure that we don't have one-to-many relationships that cause duplicates and inaccurate analysis. 
 
 
 <h3>Data Cleansing</h3>
 
-We've discovered that the expected 1:1 relationship between station_id and other qualitative data such as it's name and latitude is not enforced, and performing a lookup for the correct name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce it into a single row to enforce that 1:1 relationship.
+To recap, we've discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as it's `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce them to a single row to create that one-to-one relationship between `start_station_id` and the station-related data.
 
 To do this, we'll create a new table with `start_station_id` as the primary key and we will bring in only station-related data. After processing this data, we will rejoin the cleaned data with the origin main table. 
 
