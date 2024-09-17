@@ -21,7 +21,7 @@ Understand how annual members and casual riders use Cyclistic bikes differently 
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly available historical trip data, which contains information such as bike type (classic, electric, or docked), station names and ids, and their latitudes and longitudes. The anonymized data is made available by Motivate International Inc. Our second data source will be the City of Chicago's Data Portal which provides a list of bicycle station ids and station names.
+We will look at 12 months of Cyclistic's publicly available historical trip data (August 2023 - July 2024), which contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. The anonymized data is made available by Motivate International Inc. Additionally, we will use data from the City of Chicago's Data Portal, which provides a list of bicycle station IDs and station names.
 
 <p>
 
@@ -37,7 +37,7 @@ We will look at 12 months (August 2023 - July 2024) of Cyclistic's publicly 
 <p><b>C</b>ited - Yes, the data is public, vetted, and available on the company's website.
 
 <h3><b>Data Limitations</b></h3>
-The dataset has over 5.7 million records, over 1.5 million of which contain NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, or `ended_at` columns. The free-tier version of Google Big Query I will be using prevents data deletion, so I will be filtering out these values instead to avoid any inaccurate conclusions from our data. Since the data ROCCCs, the filtered data will be enough for completing the Business Task. 
+The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. The free-tier version of Google Big Query does not allow data deletion, so I will be filtering out these values to avoid drawing any inaccurate conclusions from the data. Since the data still meets ROCCC standards, the filtered data will be enough for completing the Business Task. 
 
 <p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
