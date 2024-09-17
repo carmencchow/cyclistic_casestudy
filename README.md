@@ -127,7 +127,8 @@ We can now join the two cleaned tables together on the start and end station ids
 
 ![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
-<p>We've also created new columns which will help us analzye other metrics such as the duration, speed and distance of each group's bike rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters`.
+<p>
+We've also created new columns which will help us analzye other metrics such as the duration, speed and distance of each group's bike rides. These new column are `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters`.
 
 ![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
 
