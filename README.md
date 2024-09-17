@@ -106,11 +106,11 @@ To recap, we've discovered that the expected one-to-one relationship between `st
 To do this, we'll create a new table with `start_station_id` as the primary key and we will bring in only station-related data. After processing this data, we will rejoin the cleaned data with the origin main table. 
 
 <i>Why aggregate our data?</i>
-Aggregating will allow us to consolidate multiple rows of data into one and enforce that one-to-one relationship that makes our records unique. Common aggregation functions are `SUM(), MIN(), MAX()` and `AVG()`, however `SUM()` and `AVG()` only work with numeric values, we will aggregate data for each `start_station_id` string type using the `MAX()` function. We'll apply the same function to all other station-related fields:
 
-We will do the same for `end_station` information before combining the results of the . We'll also format the lat and lng values by rounding them to 6 decimal places. We'll treat both `start_station_id` and `end_station_id` as `station_id` which will be the primary key used to join the results of the inner queries.
-
-Create station_data table by unioning our aggregated start and end_station data:
+<p>Aggregating will allow us to consolidate multiple rows of data into one and enforce a one-to-one relationship . Common aggregation functions include `SUM(), MIN(), MAX()` and `AVG()`. However, since `SUM()` and `AVG()` only work with numeric values, we will use `MAX()` instead because our `start_station_id` and `start_station_name` are string types.
+We will perform the same aggregation on the `end_station` data.  We'll also format the lat and lng values by rounding them to 6 decimal places. We'll use `station_id` as the primary key to join the two inner queries. 
+  
+Create new `station_data` table by unioning our aggregated start and end_station data:
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
@@ -119,22 +119,22 @@ Now let's run the earlier query that filtered on station_id '647' again. However
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
 <b>Ride data table</b>
-<p>Now, let's create a separate table for our ride-related fields, we'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
+<p>Now, let's create a separate table for our ride-related fields. We'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
 
 ![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
-With both table removed of duplicates and ensuring uniqueness, we can rejoin them both. 
+We can now join the two cleaned tables together on the start and end station ids.
 
 ![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
-<p>We've also created new columns which will help us gain deeper insights into the duration, speed and distance of each group's bike rides, as well as hours and days of most and active rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters` that will help us in our analysis.
+<p>We've also created new columns which will help us analzye other metrics such as the duration, speed and distance of each group's bike rides. These new columsn will be `start_dayofweek`, `start_month`, `start_hour`, `trip_duratio`, and `distance_in_meters`.
 
 ![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
 
 <h2>4. Analyze</h2>
 
 After connecting a new Tableau workbook to our Google Big Query server, we can start to 
-visualize the relationship between different dimensions. Let's return to the origin question:
+visualize the relationships between different dimensions. Let's return to the origin question:
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
