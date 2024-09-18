@@ -10,7 +10,7 @@ The director of marketing believes the company's future success depends on maxim
 
 <h2>Stakeholders</h2>
 
-*  Lily Moreno: The director of marketing and your manager. </p>
+*  ,i>Lily Moreno</i>: The director of marketing and your manager. </p>
 
 *  Cyclistic marketing analytics team: A team of data analysts who are responsible for
 collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy.</p>
