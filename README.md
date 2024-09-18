@@ -18,7 +18,7 @@ The director of marketing believes the company's future success depends on maxim
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
-Understand how annual members and casual riders use Cyclistic bikes differently in order to convert casual riders into annual members.
+Understand how <b>annual members and casual riders use Cyclistic bikes differently</b> in order to convert casual riders into annual members.
 
 <h2>2. Prepare</h2>
 
