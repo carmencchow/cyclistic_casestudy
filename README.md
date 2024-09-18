@@ -164,6 +164,7 @@ The pie chart shows that <b>4,178,369</b> (or 4.18) unique rides were recorded f
 
 Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
 
+<p>
 <h3><b> Daily Trends </b></h3>
 
 We can see that the number of bike rides by annual members was fairly consistent from Monday to Friday, with a decrease on weekends and the highest number on Wednesday.  For casual riders, the ride count was highest on weekends.
@@ -272,18 +273,18 @@ Google Slides
 
 The following recommendations are aimed at boosting annual membership enrollment among casual riders.
 
-<p><b>1. Spring and Summer Enrollment Campaigns</b>   
-To prepare for an uptick in casual rides in spring and summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
+<b>1. Spring and Summer Enrollment Campaigns</b>   
+<p>To prepare for an uptick in casual rides in spring and summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
 
 
-<p><b>2. Pricing Structure</b></p>
-Cyclistic can consider implementing a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly membership at a fixed price that could assist in eventually transferring riders to full members. To further incentive the annual memberhips, Cyclistic could introduce a cost to casual riders by either increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan where members have the option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
+<b>2. Pricing Structure</b>
+<p>Cyclistic can consider implementing a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly membership at a fixed price that could assist in eventually transferring riders to full members. To further incentive the annual memberhips, Cyclistic could introduce a cost to casual riders by either increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan where members have the option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
 
-<p><b>3. Offer Membership Perks</b></p>
-Cyclistic can incentivize their annual membership by offering sign-up perks to existing casual riders such as ticket / discounts to local attractions, restaurants, shops. They can partner with brands and businesss within the vicinity of the 10 most frequented bike stations. These happen to be near tourist and sightseeing attractions, so bundling admissions passes with a membership. Exclusive deals for members, perhaps a chance to win prizes at local restaurants, businesses. entertainment venues.
+<b>3. Offer Membership Perks</b></p>
+<p>Cyclistic can incentivize their annual membership by offering sign-up perks to existing casual riders such as ticket / discounts to local attractions, restaurants, shops. They can partner with brands and businesss within the vicinity of the 10 most frequented bike stations. These happen to be near tourist and sightseeing attractions, so bundling admissions passes with a membership. Exclusive deals for members, perhaps a chance to win prizes at local restaurants, businesses. entertainment venues.
 
-<p><b>4. Strategic Expansion</b></p>
-Emphasize Cyclistic's role in contributing to a healthier lifestyle by expanding their network of bikes to locations such as gyms, fitness centres or community centres. Cyclistic should also relocate stations from leas popular areas, for example to areas that see more traffic and could benefit from more presence.
+<b>4. Strategic Expansion</b>
+<p>Emphasize Cyclistic's role in contributing to a healthier lifestyle by expanding their network of bikes to locations such as gyms, fitness centres or community centres. Cyclistic should also relocate stations from leas popular areas, for example to areas that see more traffic and could benefit from more presence.
 
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
  
