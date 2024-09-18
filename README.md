@@ -193,23 +193,26 @@ Do peak hours correspond with longer ride times for casual riders and annual mem
 
 ![ride_time_hour](https://github.com/user-attachments/assets/fca57136-c070-4896-a4e9-61230390db3d)
 
-Average ride time in minutes is shown for annual members at 8am and 5pm, which are the peak hours. There is no significant change in ride time during throughout the day, which gives support to the idea tha annual members are using Cyclistic bicycles for communting. For casual members, the longest rides are taken between 8am and 5pm, which supports the hypothesis that casual riders are using bikes for recreational purposes. Casual riders could also be tourists using the bikes to explore the city during daytime hours. 
+For annual members, there is no significant change in ride time throughout the day, including the peak hours of 8am and 5pm. This supports the idea that annual members are using Cyclistic bicycles for commuting. For casual members, the longest rides occur between 8am and 5pm, which supports the hypothesis that casual riders use bikes for recreational purposes, perhaps they have flexible work schedules, or they are tourists using the bikes to explore the city during the day. 
 
 
 <b>Speed</b>
 
-We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
+Let's see if the average ride speed confirms our hypothesis.   We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
+
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
-A casual rider's average speed on a classic bike is 8.17m/s and 9.75m/s on an electric bike. These speeds are slower than member rider's whose average speed on a classic bike was 12.17 m/s and 12.21 on an electric bike. 
+We'll compare the average speed of both groups on classic bikes, which are the favoured by both groups of riders. A casual rider's average speed on a classic bike is 8.17m/s compared to an annual member's average speed of 12.17 m/s on the same bike. Casual rides bike at more leisurely speeds which make sense if they are mainly using bikes for sightseeing and exploring.
 
 
 <h3><b>Seasonal Trends</b></h3>
 
-<p>Let's Looking at the monthly ride patterns, the number of casual rides begins to increase in the Spring and continues into the Summer months. From April to May, the number of rides increased by an impressive <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, whereas the ride count for annual members only increased by <b>34.8%</b> from 200,293 to 270,000 during the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>. Conversely, annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
+<p>Let's see if there are seasonal trends in bike usage across different months.
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
+  
+  the number of casual rides begins to increase in the Spring and continues into the Summer months. From April to May, the number of rides increased by an impressive <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, whereas the ride count for annual members only increased by <b>34.8%</b> from 200,293 to 270,000 during the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>. Conversely, annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
 
 
 
