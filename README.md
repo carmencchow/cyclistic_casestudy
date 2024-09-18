@@ -170,26 +170,26 @@ We can see that the number of bike rides by annual members was fairly consistent
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
-
+<i><b> Average Ride Time<b></i>
 In addition to an uptick in the number of casual riders on weekends, casual riders tend to take <i>longer</i> rides. The average ride time from Monday to Friday was 22.18 minutes while on weekends it increased to 27.75 minutes. For member riders, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Over 12 months, casual riders logged 11,896.32 more hours than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
 ![ride_time (1)](https://github.com/user-attachments/assets/838d5c30-ed62-40e8-96c4-25eb51858f63)
 
 
+We know that casual riders take longer rides on weekends, but are they are travelling greater distances? This line graph shows casual riders are indeed travelling longer distances on weekends compared to weekdays. Over the course of a year, casual riders increased their distance travelled from 1,150,194 on Fridays to 1,775,955 kilometres on Sundays. In contrast, annual member's distance decreases from Thursday to Sunday before picking up again at the start of the work week on Monday.
 
-<i> Distance by Day </i>
+
 ![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
 
-This chart shows that casual riders take longer rides on weekends, covering 1,775,955 kilometres on Sundays. In contrast, annual member's distance decreases from Thursday to Sunday before picking up again from Monday to Thursday. 
-
-Let's take a look at the ride activity over a 24-hour period.
+Let's take a look both groups' activity over a 24-hour period with this line graph:
 
 ![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
 
-The chart above shows two peaks of high activity for annual members: between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
+We see two peaks of high activity for annual members: between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
 
+<b>Seasonal Trends</b>
 Looking at the monthly ride patterns, the number of casual rides begins to increase in the Spring and continues into the Summer months. From April to May, the number of rides increased by an impressive <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, whereas the ride count for annual members only increased by <b>34.8%</b> from 200,293 to 270,000 during the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>. Conversely, annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
 
 <b><i>Distance</i></b>
