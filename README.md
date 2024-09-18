@@ -110,7 +110,7 @@ Through our data exploration, we discovered that the expected one-to-one relatio
 
 To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
-<i>Why aggregate our data?</i>
+<b>Why aggregate our data?</b>
 
 <p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. We will also perform the same aggregation on the `end_station` data, and we'll also format the latitude and longitude values by rounding them to 6 decimal places. Finally, we'll use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
   
