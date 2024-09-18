@@ -23,10 +23,7 @@ Understand how <b>annual members and casual riders use Cyclistic bikes different
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-We will look at 12 months of Cyclistic's publicly available [historical ride data] (https://divvy-tripdata.s3.amazonaws.com/index.html) 
-
-
-(August 2023 - July 2024). The trip data contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. The anonymized data is made available by [Motivate International Inc]( https://divvybikes.com/data-license-agreement). We will use data from the City of Chicago's Data Portal, which provides a list of bicycle station IDs and station names.
+We will look at 12 months of Cyclistic's publicly available [historical ride data](https://divvy-tripdata.s3.amazonaws.com/index.html) (August 2023 - July 2024). The trip data contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. The anonymized data is made available by [Motivate International Inc]( https://divvybikes.com/data-license-agreement). We will use data from the City of Chicago's Data Portal, which provides a list of bicycle station IDs and station names.
 
 <p>
 
