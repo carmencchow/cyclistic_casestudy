@@ -291,10 +291,13 @@ The following recommendations are aimed at boosting annual membership enrollment
 <h2> Final Thoughts</h2>
 
 Collecting more demographic data would help Cyclistic better understand their customer base, especially the casual riders that they are trying to reach. Ideas of how key demographic and occupational demographic data could inform their marketing campaign include 
-<p>
+
   * Offering a reduced fair program for youths or low-income users 
+  
   * Providing Family members: Offering family discounts bundles
+
   * Opening new bike stations on university campuses to provide greater access for students commuting to and from campus
+  
   * Partnering with the city's largest employers to offer corporate passes
   
 The recommendations above will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service to enable people to move around the city. Ultimately, the continued success of Cyclistic depends on staying aware of it's evolving customer base and understanding their unique needs. With that, e to ensure their markeingn campaign is driving the desired results. 
