@@ -118,12 +118,12 @@ Creating the new `station_data` table:
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
-Now let's run the earlier query that filtered on `station_id 647` again. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the differences. On the left, we've returned the original results, while the right we've cleaned up rows with multiple records. 
+Now let's run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the differences. On the left, we've returned the original results, while the right shows that we've cleaned up rows with multiple records. 
 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
 <b>Ride data table</b>
-<p>Now, let's create a separate table for our ride-related fields. We'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
+<p>Let's create a separate table for our ride-related fields. We'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
 
 ![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
@@ -144,25 +144,29 @@ distance_in_meters
 
 ![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
 
+Our data cleansing is done. Let's see what trends and patterns our analysis will reveal.
+
 <h2>4. Analyze</h2>
 
 After connecting a new Tableau workbook to our Google Big Query server, we can begin visualizing the relationships between different fields. Let's revisit the original question:
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
-<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or <b>2,708,729</b>) of the total number, and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
+The pie chart shows that <b>4,178,369</b> (or 4.18) unique rides were recorded from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or <b>2,708,729</b>) of the total number, and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
-
-
 <b>Bike Preferences</b>
+
+![member_bike](https://github.com/user-attachments/assets/aeaf044a-c0cd-44e5-b9a9-bae98d96c09d)
+
+![casual_bike](https://github.com/user-attachments/assets/153a551e-ff0c-43fe-98a2-2f27759d9059)
 
 Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and why they are not being used by annual members.
 
 <b> Daily Trends </b>
 
-We can see that the number of bike rides by annual member was fairly consistent from Monday to Friday, with a decrease on weekends and the highest number on Wednesday.  For casual riders, the ride count was highest on the weekends.
+We can see that the number of bike rides by annual members was fairly consistent from Monday to Friday, with a decrease on weekends and the highest number on Wednesday.  For casual riders, the ride count was highest on weekends.
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
