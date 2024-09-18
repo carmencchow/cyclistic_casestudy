@@ -188,20 +188,10 @@ Let's take a look both groups' activity over a 24-hour period:
 
 We see two peaks of high activity for annual members between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
 
-<h3><b>Seasonal Trends</b></h3>
-
-![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
-
-
-<p>Looking at the monthly ride patterns, the number of casual rides begins to increase in the Spring and continues into the Summer months. From April to May, the number of rides increased by an impressive <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, whereas the ride count for annual members only increased by <b>34.8%</b> from 200,293 to 270,000 during the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>. Conversely, annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
-
-<b><i>Distance</i></b>
-
-![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
-
 <b><i>Ride Time</i></b>
 
 ![avg ride time hour](https://github.com/user-attachments/assets/e3cd72eb-351f-42c4-a1ba-c26552cd6cfe)
+
 
 <b><i>Speed</i></b>
 
@@ -210,6 +200,20 @@ We'll calculate average speed of each ride by taking the distance and dividing i
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
 A casual rider's average speed on a classic bike is 8.17m/s and 9.75m/s on an electric bike. These speeds are slower than member rider's whose average speed on a classic bike was 12.17 m/s and 12.21 on an electric bike. 
+
+
+<h3><b>Seasonal Trends</b></h3>
+
+<p>Let's Looking at the monthly ride patterns, the number of casual rides begins to increase in the Spring and continues into the Summer months. From April to May, the number of rides increased by an impressive <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, whereas the ride count for annual members only increased by <b>34.8%</b> from 200,293 to 270,000 during the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>. Conversely, annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
+
+![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
+
+
+
+<b>Distance</b>
+
+![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
+
 
 <b><i>Location</i></b>
 
