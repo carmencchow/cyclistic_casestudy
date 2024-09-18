@@ -9,10 +9,12 @@
 The director of marketing believes the company's future success depends on maximizing the number of annual memberships by converting casual riders into annual members. In order to do that, the team needs to better understand how casual riders and annual members use Cyclistic bikes differently by analyzing historical bike trip data to identify trends.
 
 <h2>Stakeholders</h2>
-<p>*  Lily Moreno: The director of marketing and your manager. </p>
-<p>*  Cyclistic marketing analytics team: A team of data analysts who are responsible for
+*  Lily Moreno: The director of marketing and your manager. </p>
+
+*  Cyclistic marketing analytics team: A team of data analysts who are responsible for
 collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy.</p>
-<p>*  Cyclistic executive team: They will decide whether to approve the recommended marketing program.</p>
+
+*  Cyclistic executive team: They will decide whether to approve the recommended marketing program.</p>
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
