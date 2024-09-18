@@ -149,7 +149,7 @@ After connecting a new Tableau workbook to our Google Big Query server, we can b
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
-<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Out of that number, rides by annual members made up 64.8% (or <b>2,708,729</b>) and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
+<b>4,178,369 rides</b> were recorded from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or <b>2,708,729</b>) of the total number, and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
@@ -157,11 +157,11 @@ After connecting a new Tableau workbook to our Google Big Query server, we can b
 
 <b>Bike Preferences</b>
 
-Both casual and annual members prefer the classic bikes over the electric bikes. For casual riders 966,128 out of 1,469,640 rides were on classic bikes (65.73%) and for annual members, 68.50% or 1,855,692 out of the 2,708,729 rides. Regarding docked bikes, not only were they only used by casual customers, but several of them logged multiday trips, had missing end station ids and names. Thi..
+Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and why they are not being used by annual members.
 
 <b> Daily Trends </b>
 
-We can see that the number of annual member bike rides was fairly consistent from Monday to Friday, with a decrease on the weekends and the highest number on Wednesday.  For casual riders, they took the most number of rides on the weekend.
+We can see that the number of bike rides by annual member was fairly consistent from Monday to Friday, with a decrease on weekends and the highest number on Wednesday.  For casual riders, the ride count was highest on the weekends.
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
@@ -172,14 +172,14 @@ We can see that the number of annual member bike rides was fairly consistent fro
 
 
 
-We can see that casual riders also take longer rides on weekends compared to member riders. In fact casual riders logged 11,896.32 hours more on Sunday than their member counterparts.
+We can see that casual riders also take longer rides on weekends compared to member riders. In fact casual riders logged 11,896.32 hours more on Sundays than the annual members.
 
 <i> Distance by Day </i>
 ![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
 
-This chart shows that casual riders take longer rides on the weekend, covering 1,775,955 kilometres on Sundays, where as member rider's kilometres start decreasing from Thursday to Sunday before pickup again on from Monday to Thursday. 
+This chart shows that casual riders take longer rides on weekends, covering 1,775,955 kilometres on Sundays. In contrast, annual member's distance decreases from Thursday to Sunday before picking up again from Monday to Thursday. 
 
-Let's take a look at the ride activity over a 24 hour period.
+Let's take a look at the ride activity over a 24-hour period.
 
 ![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
 
