@@ -241,57 +241,53 @@ These bike stations are generally located away from the shoreline and spread out
 
 <h2>5. Share</h2>
 
-We can now summarize our findings:
+Let's summarize our findings of the key differences in ride trip patterns between casual riders and annual members before making recommendations to Moreno's marketing team.
 
-<b>Casual Rider</b>
-* Most active time:
-* Busiest day of the week: Saturday and Sundays
-* Busiest months: July and August
-* Preferred start stations: near tourist attractions
-* Average ride time on weekdays: 22.16 minutes
+<b>Casual Riders</b>
+* Most active time: 9am -7pm
+* Most active day: Saturday and Sunday
+* Most active month: July, July, and August
+* Preferred start stations: near tourist attractions on the shoreline
+* Average ride time on weekdays: 22.2 minutes
 * Average ride time on weekend: 27.8 minutes
 * Average distance: 5.93 kilometres
 * Average speed on a classic bike: 8.17m/s
 
 <b>Member Riders</b>
-* Most active time:
-* Busiest day of the week: Monday to Thursday (check) 6-8am and 4-6pm
-* Busiest months: July and August
-* Preferred start stations away fro tourist attractions spread across - 
-* Average ride time on weekdays: 12.22 minutes
+* Most active time: 8am and 5pm
+* Most active day: Monday to Friday 
+* Busiest months: July, August, and September
+* Preferred start stations: spread out across commercial and financial areas
+* Average ride time on weekdays: 12.2 minutes
 * Average ride time on weekend: 14.2 minutes 
 * Average distance: 5.39 kilometres
 * Average speed on a classic bike: 12.17m/s
 
-Based on our findings, it seems like would appear that annual members use Cyclistic's bikes for commuting, and casual riders for leisure. 
+Based on the differences in these metrics, we can confidently conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders are tourists use bikes leisurely to sightsee or visit tourist attractions during the day.
 
 Tableau 
 Google Slides
 
 <h2>6. Act</h2>
 
-Based on these conclusion I'll meka the following recommndatsion to Moreno and the marketing team.
+The following recommendations are aimed at boosting annual membership enrollment among casual riders.
 
-<i>Suggestion #1:</i>
-<p><b>Seasonality/Short-term options</b>   
+<p><b>1. Seasonal Marketing</b>   
 To prepare for an uptick in casual rides in spring and summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
 
 
-<i>Suggestion #2</i>
-<p><b>Pricing Structure</b></p>
+<p><b>2. Pricing Structure</b></p>
 Cyclistic can consider implementing a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly membership at a fixed price that could assist in eventually transferring riders to full members. To further incentive the annual memberhips, Cyclistic could introduce a cost to casual riders by either increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan where members have the option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
 
-<i>Suggestion #3 </i>
-<p><b>Membership Perks</b></p>
+<p><b>3. Membership Perks</b></p>
 Cyclistic can incentivize their annual membership by offering sign-up perks to existing casual riders such as ticket / discounts to local attractions, restaurants, shops. They can partner with brands and businesss within the vicinity of the 10 most frequented bike stations. These happen to be near tourist and sightseeing attractions, so bundling admissions passes with a membership. Exclusive deals for members, perhaps a chance to win prizes at local restaurants, businesses. entertainment venues.
 
-<b>Suggestion #4: </b>
+<b>Relocation</b>
 Emphasize Cyclistic's role in contributing to a healthier lifestyle by expanding their network of bikes to locations such as gyms, fitness centres or community centres. Cyclistic should also relocate stations from leas popular areas, for example to areas that see more traffic and could benefit from more presence.
 
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
  
 <h2> Final Thoughts</h2>
-
 Since the dataset only contained anonymized information, we don't have a complete picture of casual riders ... Examples of how Cyclistics could use this additional ifnormation: 
   
   * Youth/low-income: Offering a subsized program
