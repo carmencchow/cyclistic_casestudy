@@ -170,7 +170,7 @@ We can see that the number of bike rides by annual members was fairly consistent
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
-<b> Ride Time</b>
+<b> Duration</b>
 <p>
 In addition to an uptick in the number of casual riders on weekends, casual riders tend to take <i><b>longer</b></i> rides. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For member riders, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Over 12 months, casual riders logged 11,896.32 more hours than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
@@ -189,13 +189,14 @@ Let's take a look both groups' activity over a 24-hour period:
 
 We see two peaks of high activity for annual members between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
 
-<b><i>Ride Time</i></b>
-
-What's the relationship between average ride time and number of rides? 
+Do peak hours correspond with longer ride times for casual riders and annual members?
 
 ![ride_time_hour](https://github.com/user-attachments/assets/fca57136-c070-4896-a4e9-61230390db3d)
 
-<b><i>Speed</i></b>
+Average ride time in minutes is shown for annual members at 8am and 5pm, which are the peak hours. There is no significant change in ride time during throughout the day, which gives support to the idea tha annual members are using Cyclistic bicycles for communting. For casual members, the longest rides are taken between 8am and 5pm, which supports the hypothesis that casual riders are using bikes for recreational purposes. Casual riders could also be tourists using the bikes to explore the city during daytime hours. 
+
+
+<b>Speed</b>
 
 We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
