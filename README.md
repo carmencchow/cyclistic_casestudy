@@ -112,11 +112,9 @@ To do this, we'll create a new table with `start_station_id` as the primary key,
 
 <i>Why aggregate our data?</i>
 
-<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include `SUM()`, 
-  MIN(), MAX()` and `AVG()`</i>. Since `SUM()` and `AVG()` only work with numeric values, we will use `MAX()` instead because our `start_station_id` and `start_station_name` are string types.
-We will also perform the same aggregation on the `end_station` data. And we'll also format the latitude and longitude values by rounding them to 6 decimal places. Finally, we'll use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
+<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. We will also perform the same aggregation on the `end_station` data, and we'll also format the latitude and longitude values by rounding them to 6 decimal places. Finally, we'll use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
   
-Create the new `station_data` table.
+Creating the new `station_data` table:
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
