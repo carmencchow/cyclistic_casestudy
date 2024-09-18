@@ -131,7 +131,7 @@ We can now join the two cleaned tables together on the start and end station ids
 ![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
 <p>
-We've also created new columns which will help us analzye other metrics such as the duration, speed and distance of each group's bike rides. These new column are
+We've also created new columns which will help us analzye other metrics such as the duration, speed and distance of each group's bike rides. These new column are:
 
 ```
 start_dayofweek,
@@ -145,8 +145,7 @@ distance_in_meters
 
 <h2>4. Analyze</h2>
 
-After connecting a new Tableau workbook to our Google Big Query server, we can start to 
-visualize the relationships between different dimensions. Let's return to the origin question:
+After connecting a new Tableau workbook to our Google Big Query server, we can begin visualizing the relationships between different fields. Let's revisit the original question:
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
