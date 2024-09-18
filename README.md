@@ -218,8 +218,7 @@ April is when both groups start biking longer distances, with this trend continu
 
 ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
 
-
-<b>Location</b>
+<h3><b>Location</b></h3>
 
 Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the Chicago Data Portal website to plot the most frequented start stations among casual riders and annual members: 
 
@@ -229,13 +228,14 @@ For casual riders, the most popular bike station is <i>Streeter Dr. & Grand Ave<
 
 ![casual_station_map](https://github.com/user-attachments/assets/e105abd6-eb7c-47f9-9e2f-ff51efd91a50)
 
-The 10 most popular stations are located near tourist attractions like Adler Planetarium and Shedd Aquarium. 
+The 10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions like Adler Planetarium and Shedd Aquarium. 
 
-For annual members, the most popular station is <i>Clinton St & Washington Blvd<i>, followed by <i>Kingsbury St & Kinzie.</i>
+For annual members, the most popular station is <i>Clinton St & Washington Blvd</i>, followed by <i>Kingsbury St & Kinzie.</i>
 
 ![top_10_members_station](https://github.com/user-attachments/assets/530efb66-a505-4e70-84f3-344b4a23edf9)
 
-These bike stations are  locations are more ... Near North Side
+These bike stations are generally located away from the shoreline and spread out across Near North Side, Magnificent Mile, and the Loop, Chicago's central business district.
+
 ![member_station_map](https://github.com/user-attachments/assets/510c9e6a-110f-402f-a133-8344fcd3a27a)
 
 
