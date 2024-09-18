@@ -274,30 +274,30 @@ Google Slides
 The following recommendations are aimed at boosting annual membership enrollment among casual riders.
 
 <b>1. Spring and Summer Enrollment Campaigns</b>   
-<p>To prepare for an uptick in casual rides in spring and summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
-
+<p>To prepare for an uptick in casual rides in spring and summer, Cyclistic should plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer. Since casual riders are the most active during the summer months, campaigns should launh ahead of the season.
 
 <b>2. Pricing Structure</b>
-<p>Cyclistic can consider implementing a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly membership at a fixed price that could assist in eventually transferring riders to full members. To further incentive the annual memberhips, Cyclistic could introduce a cost to casual riders by either increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan where members have the option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
+<p>Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. To further incentive annual memberhips, Cyclistic could introduce a surcharge for casual riders by increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasibale to increase and retain membership.
 
 <b>3. Offer Membership Perks</b></p>
-<p>Cyclistic can incentivize their annual membership by offering sign-up perks to existing casual riders such as ticket / discounts to local attractions, restaurants, shops. They can partner with brands and businesss within the vicinity of the 10 most frequented bike stations. These happen to be near tourist and sightseeing attractions, so bundling admissions passes with a membership. Exclusive deals for members, perhaps a chance to win prizes at local restaurants, businesses. entertainment venues.
+<p>Cyclistic can incentivize their annual membership by offering sign-up perks to casual riders who are interested in trasnferring to an annual membership. These could be in the form of tickets or discounts to local attractions, restaurants, and shops. Cyclistic can partner with brands and businesss in the vicinity of the 10 most frequented bike stations. Bundling admission passes with
+a membership, as well as offering exclusive deals for members - like chances to win prizes at local restaurants, businesses, or entertainment venues - could be an attractive way to boost membership while partnering with and supporting local businesses.
 
 <b>4. Strategic Expansion</b>
-<p>Emphasize Cyclistic's role in contributing to a healthier lifestyle by expanding their network of bikes to locations such as gyms, fitness centres or community centres. Cyclistic should also relocate stations from leas popular areas, for example to areas that see more traffic and could benefit from more presence.
+<p>To promote a healthier lifestyle particularly in underserved areas,  Cyclistic should expand their network of bikes to locations such as popular gyms and community recreation centres. Below is a list of 10 of the 60? stations that had less than 10 bikes rentals in the past 12 months. Cyclistic should relocate these underused bike stations to more frequented areas, thereby driving more usage.
 
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
  
 <h2> Final Thoughts</h2>
 
-Collecting more demographic data would help Cyclistic better understand their customer base, especially the casual riders that they are trying to reach. Ideas of how key demographic and occupational demographic data could inform their marketing campaign include 
+Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. Key demographic and occupational data could inform future marketing campaigns in targed ways, such as:  
 
-  * Offering a reduced fair program for youths or low-income users 
+  * Offering a reduced fair program for youth or low-income users. 
   
-  * Providing Family members: Offering family discounts bundles
+  * Providing family discounts bundles for household members.
 
-  * Opening new bike stations on university campuses to provide greater access for students commuting to and from campus
+  * Opening new bike stations on university campuses to facilitate student commutes.
   
-  * Partnering with the city's largest employers to offer corporate passes
+  * Partnering with the city's largest employers to offer employee corporate passes.
   
-The recommendations above will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service to enable people to move around the city. Ultimately, the continued success of Cyclistic depends the company's efforts to stay aware of the needs of its evolving customer base. With that ensure their markeingn campaign is driving the desired results. 
+The recommendations above will help Cyclistic boost conversion rates while continuing to provide affordable, sustainable transportation to all riders. Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base, and that can be achieved through continued data collection and analysis.
