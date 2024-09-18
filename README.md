@@ -24,7 +24,7 @@ Understand how annual members and casual riders use Cyclistic bikes differently 
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-We will look at 12 months of Cyclistic's publicly available historical trip data (August 2023 - July 2024), which contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. The anonymized data is made available by Motivate International Inc. Additionally, we will use data from the City of Chicago's Data Portal, which provides a list of bicycle station IDs and station names.
+We will look at 12 months of Cyclistic's publicly available historical trip data (August 2023 - July 2024), which contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. The anonymized data is made available by Motivate International Inc. We will use data from the City of Chicago's Data Portal, which provides a list of bicycle station IDs and station names.
 
 <p>
 
@@ -43,7 +43,7 @@ We will look at 12 months of Cyclistic's publicly available historical trip data
 
 The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. The free-tier version of Google Big Query does not allow data deletion, so I will be filtering out these values to avoid drawing any inaccurate conclusions. 
 
-<p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will be unioning the tables instead of joining them. We'll be using Google Big Query for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+<p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will not be adding columns. Instead we will be unioning the tables by adding them to them bottom of the previous table. Google Big Query instead of Excel will be u sed for data cleansing and analysis due to its ability to handle larger volumes of data.  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
 <p>
 
@@ -62,62 +62,62 @@ We have now imported and merged all 12 datasets giving us <i>5,715,482</i> rows 
 <h2>3. Process</h2>
 <h3>Data Exploration</h3>
 
-Before cleaning the data, it's beneficial to explore the data and see what exactly we're working with. Looking at our table,  we can divide our columns into three categories of qualitative data: data about station information, data about ride information, and data related to start and end times. Here's an overview of our columns:
+Before cleaning the data, it's beneficial to explore it and see what exactly we're working with. Looking at our table,  we can group our columns into three categories of qualitative data: data about stations, data about rides, and data related to start and end times. Here's the schema showing each field name and data type.
 
 ![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
 ![schema2](https://github.com/user-attachments/assets/8c034d55-782b-43bc-bffc-2095c9c6cac6)
 
-Let's explore the relationships between some of our columns and see if they are one-to-one or one-to-many relationships. It would be reasonable to expect a bike station to have only one station name associated with it, in other words `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to see if there are instances when a `start_station_id` has more than one `start_station_name` associated with it. 
+Let's explore the relationships between some of our columns and see whether they are one-to-one or one-to-many relationships. We'll start with a bike station, which we would expect to have only one station name associated with it. In other words, `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to check for instances where a `start_station_id` has multiple `start_station_names`. 
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-We see there are, in fact, 83 records of `start_station_id`s with more than one `start_station_name`. 
+We see that there are, in fact, 83 records of `start_station_id`s linked to more than one `start_station_name`. 
 
 ![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
 
-Let's examine the first result, the station with the id `647`:
+Let's examine the first result: the station with the ID `647`.
 
 ![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
 
-This returns three different station names. In order to find the correct name, we'll turn to our second data source, the city of Chicago Data Portal's website (link provided above) and look up station id 647 in its database:
+This returns three different station names. To find the correct name, we'll refer to our second data source - the City of Chicago Data Portal's website (link provided above) - and look up station_id `647` in its database.
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-It looks like Racine Ave. & 57th is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure a more effective way of ensuring a single name for each station_id.
+It looks like Racine Ave. & 57th is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure that each `station_id` has a unique and consistent name.
 
-Let's explore the relationship between `start_station_id` and `start_lat`:
+Let's examine the relationship between `start_station_id` and `start_lat`:
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
-Our query returns 1,588 records of a single `start_station_id` with multiple `start_lat`s. 
+Our query returns 1,588 records where a single `start_station_id` is associated with multiple `start_lat` values. 
 
 ![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
 
-Let's filter on the first result, station <i>WL-012</i>:
+Let's filter on the first result: station <i>WL-012</i>:
 
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
-We see that the 7,232 different latitudes are results of inconsistent number formatting. 
+We see that the 7,232 different latitudes are the result of inconsistent number formatting. 
 
-We now have an idea of the types of data cleansing and data transformation processes we will need to ensure that we don't have one-to-many relationships that cause duplicates and inaccurate analysis. 
+We now have an idea of the types of data cleansing and data transformation processes needed to prevent duplicates and one-to-many relationships that can lead to inaccuracies in our analysis. 
 
 
 <h3>Data Cleansing</h3>
 
-To recap, we've discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as it's `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station name, although possible, would not be practical or time efficient. To handle the variance of multiple records, we can aggregate the rows and reduce them to a single row to create that one-to-one relationship between `start_station_id` and the station-related data.
+Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station name, while possible, would not be practical or time-efficient. Instead, what we'll do is aggregate the rows into a single entry to create a one-to-one relationship between `start_station_id` and the associated data.
 
-To do this, we'll create a new table with `start_station_id` as the primary key and we will bring in only station-related data. After processing this data, we will rejoin the cleaned data with the origin main table. 
+To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
 <i>Why aggregate our data?</i>
 
-<p>Aggregating will allow us to consolidate multiple rows of data into one and enforce a one-to-one relationship . Common aggregation functions include `SUM(), MIN(), MAX()` and `AVG()`. However, since `SUM()` and `AVG()` only work with numeric values, we will use `MAX()` instead because our `start_station_id` and `start_station_name` are string types.
-We will perform the same aggregation on the `end_station` data.  We'll also format the lat and lng values by rounding them to 6 decimal places. We'll use `station_id` as the primary key to join the two inner queries. 
+<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include `SUM(), MIN(), MAX()` and `AVG()`. Since `SUM()` and `AVG()` only work with numeric values, we will use `MAX()` instead because our `start_station_id` and `start_station_name` are string types.
+We will also perform the same aggregation on the `end_station` data. And we'll also format the latitude and longitude values by rounding them to 6 decimal places. Finally, we'll use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
   
-Create new `station_data` table by unioning our aggregated start and end_station data:
+Create the new `station_data` table.
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
-Now let's run the earlier query that filtered on station_id '647' again. However, this time we will run it twice: once on our cleaned data and the other on our original dataset  to see the difference. On the left, we've returned the original results, while the right we've cleaned up rows with multiple records. 
+Now let's run the earlier query that filtered on `station_id 647` again. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the differences. On the left, we've returned the original results, while the right we've cleaned up rows with multiple records. 
 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
