@@ -272,27 +272,28 @@ Google Slides
 
 The following recommendations are aimed at boosting annual membership enrollment among casual riders.
 
-<p><b>1. Seasonal Marketing</b>   
+<p><b>1. Spring and Summer Enrollment Campaigns</b>   
 To prepare for an uptick in casual rides in spring and summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
 
 
 <p><b>2. Pricing Structure</b></p>
 Cyclistic can consider implementing a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly membership at a fixed price that could assist in eventually transferring riders to full members. To further incentive the annual memberhips, Cyclistic could introduce a cost to casual riders by either increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan where members have the option to pay up front or month to month in installments may be more feasibale to increase and retain enrollment.
 
-<p><b>3. Membership Perks</b></p>
+<p><b>3. Offer Membership Perks</b></p>
 Cyclistic can incentivize their annual membership by offering sign-up perks to existing casual riders such as ticket / discounts to local attractions, restaurants, shops. They can partner with brands and businesss within the vicinity of the 10 most frequented bike stations. These happen to be near tourist and sightseeing attractions, so bundling admissions passes with a membership. Exclusive deals for members, perhaps a chance to win prizes at local restaurants, businesses. entertainment venues.
 
-<b>Relocation</b>
+<p><b>4. Strategic Expansion</b></p>
 Emphasize Cyclistic's role in contributing to a healthier lifestyle by expanding their network of bikes to locations such as gyms, fitness centres or community centres. Cyclistic should also relocate stations from leas popular areas, for example to areas that see more traffic and could benefit from more presence.
 
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
  
 <h2> Final Thoughts</h2>
-Since the dataset only contained anonymized information, we don't have a complete picture of casual riders ... Examples of how Cyclistics could use this additional ifnormation: 
-  
-  * Youth/low-income: Offering a subsized program
-  * Family members: Offering family discounts bundles
-  * University students: Opening new bike stations on university campuses for to provide greater access for students 
-  * Workers: Partnering with the city's largest employers to offer discounted member passes to employees
 
-Based on the ride patterns and seasonal trends, by following these recommendations will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service that their riders can enjoy. 
+Collecting more demographic data would help Cyclistic better understand their customer base, especially the casual riders that they are trying to reach. Ideas of how key demographic and occupational demographic data could inform their marketing campaign include 
+<p>
+  * Offering a reduced fair program for youths or low-income users 
+  * Providing Family members: Offering family discounts bundles
+  * Opening new bike stations on university campuses to provide greater access for students commuting to and from campus
+  * Partnering with the city's largest employers to offer corporate passes
+  
+The recommendations above will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service to enable people to move around the city. Ultimately, the continued success of Cyclistic depends on staying aware of it's evolving customer base and understanding their unique needs. With that, e to ensure their markeingn campaign is driving the desired results. 
