@@ -162,7 +162,7 @@ The pie chart shows that <b>4,178,369</b> (or 4.18) unique rides were recorded f
 
 ![casual_bike](https://github.com/user-attachments/assets/153a551e-ff0c-43fe-98a2-2f27759d9059)
 
-Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and why they are not being used by annual members.
+Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
 
 <h3><b> Daily Trends </b></h3>
 
@@ -170,12 +170,13 @@ We can see that the number of bike rides by annual members was fairly consistent
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
-<b> Average Ride Time</b>
+<b> Ride Time</b>
 <p>
 In addition to an uptick in the number of casual riders on weekends, casual riders tend to take <i><b>longer</b></i> rides. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For member riders, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Over 12 months, casual riders logged 11,896.32 more hours than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
 ![ride_time (1)](https://github.com/user-attachments/assets/838d5c30-ed62-40e8-96c4-25eb51858f63)
 
+<b> Distance</b>
 
 We know that casual riders take longer rides on weekends, but are they are travelling greater distances? This line graph shows casual riders are indeed travelling longer distances on weekends compared to weekdays. Over the course of a year, casual riders increased their distance travelled from <b>1,150,194</b> on Fridays to <b>1,775,955 kilometres</b> on Sundays. In contrast, annual member's distance decreased from Thursday to Sunday before picking up again at the start of the work week on Monday.
 
@@ -190,8 +191,9 @@ We see two peaks of high activity for annual members between 6-8am and 4-6pm, wi
 
 <b><i>Ride Time</i></b>
 
-![avg ride time hour](https://github.com/user-attachments/assets/e3cd72eb-351f-42c4-a1ba-c26552cd6cfe)
+What's the relationship between average ride time and number of rides? 
 
+![ride_time_hour](https://github.com/user-attachments/assets/fca57136-c070-4896-a4e9-61230390db3d)
 
 <b><i>Speed</i></b>
 
