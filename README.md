@@ -284,6 +284,7 @@ The following recommendations are aimed at boosting annual membership enrollment
 <b>3. Offer Membership Perks</b></p>
 <p>Cyclistic can incentivize their annual membership by offering sign-up perks to casual riders who are interested in trasnferring to an annual membership. These could be in the form of tickets or discounts to local attractions, restaurants, and shops. Cyclistic can partner with brands and businesss in the vicinity of the 10 most frequented bike stations. Bundling admission passes with
 a membership, as well as offering exclusive deals for members - like chances to win prizes at local restaurants, businesses, or entertainment venues - could be an attractive way to boost membership while partnering with and supporting local businesses.
+* People shop by bike in the area&
 
 <b>4. Strategic Expansion</b>
 <p>To promote a healthier lifestyle particularly in underserved areas,  Cyclistic should expand their network of bikes to locations such as popular gyms and community recreation centres. Below is a list of 10 of the 60? stations that had less than 10 bikes rentals in the past 12 months. Cyclistic should relocate these underused bike stations to more frequented areas, thereby driving more usage.
@@ -295,12 +296,14 @@ Most importantly, Cyclistic can grow their number of annual riders by expanidng 
 
 Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. Key demographic and occupational data could inform future marketing campaigns in targed ways, such as:  
 
-  * Offering a reduced fair program for youth or low-income users. 
+  * Offering a reduced fair program for youth, low-income users, and seniors. 
   
-  * Providing family discounts bundles for household members.
+  * Providing family discounts bundles for household members. 
 
   * Opening new bike stations on university campuses to facilitate student commutes.
   
   * Partnering with the city's largest employers to offer employee corporate passes.
   
-The recommendations above will help Cyclistic boost conversion rates while continuing to provide affordable, sustainable transportation to all riders. Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base, and that can be achieved through continued data collection and analysis. Part of their strategy to grow and retrain long-term users.
+The recommendations above will help Cyclistic boost conversion rates while continuing to provide affordable, sustainable transportation to all riders. Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base, and that can be achieved through continued data collection and analysis. Part of their strategy to grow and retrain long-term users.  lead to stronger marketing strategies. Evaluate
+
+Through the life cycle of the campaign
