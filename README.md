@@ -183,7 +183,7 @@ Let's take a look at the ride activity over a 24-hour period.
 
 ![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
 
-The chart above shows two peaks of high activity for annual members: between 6-8am and 4-6pm, with the most active hour being 8am and 5pm, which could indicate when members are heading to and from work. On the other hand, the majority of casual bike rides take place between 8am and 7pm, beginning with a steady increase from 8am to 5pm.
+The chart above shows two peaks of high activity for annual members: between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
 
