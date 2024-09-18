@@ -212,9 +212,7 @@ We'll compare the average speed of both groups on classic bikes, which are the f
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
   
-The bar chart shows the number of casual rides increases in the Spring and continues into the Summer months. <b>From April to May, the number of rides increased by a signifcant 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b> from 200,293 to 270,000 in the same period. From October to November, <b>casual members saw a 44% decrease in rides </b> from 128,289 to 71,053, while annual members had a smaller 25.9% decrease with the number of rides dropping from 268,598 to 199,086. 
-
-
+The bar chart shows that the number of casual rides increases in the spring and continues into the summer months. <b>From April to May, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b>, from 200,293 to 270,000 during the same period. From October to November, <b>casual riders saw a 44% decrease in rides </b>, dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
 
 <b>Distance</b>
 
@@ -276,7 +274,7 @@ Based on these conclusion I'll meka the following recommndatsion to Moreno and t
 
 <i>Suggestion #1:</i>
 <p><b>Seasonality/Short-term options</b>   
-To prepare for an uptick in casual rides in Spring and Summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
+To prepare for an uptick in casual rides in spring and summer, Cyclistic should prepare and plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer months. Since casual riders are the most active during the summer months, launch campaigns ahead of the summer months that and introduce a monthly pass
 
 
 <i>Suggestion #2</i>
