@@ -10,12 +10,11 @@ The director of marketing believes the company's future success depends on maxim
 
 <h2>Stakeholders</h2>
 
-*  <i>Lily Moreno</i>: The director of marketing and your manager. </p>
+*  <b>Lily Moreno</b>: The director of marketing and your manager. </p>
 
-*  Cyclistic marketing analytics team: A team of data analysts who are responsible for
-collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy.</p>
+*  <b>Cyclistic marketing analytics team</b>: A team of data analysts who are responsible for collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy.</p>
 
-*  Cyclistic executive team: They will decide whether to approve the recommended marketing program.</p>
+*  <b>Cyclistic executive team</b>: They will decide whether to approve the recommended marketing program.</p>
 
 <h2>1. Ask</h2>
 <h3><b>Business Task</b></h3>
