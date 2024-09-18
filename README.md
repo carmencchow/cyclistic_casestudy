@@ -27,12 +27,9 @@ We will look at 12 months of Cyclistic's publicly available historical trip data
 
 <p>
 
-<p>Cyclistic historical trip data
-<p>https://divvy-tripdata.s3.amazonaws.com/index.html
-<p>Motivate International Inc. license: 
-<p>https://divvybikes.com/data-license-agreement.
-<p>Chicago's Data Portal 
-<p>https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
+<p>Cyclistic historical trip data: https://divvy-tripdata.s3.amazonaws.com/index.html
+<p>Motivate International Inc. license: https://divvybikes.com/data-license-agreement.
+<p>Chicago's Data Portal https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p><b>R</b>eliable - Yes, the dataset is public and unbiased.
