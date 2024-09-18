@@ -287,6 +287,7 @@ a membership, as well as offering exclusive deals for members - like chances to 
 
 <b>4. Strategic Expansion</b>
 <p>To promote a healthier lifestyle particularly in underserved areas,  Cyclistic should expand their network of bikes to locations such as popular gyms and community recreation centres. Below is a list of 10 of the 60? stations that had less than 10 bikes rentals in the past 12 months. Cyclistic should relocate these underused bike stations to more frequented areas, thereby driving more usage.
+Most importantly, Cyclistic can grow their number of annual riders by expanidng network and offering more accessible bike stations across the city. 
 
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
  
@@ -302,4 +303,4 @@ Collecting a wider spread of demographic data would help Cyclistic better unders
   
   * Partnering with the city's largest employers to offer employee corporate passes.
   
-The recommendations above will help Cyclistic boost conversion rates while continuing to provide affordable, sustainable transportation to all riders. Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base, and that can be achieved through continued data collection and analysis.
+The recommendations above will help Cyclistic boost conversion rates while continuing to provide affordable, sustainable transportation to all riders. Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base, and that can be achieved through continued data collection and analysis. Part of their strategy to grow and retrain long-term users.
