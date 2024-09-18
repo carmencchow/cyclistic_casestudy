@@ -300,4 +300,4 @@ Collecting more demographic data would help Cyclistic better understand their cu
   
   * Partnering with the city's largest employers to offer corporate passes
   
-The recommendations above will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service to enable people to move around the city. Ultimately, the continued success of Cyclistic depends on staying aware of it's evolving customer base and understanding their unique needs. With that, e to ensure their markeingn campaign is driving the desired results. 
+The recommendations above will help Cyclistic boost their conversion rate while continuing to provide an affordable, sustainable service to enable people to move around the city. Ultimately, the continued success of Cyclistic depends the company's efforts to stay aware of the needs of its evolving customer base. With that ensure their markeingn campaign is driving the desired results. 
