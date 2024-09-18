@@ -212,7 +212,7 @@ We'll compare the average speed of both groups on classic bikes, which are the f
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
   
-  the number of casual rides begins to increase in the Spring and continues into the Summer months. From April to May, the number of rides increased by an impressive <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, whereas the ride count for annual members only increased by <b>34.8%</b> from 200,293 to 270,000 during the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>. Conversely, annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
+The bar chart shows the number of casual rides increases in the Spring and continues into the Summer months. From April to May, the number of rides increased by a signifcant <b>79.4%</b>, rising from <b>92,111 to 164,316</b> rides, while the number of rides by annual members only increased by <b>34.8%</b> from 200,293 to 270,000 in the same period. From October to November, casual members saw a <b>44% </b> decrease from <b>128,289 to 71,053</b>, while annual members had a smaller <b>25.9%</b> decrease with the number of rides dropping from 268,598 to 199,086. 
 
 
 
