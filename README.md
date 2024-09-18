@@ -45,7 +45,7 @@ The dataset contains over 5.7 million records, with more than 1.5 million entrie
 
 <p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will not be adding new columns. Instead we will be unioning the tables by adding them to them bottom of the previous table. 
   
-  First, I'll create a table and enter the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+We'll create a table and specifiy the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
 <p>
 
@@ -59,7 +59,7 @@ The remaining 11 CSV files will be loaded and unioned to the bottom of our new t
 
 ``` bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202309-divvy-tripdata.csv" ```
 
-We have now imported and merged all 12 datasets giving us <i>5,715,482</i> rows of data. Let's go ahead and process the data.
+We have now imported and merged all 12 datasets giving us 5,715,482 rows of data. Let's go ahead and process the data.
 
 <h2>3. Process</h2>
 <h3>Data Exploration</h3>
@@ -85,7 +85,7 @@ This returns three different station names. To find the correct name, we'll refe
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-It looks like Racine Ave. & 57th is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure that each `station_id` has a unique and consistent name.
+It looks like <i>Racine Ave. & 57th</i> is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure that each `station_id` has a unique and consistent name.
 
 Let's examine the relationship between `start_station_id` and `start_lat`:
 
@@ -106,13 +106,13 @@ We now have an idea of the types of data cleansing and data transformation proce
 
 <h3>Data Cleansing</h3>
 
-Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station name, while possible, would not be practical or time-efficient. Instead, what we'll do is aggregate the rows into a single entry to create a one-to-one relationship between `start_station_id` and the associated data.
+Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station name, while possible, would not be practical or time-efficient. Instead, what we'll do is aggregate the rows into a single entry to create a one-to-one relationship between `start_station_id` and the station-related data.
 
 To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
 <i>Why aggregate our data?</i>
 
-<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include `SUM(), MIN(), MAX()` and `AVG()`. Since `SUM()` and `AVG()` only work with numeric values, we will use `MAX()` instead because our `start_station_id` and `start_station_name` are string types.
+<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include <i>SUM(), MIN(), MAX()` and `AVG()`</i>. Since `SUM()` and `AVG()` only work with numeric values, we will use `MAX()` instead because our `start_station_id` and `start_station_name` are string types.
 We will also perform the same aggregation on the `end_station` data. And we'll also format the latitude and longitude values by rounding them to 6 decimal places. Finally, we'll use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
   
 Create the new `station_data` table.
