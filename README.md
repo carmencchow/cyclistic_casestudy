@@ -34,7 +34,7 @@ We will look at 12 months of Cyclistic's publicly available historical ride data
 
 <h3><b>Data Limitations</b></h3>
 
-The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use Google Big Query instead of Excel for data cleansing and analysis. Since the free-tier version of Big Query does not support data deletion, I will filter out the NULL and negative values in the analysis.  
+The dataset contains over <b>5.7 million records</b>, with more than <i>1.5 million entries</i> having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use <b>Google Big Query</b> instead of Excel for data cleansing and analysis. Since the free-tier version of Big Query does not support data deletion, I will filter out the NULL and negative values in the analysis.  
 
 <p>Previewing the CSV files in Excel shows that the column names are identical across all the files, which means we will not need to join the tables to add new columns. Instead we can union the tables by appending them to the bottom of the previous table. 
   
