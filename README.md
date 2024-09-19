@@ -23,15 +23,8 @@ Understand how <b>annual members and casual riders use Cyclistic bikes different
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-We will look at 12 months of Cyclistic's publicly available [historical ride data](https://divvy-tripdata.s3.amazonaws.com/index.html) (August 2023 - July 2024). The trip data contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. The anonymized data is made available by [Motivate International Inc]( https://divvybikes.com/data-license-agreement). We will use data from the City of Chicago's Data Portal, which provides a list of bicycle station IDs and station names. 
-1. Text [Link](https://github.com/) text
-2. Text
+We will look at 12 months of Cyclistic's publicly available historical ride data - https://divvy-tripdata.s3.amazonaws.com/index.html - (August 2023 - July 2024). The anonymized trip data contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. It is made available by Motivate International Inc at https://divvybikes.com/data-license-agreement. Additionally, we will use data from the City of Chicago's Data Portal, https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data, which provides a list of bicycle station IDs and station names. 
 
-<p>
-
-<p>Cyclistic historical trip data: https://divvy-tripdata.s3.amazonaws.com/index.html
-<p>Motivate International Inc. license: https://divvybikes.com/data-license-agreement.
-<p>Chicago's Data Portal https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data   
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p><b>R</b>eliable - Yes, the dataset is public and unbiased.
