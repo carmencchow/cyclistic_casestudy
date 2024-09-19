@@ -109,8 +109,6 @@ Let's do that now:
 
 ![station_data](https://github.com/user-attachments/assets/8c3f5bad-e74e-4017-bbb2-eb260dfa6e7c)
 
-![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
-
 We'll run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the difference. On the left, we've returned the original result, showing examples of one-to-many relationship between `start_station_id` and `start_station_name`. On the right, our cleaned data shows that each `start_station_id` has a single `start_station_name.`
 
 ![nodata](https://github.com/user-attachments/assets/6c14b464-65bc-42e5-94da-8190053e1d09)
@@ -119,9 +117,6 @@ We'll run the query we ran before that filtered on `station_id 647`. This time, 
 <b>Ride data table</b>
 
 <p>Let's create a separate table for our ride-related fields. We'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
-
-![ride_data ](https://github.com/user-attachments/assets/2d6c97de-5e46-41d8-97d5-3d6717b24867)
-
 
 ![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
@@ -141,9 +136,6 @@ trip_duration,
 distance_in_meters
 ```
 our final table that has been cleaned with the addition of 5 new variables:
-
-![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
-
 
 ![final](https://github.com/user-attachments/assets/76aefd03-0a3d-45bd-821c-2c21768dabd6)
 
