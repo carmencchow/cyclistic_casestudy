@@ -125,7 +125,7 @@ We can now join the two cleaned `station_data` and `ride_data` tables together:
 ![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
 <p>
-We will also create the following new columns:
+... and create the following new columns:
 
 ```
 start_dayofweek,
@@ -134,6 +134,7 @@ start_hour,
 trip_duration,
 distance_in_meters
 ```
+our final table that has been cleaned with the addition of 5 new variables:
 
 ![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
 
