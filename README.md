@@ -290,8 +290,9 @@ After reviewing cycling trends and patterns among casual riders, we can propose 
 <p>Knowing that casual riders tend to rent bikes near tourist attractions and landmarks, Cyclistic could incentivize annual memberships by offering sign-up perks and discount at restaurants, shops, and other venues that are located near the most frequented bike stations. These perks could include tickets, admission passes, and  discounts to local attractions, restaurants, and shops. They can also consider offering exclusive deals for members such as additional prizes and upgrades.
 
 <b>4. Expansion & Accessibility</b>
-<p>Although Cyclistic has been expanding their network of bikes since 2016, a number of stations had bikes checkout by riders for an astonishingly low 10 times or less from July 2023 to August 2024. Cyclistic should consider relocatig these underused bike stations to areas that could see more growth. In underserved areas, Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. Areas for expansion could include university campus to make biking more accessible as well as other ares like fitness cenres    
-  
+<p>Although Cyclistic has been expanding its network of bikes since 2016, a number of stations had bikes checked out by riders an astonishingly low 10 times or fewer in the past 12 month. Cyclistic should consider relocatig these underused bike stations to areas with more potential more growth, perhaps in an underserved neighborhood or community. Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. Areas for expansion could include university campuses, community centres or neighborhood parks to make biking more accessible for eveyone.
+
+Underused stations:
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
    
 <h2> Final Thoughts</h2>
