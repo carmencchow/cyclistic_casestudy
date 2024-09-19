@@ -144,7 +144,7 @@ Our data cleansing is done. Let's see what trends and patterns our analysis will
 
 The following visualizations were created in Tableau. Link to my Tableau dashboard is at the bottom of the page.  Let's revisit the original business question:
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<h3><i>How do annual members and casual riders use Cyclistic bikes differently?</i></h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp    <h3><i>How do annual members and casual riders use Cyclistic bikes differently?</i></h3>
 
 <b>Number of Rides</b>
 
