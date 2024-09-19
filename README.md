@@ -136,7 +136,7 @@ distance_in_meters
 ```
 our final table that has been cleaned with the addition of 5 new variables:
 
-![final](https://github.com/user-attachments/assets/6c2fcd2c-816f-48e3-89e6-418f2898b43a)
+![final](https://github.com/user-attachments/assets/76aefd03-0a3d-45bd-821c-2c21768dabd6)
 
 Our data cleansing is done. Let's see what trends and patterns our analysis will reveal.
 
