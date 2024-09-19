@@ -206,15 +206,15 @@ Let's compare the average speed of bike rides on classic bikes, the preferred bi
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
   
-The bar chart above shows that the number of rides by casual riders begins to increase in the spring and continues into the summer months, with June, July, and August seeing the highest number of rides. In fact, <b>from April to May, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b>, from 200,293 to 270,000 during the same period. From October to November, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
+The bar chart above shows that the number of rides by casual riders begins to increase in the spring and continues into the summer months, with June, July, and August having the highest number of rides. In fact, <b>from April 2024 to May 2024, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b>, from 200,293 to 270,000 during the same period. From October 2023 to November 2023, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
 
-April is when both groups start biking longer distances, with this trend continuing through spring and summer. It culminates in all-time highs in September before dropping off again in the fall and winter months.
+April is when both groups start biking longer distances, with this trend continuing through spring and summer. Bike distances peak in September before dropping off again in the fall and winter months.
 
 ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
 
 <h3><b>Location</b></h3>
 
-Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the Chicago Data Portal website to plot the ten most frequented start stations among casual riders and annual members. We'll start with casual riders: 
+Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the Chicago Data Portal website to plot the latitudes and longitudes of the ten most frequented stations where casual riders and annual members began their trips. We'll start with casual riders: 
 
 ![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
 
@@ -228,14 +228,14 @@ For annual members, the most popular station was <b>Clinton St & Washington Blvd
 
 ![top_10_members_station](https://github.com/user-attachments/assets/530efb66-a505-4e70-84f3-344b4a23edf9)
 
-These bike stations are generally located away from the shoreline and spread out across Near North Side, Magnificent Mile, and the Loop, Chicago's central business district.
+Annual Members tended to pick up bikes at stations located away from the shoreline and spread out across Near North Side, Magnificent Mile, and the Loop, Chicago's central business district.
 
 ![member_station_map](https://github.com/user-attachments/assets/510c9e6a-110f-402f-a133-8344fcd3a27a)
 
 
 <h2>5. Share</h2>
 
-Let's summarize our findings of the key differences in ride trip patterns between casual riders and annual members before making recommendations to Moreno's marketing team.
+Let's summarize our findings of the key differences in cycling trends between casual riders and annual members.
 
 <b>Casual Riders</b>
 * Most active time: 8am -7pm
@@ -257,17 +257,17 @@ Let's summarize our findings of the key differences in ride trip patterns betwee
 * Average distance: 5.39 kilometres
 * Average speed on a classic bike: 12.17m/s
 
-Based on the differences in user ride pattersn in these metrics, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders are tourists use bikes leisurely to sightsee or visit tourist attractions during the day.
+Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders tend to use Cyclistic bikes for sightseeing and exploring the city.
 
 Tableau 
 Google Slides
 
 <h2>6. Act</h2>
 
-The following recommendations are aimed at boosting annual membership enrollment among casual riders.
+After looking at the trends in how casual rides use Cyclistic bikes, we'll propose the following recommendations which are aimed at boosting Cyclistic's annnual membership enrollment among casual riders. Extend reach and attract more riders
 
-<b>1. Spring and Summer Enrollment Campaigns</b>   
-<p>To prepare for an uptick in casual rides in spring and summer, Cyclistic should plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer. Since casual riders are the most active during the summer months, campaigns should launh ahead of the season. Emphasize unlimited access to Cyclistic's bike share program 
+<b>1. Seasonal Enrollment Campaigns</b>   
+<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To do this, Cyclistic will need to time the launch of future enrollment and advertising campaigns before in March and April to raise awareness of Cyclistics annual membership program and genearte interest among more riders before the signficant 79.4% increase in ride count occurs from April to May. Cyclistic's ads should focus on the benefits of switching to a long-term membership, including savings costs, convenience and unlimited access to Cyclistic's fleet of bikes. 
 
 <b>2. Pricing Structure</b>
 <p>Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. To further incentive annual memberhips, Cyclistic could introduce an overcharge fee for casual riders for every additional 30 minutes.  This is important especially for riders who are discouraged by the perceived cost of an annual membership. by increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasibale to increase and retain membership.
