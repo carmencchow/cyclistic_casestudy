@@ -145,13 +145,15 @@ Our data cleansing is done. Let's see what trends and patterns our analysis will
 
 The following visualizations were created in Tableau. The link to my Tableau dashboard is at the bottom of the page.  Let's revisit the original business question posed by Lily Moreno, Cyclistic's director of marketing.
 
-<h3 align="center"><i>How do annual members and casual riders use Cyclistic bikes differently?</i></h3>
+<h3 align="center"><i>"How do annual members and casual riders use Cyclistic bikes differently?"</i></h3>
 
-<b><i>Note</i></b>: For our analysis, we are filtering out rides that are under a minute or over 24 hours long, as well as rides with NULL station names and staton ids. The reduced the rows of data we will be analyzing from 5,715,482 to 4,178,369.
+<br>
+<b><i>Note</i></b>: For our analysis, we are filtering out rides that are under a minute or over 24 hours long, as well as rides with NULL station names and station IDs. This effectively reduces the rows of data we will include in our analysis from 5,715,482 to 4,178,369.
+<br>
 
 <b>Number of Rides</b>
 
-The pie chart shows that a combined <b>4,178,369</b> (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides. 
+The pie chart shows that a combined 4,178,369 (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or 2.71 million) of the total number, and <b>casual riders accounted for <b>35.2%</b> or 1.47 million rides. 
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
