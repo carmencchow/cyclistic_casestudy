@@ -202,7 +202,7 @@ Let's find out if the average ride speed for each group offers any insights into
 
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
-Let's compare the average speed of bike rides on classic bikes, the preferred bike for both groups of riders.  A casual rider's average speed on a classic bike is <b>8.17m/s</b> compared to an annual member's average speed of <b>12.17 m/s</b>.  It appears that casual riders bike <b>4.0m/s slower than annual members</b>, which make sense if they are using the bikes for leisurely activities like sightseeing.
+Let's compare the average speed of bike rides on classic bikes, the preferred bike for both groups of riders.  A casual rider's average speed on a classic bike is <b>8.17 m/s</b> compared to an annual member's average speed of <b>12.17 m/s</b>.  It appears that casual riders bike <b>4.0 m/s slower than annual members</b>, which make sense if they are using the bikes for leisurely activities like sightseeing.
 
 <h3><b>Seasonal Trends</b></h3>
 
@@ -210,15 +210,15 @@ Let's compare the average speed of bike rides on classic bikes, the preferred bi
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
   
-The bar chart above shows that the number of rides by casual riders begins to increase in the spring and continues into the summer months, with June, July, and August having the highest number of rides. In fact, <b>from April 2024 to May 2024, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b>, from 200,293 to 270,000 during the same period. From October 2023 to November 2023, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
+The bar chart above shows that the number of <b>rides by casual riders begins to increase in the spring</b> and continues into the summer months, with June, July, and August having the highest number of rides. In fact, <b>from April 2024 to May 2024, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by 34.8%, from 200,293 to 270,000 during the same period. From October 2023 to November 2023, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
 
-April is when both groups start biking longer distances, with this trend continuing through spring and summer. Bike distances peak in September before dropping off again in the fall and winter months.
+With the warmer weather, April is also when both groups start biking longer distances. This trend continues into the summer months before dropping off again in September. Both groups experience a decline in ride distances from October to January.
 
 ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
 
 <h3><b>Location</b></h3>
 
-Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the Chicago Data Portal website to plot the latitudes and longitudes of the ten most frequented stations where casual riders and annual members began their trips. We'll start with casual riders: 
+Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data) database to plot the latitudes and longitudes of the ten most frequented stations where casual riders and annual members began their trips. We'll start with casual riders: 
 
 ![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
 
@@ -249,7 +249,7 @@ Let's summarize our findings of the key differences in cycling trends between ca
 * Average ride time on weekdays: 22.2 minutes
 * Average ride time on weekend: 27.8 minutes
 * Average distance: 5.93 kilometres
-* Average speed on a classic bike: 8.17m/s
+* Average speed on a classic bike: 8.17 m/s
 
 <b>Annual Members</b>
 * Most active time: 8am and 5pm
@@ -259,7 +259,7 @@ Let's summarize our findings of the key differences in cycling trends between ca
 * Average ride time on weekdays: 12.2 minutes
 * Average ride time on weekend: 14.2 minutes 
 * Average distance: 5.39 kilometres
-* Average speed on a classic bike: 12.17m/s
+* Average speed on a classic bike: 12.17 m/s
 
 Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders tend to use Cyclistic bikes for sightseeing and exploring the city.
 
