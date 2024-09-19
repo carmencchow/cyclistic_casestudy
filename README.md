@@ -218,7 +218,7 @@ With the warmer weather, April is also when both groups start biking longer dist
 
 <h3><b>Location</b></h3>
 
-Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data) database to plot the latitudes and longitudes of the ten most frequented stations where casual riders and annual members began their trips. We'll start with casual riders: 
+Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data) database to plot the latitudes and longitudes of the ten most frequented stations where casual riders and annual members begin their trips. We'll start with a list of the stations most frequented by casual riders: 
 
 ![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
 
@@ -226,13 +226,13 @@ For casual riders, the most popular bike station was <b>Streeter Dr. & Grand Ave
 
 ![casual_station_map](https://github.com/user-attachments/assets/e105abd6-eb7c-47f9-9e2f-ff51efd91a50)
 
-Looking at the map, the 10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions like Adler Planetarium and Shedd Aquarium. 
+Looking at the map, the <b>10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions</b> like Adler Planetarium and Shedd Aquarium. 
 
-For annual members, the most popular station was <b>Clinton St & Washington Blvd</b>, followed by <i>Kingsbury St & Kinzie.</i>
+For annual members, the most popular station was Clinton St & Washington Blvd, followed by Kingsbury St & Kinzie.
 
 ![top_10_members_station](https://github.com/user-attachments/assets/530efb66-a505-4e70-84f3-344b4a23edf9)
 
-Annual Members tended to pick up bikes at stations located away from the shoreline and spread out across Near North Side, Magnificent Mile, and the Loop, Chicago's central business district.
+Annual Members tend to pick up bikes at stations located away from the shoreline and spread out across Near North Side, Magnificent Mile, and the Loop, Chicago's central business district.
 
 ![member_station_map](https://github.com/user-attachments/assets/510c9e6a-110f-402f-a133-8344fcd3a27a)
 
@@ -244,11 +244,11 @@ Let's summarize our findings of the key differences in cycling trends between ca
 <b>Casual Riders</b>
 * Most active time: 8am -7pm
 * Most active day: Saturday and Sunday
-* Most active month: July, July, and August
+* Most active months: July, July, and August
 * Preferred start stations: near tourist attractions on the shoreline
 * Average ride time on weekdays: 22.2 minutes
-* Average ride time on weekend: 27.8 minutes
-* Average distance: 5.93 kilometres
+* Average ride time on weekends: 27.8 minutes
+* Average ride distance: 5.93 kilometres
 * Average speed on a classic bike: 8.17 m/s
 
 <b>Annual Members</b>
@@ -257,31 +257,27 @@ Let's summarize our findings of the key differences in cycling trends between ca
 * Busiest months: July, August, and September
 * Preferred start stations: spread out across commercial and financial areas
 * Average ride time on weekdays: 12.2 minutes
-* Average ride time on weekend: 14.2 minutes 
-* Average distance: 5.39 kilometres
+* Average ride time on weekends: 14.2 minutes 
+* Average ride distance: 5.39 kilometres
 * Average speed on a classic bike: 12.17 m/s
 
-Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders tend to use Cyclistic bikes for sightseeing and exploring the city.
-
-Tableau 
-Google Slides
+Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders tend to use Cyclistic bikes to sightsee and explore the city.
 
 <h2>6. Act</h2>
 
-After looking at the trends in how casual rides use Cyclistic bikes, we'll propose the following recommendations which are aimed at boosting Cyclistic's annnual membership enrollment among casual riders. Extend reach and attract more riders
+After reviewing cycling trends and patterns among casual riders, we can propose the following recommendations aimed at boosting Cyclistic's annnual membership conversion rate among casual riders.
 
 <b>1. Seasonal Ad Campaigns</b>   
-<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To do this, Cyclistic will need to time the launch of future enrollment and advertising campaigns before in March and April to raise awareness of Cyclistics annual membership program and genearte interest among more riders before the signficant 79.4% increase in ride count occurs from April to May. Cyclistic's ads should focus on the benefits of switching to a long-term membership, including savings costs, convenience and unlimited access to Cyclistic's fleet of bikes. 
+<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To do this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in the number of casual rides from April to May</b>. Launching the campaign well before this influx of rides will raise awareness of Cyclistics annual membership program and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership which include savings costs, convenience and unlimited access to Cyclistic's fleet of bikes throughout the year. 
 
-<b>2. New/Flexible Pricing Model</b>
-<p> Cyclistic can remove any perceived costs as barriers to a
-  Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could To further incentive annual memberhips, Cyclistic could include the following:
+<b>2. Flexible Pricing Model</b>
+<p> Cyclistic should implement a new pricing structure to attract and retain more annual members. Here are some ways the company can incentivize casual members to enrol in their annual membership program:
   
-  * tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members.
+  * <i>Offer tiered membership</i>: such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members.
     
-  *  Overcharge fee for casual riders if they reach for every additional 10 or 20 minutes, or kilometres cycled.
+  * <i>Implement overcharge fees</i>:  for casual riders if they reach for every additional 10 or 20 minutes, or kilometres cycled.
     
-  *  Annual membership at a lower price point than casual rides.
+  *  <Annual membership at a lower price point than casual rides.
     
   *  Two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasible to increase and retain membership.
     
@@ -292,7 +288,7 @@ After looking at the trends in how casual rides use Cyclistic bikes, we'll propo
   *   Partnering with the city's largest employers to offer employee corporate passes.
   
 
-<b>3. Attractive Member's Benefits</b>
+<b>3. Annual membership benefits</b>
 <p>Cyclistic can incentivize their annual membership by offering sign-up perks to casual riders who are interested in trasnferring to an annual membership. These could be in the form of tickets or discounts to local attractions, restaurants, and shops. Cyclistic can partner with brands and businesss in the vicinity of the 10 most frequented bike stations. Bundling admission passes with
 a membership, as well as offering exclusive deals for members - like chances to win prizes at local restaurants, businesses, or entertainment venues - could be an attractive way to boost membership while partnering with and supporting local businesses. Recognizing that people shop by bike in the tourist and attraction sites
 
@@ -303,6 +299,4 @@ a membership, as well as offering exclusive deals for members - like chances to 
  
 <h2> Final Thoughts</h2>
 
-Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. In the future, Cyclistic could strive to collect a wider range of key demographic and occupational data that could inform future marketing strategies in different ways.
-
-Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base. By considering the occupational and socioecononmic backgrounds of different segments of their ridership, Cyclistic can adapt their pay structure and expansion to serve the needs of their riders. These adjustments, along with recommendations outlined above will help Cyclistic boost conversion rates while continuing to provide affordable, convenient and sustainable mobility option. 
+Although the data used in this case study was sufficient in completing the business task proposed by Cyclistic, collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert.  Ultimately, Cyclistic's continued success depends on their ability grow their annual membership by attracting and retaining long-term customers. By following the data-driven recommendations to update their pay structure, expand their network of bikes, partner with key businesses, and time their ad campaigns, Cyclistic can succeed in boosting their conversion rates while continuing to provide an affordable, convenient and sustainable mobility option to locals. 
