@@ -111,7 +111,8 @@ Let's do that now:
 
 We'll run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the difference. On the left, we've returned the original result, showing examples of one-to-many relationship between `start_station_id` and `start_station_name`. On the right, our cleaned data shows that each `start_station_id` has a single `start_station_name.`
 
-![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
+![nodata](https://github.com/user-attachments/assets/6c14b464-65bc-42e5-94da-8190053e1d09)
+
 
 <b>Ride data table</b>
 
