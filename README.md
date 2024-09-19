@@ -45,7 +45,7 @@ We'll create a table and specify the column header names and their data types be
 
 ![schema](https://github.com/user-attachments/assets/507afc06-7550-4db5-8fde-80341e138b0f)
 
-Instructions for installing and running the Google Cloud CLI are available here: https://cloud.google.com/sdk/docs/install-sdk . We'll use the following `bq` command to load the first file, <i>202308-divvy-tripdata.csv</i> to BigQuery: 
+Instructions for installing and running the Google Cloud CLI are available [here]( https://cloud.google.com/sdk/docs/install-sdk) . We'll use the following `bq` command to load the first file, <i>202308-divvy-tripdata.csv</i> to BigQuery: 
 
 ```bq load - replace - skip_leading_rows=1 general-432301:wip.tripdata_t.est"C:\Users\carmen\Desktop\12_months_csv\202308-divvy-tripdata.csv```
 
