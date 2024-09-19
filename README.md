@@ -202,7 +202,7 @@ Let's find out if the average ride speed for each group offers any insights into
 
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
-Let's compare the average speed of bike rides on classic bikes, the preferred bike for both groups of riders.  A casual rider's average speed on a classic bike is <b>8.17m/s</b> compared to an annual member's average speed of <b>12.17 m/s</b>. It appears that casual riders bike at a more leisurely pace, which make sense if they are mainly using bikes for sightseeing and exploration, and not using it to rush to and from work. 
+Let's compare the average speed of bike rides on classic bikes, the preferred bike for both groups of riders.  A casual rider's average speed on a classic bike is <b>8.17m/s</b> compared to an annual member's average speed of <b>12.17 m/s</b>.  It appears that casual riders bike at a more leisurely pace, <b>4.0m/s slower than annual members</b> which make sense if they are mainly using bikes for sightseeing and exploration, and not using it to rush to and from work. 
 
 <h3><b>Seasonal Trends</b></h3>
 
