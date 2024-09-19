@@ -273,24 +273,18 @@ Based on these notable differences, we can conclude that annual members are peop
 After reviewing cycling trends and patterns among casual riders, we can propose the following recommendations aimed at boosting Cyclistic's annnual membership conversion rate among casual riders.
 
 <b>1. Seasonal Ad Campaigns</b>   
-<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in the number of casual rides from April to May</b>. Launching the campaign well before this influx of rides will raise awareness of Cyclistics annual membership program and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership which include savings costs, convenience, and unlimited access to Cyclistic's fleet of bikes throughout the year. 
+<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in the number of casual rides from April to May</b>. Launching the campaign well before this influx of rides will raise awareness of Cyclistics annual membership program and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership which include savings costs by offering the annual membership at a lower price point,  convenience, and unlimited access to Cyclistic's fleet of bikes throughout the year. 
 
 <b>2. Flexible Pricing Model</b>
 <p> Cyclistic should implement a new pricing structure to attract and retain more annual members. Here are some ways the company can incentivize casual members to enrol in their annual membership program:
   
-  * <i><b>Tiered membership<b></i>
-   * Offer several plans that provide different benefits to customers based on their needs and interests. These could include offering a monthly plan at a fixed price that could eventually encourage casual riders to become full members.
+  * <i><b>Tiered membership</b></i>: Offer several plans that provide different benefits to customers based on their needs and interests. These could include offering a monthly plan at a fixed price that could eventually encourage casual riders to become full members.
     
-  * <i><b>Overcharge fees<b></i>
-   * Make an annual membership the more cost-effective option by adding a surcharge fee for every additional minute or kilometre cycled as a casual rider. 
+  * <i><b>Overcharge fees</b></i>: Make an annual membership the more cost-effective option by adding a surcharge fee for every additional minute or kilometre cycled as a casual rider. 
     
-  * <i><b>Annual membership at a lower price point than casual rides.<i><b>
+  * <i><b>Two-tiered annual membership plan</i></b>: Give annual subscribers the option to pay for their annual membership up front in one lump sum pament or in monthly installments. Choice in payment plans can make it more feasible and attractive for casual riders hesistant about switching over.  
     
-  * <i><b>Two-tiered annual membership plan<i><b>
-    Give annual subscribers the option to pay for their annual membership up front in one lump sum pament or in monthly installments. Choice in payment plans can make it more feasible and attractive for casual riders hesistant about switching over.  
-    
-  *  <i><b>Discounted plans<i><b>
-    With more demographic and occupational data, Cyclistic could offer a reduced fair program to specific segments of their customer base:
+  *  <i><b>Discounted plans</i></b>:  With more demographic and occupational data, Cyclistic could offer a reduced fair program to specific segments of their customer base:
 
   *   Youth and low-income users
   *   Seniors
