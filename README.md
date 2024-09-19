@@ -192,11 +192,11 @@ Do peak hours correspond to longer ride times for casual riders and annual membe
 
 ![ride_time_hour](https://github.com/user-attachments/assets/fca57136-c070-4896-a4e9-61230390db3d)
 
-For annual members, there is no significant change in time duration throughout the day, including at the peak hours of 8am and 5pm. This supports the idea that annual members are using Cyclistic bicycles for commuting. For casual members, the longest rides occur between 8am and 5pm, which supports the hypothesis that casual riders use bikes for recreational purposes, perhaps they have flexible work schedules, or they are tourists using the bikes to explore the city during the day. 
+For annual members, there is no significant change in trip duration throughout the day, including at the peak hours of 8am and 5pm. This supports the idea that annual members are using Cyclistic bicycles for commuting. For casual members, the longest rides occur between 8am and 5pm. This observation shows that casual riders are probably using bikes for recreational purposes, either as tourists or locals who have flexible work schedules or work from home.
 
 <b>Speed</b>
 
-Let's see if the each group's average ride speed offers insights into how bike usage differs. We'll calculate the average speed of each ride by taking the distance and dividing it by the trip duration. 
+Let's find out if the average ride speed for each group offers any insights into how bike usage differs between them. We'll calculate the average speed of each ride by taking the distance and dividing it by the trip duration. 
 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 
