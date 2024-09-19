@@ -95,7 +95,7 @@ We see that the 7,232 different latitudes are the result of inconsistent number 
 
 <h3>Data Cleansing</h3>
 
-Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` was not been enforced. As mentioned, performing a lookup for each of the 83 station names, while possible, would not be practical. Instead, we'll aggregate the multiple results for each `start_station_id` into a single entry to create a one-to-one relationship between `start_station_id` and other station-related data points.
+Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` was not enforced. As mentioned, performing a lookup for each of the 83 station names, while possible, would not be practical. Instead, we'll aggregate the multiple results for each `start_station_id` into a single entry to create a one-to-one relationship between `start_station_id` and other station-related data points.
 
 To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
