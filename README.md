@@ -210,25 +210,25 @@ We'll compare the average speed of rides on classic bikes, the preferred bike fo
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
   
-The bar chart shows that the number of casual rides increases in the spring and continues into the summer months, with the June, July, and August seeing the highest number of rides for casual riders. <b>From April to May, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b>, from 200,293 to 270,000 during the same period. From October to November, <b>casual riders saw a 44% decrease in rides </b>, dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
+The bar chart above shows that the number of rides by casual riders begins to increase in the spring and continues into the summer months, with June, July, and August seeing the highest number of rides. In fact, <b>from April to May, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by <b>34.8%</b>, from 200,293 to 270,000 during the same period. From October to November, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
 
-April is when both groups start biking longer distances, with this trend continuing through spring and summer, culminating in all-time highs in September before dropping off in the fall and winter months.
+April is when both groups start biking longer distances, with this trend continuing through spring and summer. It culminates in all-time highs in September before dropping off again in the fall and winter months.
 
 ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
 
 <h3><b>Location</b></h3>
 
-Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the Chicago Data Portal website to plot the most frequented start stations among casual riders and annual members: 
+Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the Chicago Data Portal website to plot the ten most frequented start stations among casual riders and annual members. We'll start with casual riders: 
 
 ![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
 
-For casual riders, the most popular bike station is <i>Streeter Dr. & Grand Ave</i>, followed by <i>DuSable Lake Shore & Monroe St.</i>
+For casual riders, the most popular bike station was <b>Streeter Dr. & Grand Ave</b> with 46,993 rides, accounting for <b>32% of the total rides</b>. 
 
 ![casual_station_map](https://github.com/user-attachments/assets/e105abd6-eb7c-47f9-9e2f-ff51efd91a50)
 
-The 10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions like Adler Planetarium and Shedd Aquarium. 
+Looking at the map, the 10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions like Adler Planetarium and Shedd Aquarium. 
 
-For annual members, the most popular station is <i>Clinton St & Washington Blvd</i>, followed by <i>Kingsbury St & Kinzie.</i>
+For annual members, the most popular station was <b>Clinton St & Washington Blvd</b>, followed by <i>Kingsbury St & Kinzie.</i>
 
 ![top_10_members_station](https://github.com/user-attachments/assets/530efb66-a505-4e70-84f3-344b4a23edf9)
 
@@ -242,7 +242,7 @@ These bike stations are generally located away from the shoreline and spread out
 Let's summarize our findings of the key differences in ride trip patterns between casual riders and annual members before making recommendations to Moreno's marketing team.
 
 <b>Casual Riders</b>
-* Most active time: 9am -7pm
+* Most active time: 8am -7pm
 * Most active day: Saturday and Sunday
 * Most active month: July, July, and August
 * Preferred start stations: near tourist attractions on the shoreline
