@@ -157,7 +157,7 @@ The pie chart shows that a combined 4,178,369 (or 4.18 million) unique rides wer
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
-<h3>Bike Preference /h3>
+<h3>Bike Preference </h3>
 <br>
 <p>Do casual riders and annual members favor different types of bikes?
 
