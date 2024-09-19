@@ -35,7 +35,7 @@ We will look at 12 months of Cyclistic's publicly available historical ride data
 
 <h3><b>Data Limitations</b></h3>
 
-The dataset contains over <b>5.7 million records</b>, with more than <i>1.5 million entries</i> having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use <b>Google Big Query</b> instead of Excel for data cleansing and analysis. Since the free-tier version of Big Query does not support data deletion, I will filter out the NULL and negative values in the analysis.  
+The dataset contains over <b>5.7 million records</b>, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use <b>Google Big Query</b> instead of Excel for data cleansing and analysis. Since the free-tier version of Big Query does not support data deletion, we will filter out the NULL and negative values in the analysis.  
 
 <p>Previewing the CSV files in Excel shows that the column names are identical across all the files, which means we will not need to join the tables to add new columns. Instead we can union the tables by appending them to the bottom of the previous table. 
   
@@ -58,7 +58,7 @@ We have now imported and merged all 12 datasets giving us 5,715,482 rows of data
 <h2>3. Process</h2>
 <h3>Data Exploration</h3>
 
-Before cleaning the data, it's beneficial to explore what we are working with. Looking at our table,  we can group our columns into three categories of qualitative data: data about stations, data about rides, and data related to start and end times. Here's the schema showing each field name and data type.
+Before cleaning the data, it's beneficial to explore what we are working with. Looking at our schema,  we can group our columns into three categories of qualitative data: data about stations, data about rides, and data related to start and end times. Here's the schema showing each field name and data type.
 
 ![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
 ![schema2](https://github.com/user-attachments/assets/8c034d55-782b-43bc-bffc-2095c9c6cac6)
@@ -67,7 +67,7 @@ Let's explore the relationships between some of our columns and see whether they
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-We see that there are, in fact, <b>83 records of `start_station_id`s linked to more than one `start_station_name`</b>. 
+We see that there are, in fact, <b>83 records</b> of `start_station_id`s linked to more than one `start_station_name`. 
 
 ![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
 
@@ -135,7 +135,7 @@ start_hour,
 trip_duration,
 distance_in_meters
 ```
-our final table that has been cleaned with the addition of 5 new variables:
+our final table has been cleaned with 5 newly created variables:
 
 ![final](https://github.com/user-attachments/assets/76aefd03-0a3d-45bd-821c-2c21768dabd6)
 
@@ -143,13 +143,15 @@ Our data cleansing is done. Let's see what trends and patterns our analysis will
 
 <h2>4. Analyze</h2>
 
-The following visualizations were created in Tableau. Link to my Tableau dashboard is at the bottom of the page.  Let's revisit the original business question:
+The following visualizations were created in Tableau. The link to my Tableau dashboard is at the bottom of the page.  Let's revisit the original business question posed by Lily Moreno, Cyclistic's director of marketing.
 
 <h3 align="center"><i>How do annual members and casual riders use Cyclistic bikes differently?</i></h3>
 
+<b><i>Note</i></b>: For our analysis, we are filtering out rides that are under a minute or over 24 hours long, as well as rides with NULL station names and staton ids. The reduced the rows of data we will be analyzing from 5,715,482 to 4,178,369.
+
 <b>Number of Rides</b>
 
-The pie chart shows that a combined <b>4,178,369</b> (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides.
+The pie chart shows that a combined <b>4,178,369</b> (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides. 
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
