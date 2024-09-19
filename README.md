@@ -166,7 +166,7 @@ The pie chart shows that a combined 4,178,369 (or 4.18 million) unique rides wer
 
 ![casual_bike](https://github.com/user-attachments/assets/153a551e-ff0c-43fe-98a2-2f27759d9059)
 
-<p>Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Interestingly, <b><i>docked bikes were only used by casual riders</b></i>, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. It might be worthwhile to ask Cyclistic to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
+<p>Both casual and annual members prefer classic bikes over electric bikes. <b>For casual riders, 65.73% or 966,128 out of 1,469,640 rides were on classic bikes</b>, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Interestingly, <b><i>docked bikes were only used by casual riders</b></i>, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. It might be worthwhile to ask Cyclistic to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
 
 <p>
 <h3> Daily Trends </h3>
