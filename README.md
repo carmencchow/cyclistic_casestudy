@@ -101,10 +101,10 @@ To do this, we'll create a new table with `start_station_id` as the primary key,
 
 <b>Why aggregate our data?</b>
 
-<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. We will also aggregate
-the `end_station` data to ensure all related station data is clean. Then we will use `station_id` as the primary key to union the cleaned `start_station` and `end_station` data into a clean `station_data` table.
+<p>Aggregating will allow us to consolidate multiple rows of data into a single row. 
+We can use either `MAX()` or `MIN()` instead of `SUM()` or `AVG()` to handle string types like `start_station_id` and `start_station_name`.   In this case, we'll choose `MAX()`. We will also aggregate the `end_station` data the same way.  Then we will use `station_id` as the primary key to union both of these cleaned tables into a single `station_data` table.
   
-Let's create the new `station_data` table:
+Let's do that now:
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
