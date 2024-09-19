@@ -6,7 +6,7 @@
 <h2>Background</h2>
 <p>Cyclistic is a successful bike-share company in Chicago. Since 2016, its program has grown to a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. Customers who purchase single-ride or full-day passes are referred to as <b>casual riders</b> and those who purchase annual memberships are Cyclistic <b>members</b>. 
   
-The director of marketing believes the company's future success depends on maximizing the number of annual memberships by converting casual riders into annual members. In order to do that, the team needs to better understand how casual riders and annual members use Cyclistic bikes differently. To do this, we will be analyzing historical bike trip data to identify trends.
+The director of marketing believes the company's future success depends on maximizing the number of annual memberships by converting casual riders into annual members. In order to do that, the team needs to better understand how casual riders and annual members use Cyclistic bikes differently. To do this, we will be analyzing historical bike trip data to identify cycling trends. 
 
 <h2>Stakeholders</h2>
 
@@ -23,7 +23,7 @@ Understand how <b>annual members and casual riders use Cyclistic bikes different
 <h2>2. Prepare</h2>
 
 <h3><b>Data Source</b></h3>
-We will look at 12 months of Cyclistic's publicly available historical ride data (August 2023 - July 2024), available at https://divvy-tripdata.s3.amazonaws.com/index.html . The anonymized trip data contains information such as bike type, station names and IDs, and their respective latitudes and longitudes. It is made available by Motivate International Inc at https://divvybikes.com/data-license-agreement. Additionally, we will use the City of Chicago's Data Portal, https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data , to find stations names and IDs. 
+We will look at 12 months of Cyclistic's publicly available historical ride data (August 2023 - July 2024), which is available at https://divvy-tripdata.s3.amazonaws.com/index.html . This anonymized trip data includes information such as bike type, station names, station IDs, station latitudes and station longitudes. It is made provided by Motivate International Inc. and available at https://divvybikes.com/data-license-agreement. Additionally, we will use the City of Chicago's Data Portal, available at https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data to plot the locations of the most visited stations. 
 
 <h3><b>Data Bias and Credibility. Does it ROCCC?</b></h3>
 <p><b>R</b>eliable - Yes, the dataset is public and unbiased.
