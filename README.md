@@ -34,11 +34,11 @@ We will look at 12 months of Cyclistic's publicly available historical ride data
 
 <h3><b>Data Limitations</b></h3>
 
-The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use Google Big Query instead of Excel for data cleansing and analysis. The free-tier version of Big Query does not handle data deletion, so I will filter out the NULL and negative values. 
+The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use Google Big Query instead of Excel for data cleansing and analysis. Since the free-tier version of Big Query does not support data deletion, I will filter out the NULL and negative values in the analysis.  
 
-<p>Previewing the CSV files in Excel shows that the column names are identical across all the files, which means we will not need join the tables to add new columns. Instead we will union the tables by adding them to them bottom of the previous table. 
+<p>Previewing the CSV files in Excel shows that the column names are identical across all the files, which means we will not need to join the tables to add new columns. Instead we can union the tables by appending them to the bottom of the previous table. 
   
-We'll create a table and specifiy the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
+We'll create a table and specify the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
 <p>
 
@@ -57,62 +57,58 @@ We have now imported and merged all 12 datasets giving us 5,715,482 rows of data
 <h2>3. Process</h2>
 <h3>Data Exploration</h3>
 
-Before cleaning the data, it's beneficial to explore it and see what exactly we're working with. Looking at our table,  we can group our columns into three categories of qualitative data: data about stations, data about rides, and data related to start and end times. Here's the schema showing each field name and data type.
+Before cleaning the data, it's beneficial to explore what we are working with. Looking at our table,  we can group our columns into three categories of qualitative data: data about stations, data about rides, and data related to start and end times. Here's the schema showing each field name and data type.
 
 ![schema1](https://github.com/user-attachments/assets/a0e1a99e-6277-4ee5-86cd-b50a9a7eb768)
 ![schema2](https://github.com/user-attachments/assets/8c034d55-782b-43bc-bffc-2095c9c6cac6)
 
-Let's explore the relationships between some of our columns and see whether they are one-to-one or one-to-many relationships. We'll start with a bike station, which we would expect to have only one station name associated with it. In other words, `start_station_id` should have a one-to-one relationship with `start_station_name`. Let's see if that is the case. We'll run a query on `start_station_id` to check for instances where a `start_station_id` has multiple `start_station_names`. 
+Let's explore the relationships between some of our columns and see whether they are one-to-one or one-to-many relationships. We'll start with a bike station, which we would expect to have only one station name associated with it. We'll run a query on `start_station_id` to check for instances where a `start_station_id` has multiple `start_station_names`. 
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-We see that there are, in fact, 83 records of `start_station_id`s linked to more than one `start_station_name`. 
+We see that there are, in fact, <b>83 records of `start_station_id`s linked to more than one `start_station_name`</b>. 
 
 ![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
 
-Let's examine the first result: the station with the ID `647`.
+Let's examine the first result: station `647`.
 
 ![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
 
-This returns three different station names. To find the correct name, we'll refer to our second data source - the City of Chicago Data Portal's website (link provided above) - and look up station_id `647` in its database.
+This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source - the City of Chicago Data Portal's website (link provided above) - and look up the station id in its database.
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-It looks like <i>Racine Ave. & 57th</i> is the station's actual name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure that each `station_id` has a unique and consistent `station_name`.
-
-Now, let's check the relationship between `start_station_id` and `start_lat`:
+It looks like <i>Racine Ave. & 57th</i> is the station's actual name. While we were able to retrieve the correct name with this lookup, this would not be an efficient method to repeat with 82 other `start_station_id`s. Let's see if `start_lat` also yields multiple results for any single `start_station_id`:
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
-Our query returns 1,588 records where a single `start_station_id` is associated with multiple `start_lat` values. 
+There are 1,588 records where a single `start_station_id` is associated with multiple `start_lat` values. 
 
 ![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
 
-Let's filter on the first result: station <i>WL-012</i>:
+Let's filter on the first row: station <i>WL-012</i>:
 
 ![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
 
-We see that the 7,232 different latitudes are the result of inconsistent number formatting. 
-
-We now have an idea of the types of data cleansing and data transformation processes needed to prevent duplicates and one-to-many relationships that can lead to inaccuracies in our analysis. 
+We see that the 7,232 different latitudes are the result of inconsistent number formatting. We'll need to clean our data to ensure that each `start_station_id` has only one `start_station_name`, one `start_lat`, and one `start_lng` associated with it.
 
 
 <h3>Data Cleansing</h3>
 
-Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station names, while possible, would not be practical. Instead, we'll aggregate the rows into a single entry to create a one-to-one relationship between `start_station_id` and all other station-related data points.
+Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` was not been enforced. As mentioned, performing a lookup for each of the 83 station names, while possible, would not be practical. Instead, we'll aggregate the multiple results for each `start_station_id` into a single entry to create a one-to-one relationship between `start_station_id` and other station-related data points.
 
 To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
 <b>Why aggregate our data?</b>
 
-<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. Aggregating
-the `end_station` data will ensure all related station data is clean. Then we will use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
+<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. We will also aggregate
+the `end_station` data to ensure all related station data is clean. Then we will use `station_id` as the primary key to union the cleaned `start_station` and `end_station` data into a clean `station_data` table.
   
-Creating the new `station_data` table:
+Let's create the new `station_data` table:
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
-Let's run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the difference. On the left, we've returned the original result, while the right shows that we've cleaned up rows with multiple records. 
+We'll run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the difference. On the left, we've returned the original result, showing examples of one-to-many relationship between `start_station_id` and `start_station_name`. On the right, our cleaned data shows that each `start_station_id` has a single `start_station_name.`
 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
