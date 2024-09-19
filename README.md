@@ -271,14 +271,21 @@ After looking at the trends in how casual rides use Cyclistic bikes, we'll propo
 
 <b>2. New/Flexible Pricing Model</b>
 <p> Cyclistic can remove any perceived costs as barriers to a
-  Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could To further incentive annual memberhips, Cyclistic could 
-  * include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. 
-  *  introduce an overcharge fee for casual riders if they reach for every additional 10 or 20 minutes, or kilometres cycled.   
-  *  Offer the annual membership at a lower price point than casual rides. 
-  * two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasible to increase and retain membership.
-  * Offering a reduced fair program for youth, low-income users, and seniors. 
-  * Providing family discounts bundles for household members. 
-  * Partnering with the city's largest employers to offer employee corporate passes.
+  Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could To further incentive annual memberhips, Cyclistic could include the following:
+  
+  * tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members.
+    
+  *  Overcharge fee for casual riders if they reach for every additional 10 or 20 minutes, or kilometres cycled.
+    
+  *  Annual membership at a lower price point than casual rides.
+    
+  *  Two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasible to increase and retain membership.
+    
+  *  Offering a reduced fair program for youth, low-income users, and seniors.
+    
+  *   Providing family discounts bundles for household members.
+    
+  *   Partnering with the city's largest employers to offer employee corporate passes.
   
 
 <b>3. Attractive Member's Benefits</b>
