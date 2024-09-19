@@ -160,24 +160,24 @@ The pie chart shows that a combined <b>4,178,369</b> (or 4.18 million) unique ri
 
 ![casual_bike](https://github.com/user-attachments/assets/153a551e-ff0c-43fe-98a2-2f27759d9059)
 
-Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Interestingly, <b><i>docked bikes were used only used by casual riders</b></i>, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. It might be worthwhile to ask Cyclistic to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
+Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Interestingly, <b><i>docked bikes were only used by casual riders</b></i>, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. It might be worthwhile to ask Cyclistic to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
 
 <p>
 <h3><b> Daily Trends </b></h3>
 
-We can see that the number of bike rides by annual members was fairly consistent from Monday to Friday, with a decrease on weekends and the highest number on Wednesday.  For casual riders, the ride count was highest on weekends.
+We can see that the number of bike rides by annual members was fairly consistent from Monday to Friday, with a decrease on weekends and the highest number on Wednesday.  <b>For casual riders, the ride count was highest on weekends</b>.
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
 <b> Duration</b>
 <p>
-In addition to an uptick in the number of casual riders on weekends, weekend rides also tend to be <i><b>longer</b></i> rides. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For annual members, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Zooming out, over the course of 12 months, casual riders logged 11,896.32 more hours than their member counterparts on Sundays, the day with the longest average ride time for both groups.
+In addition to an uptick in the number of casual riders on weekends, weekend rides also tend to be <i><b>longer rides</b></i>. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For annual members, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Taking a look at the broader picture, over the course of 12 months, <b>casual riders rode 11,896.32 more hours</b> than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
 ![ride_time (1)](https://github.com/user-attachments/assets/838d5c30-ed62-40e8-96c4-25eb51858f63)
 
 <b> Distance</b>
 
-We know that casual riders take longer rides on weekends, but are they also travelling greater distances? This line graph shows that casual riders are indeed travelling longer distances on weekends compared to weekdays. Over the course of a year, casual riders increased their distance travelled from <b>1,150,194</b> on Fridays to <b>1,775,955 kilometres</b> on Sundays. In contrast, annual members' distance decreased from Thursday to Sunday before picking up again at the start of the work week on Monday.
+We know that casual riders take longer rides on weekends, but are they also travelling greater distances? This line graph shows that <b>casual riders are indeed travelling longer distances on weekends</b> compared to weekdays. Over the course of a year, casual riders increased their distance travelled from <b>1,150,194</b> on Fridays to <b>1,775,955 kilometres</b> on Sundays. In contrast, annual members' distance decreased from Thursday to Sunday before picking up again at the start of the work week on Monday.
 
 
 ![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
