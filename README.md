@@ -36,7 +36,7 @@ We will look at 12 months of Cyclistic's publicly available historical ride data
 
 The dataset contains over 5.7 million records, with more than 1.5 million entries having NULL or negative values in the  `start_station_name`, `start_station_id`, `end_station_name`, and `end_station_id` columns. We'll use Google Big Query instead of Excel for data cleansing and analysis. The free-tier version of Big Query does not handle data deletion, so I will filter out the NULL and negative values. 
 
-<p>Previewing the CSV files in Excel shows that the column names are identical across all fields, which means we will not be adding new columns. Instead we will be unioning the tables by adding them to them bottom of the previous table. 
+<p>Previewing the CSV files in Excel shows that the column names are identical across all the files, which means we will not need join the tables to add new columns. Instead we will union the tables by adding them to them bottom of the previous table. 
   
 We'll create a table and specifiy the column header names and their data types before using the Google Cloud CLI to upload the first CSV file to Big Query.
   
@@ -78,9 +78,9 @@ This returns three different station names. To find the correct name, we'll refe
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-It looks like <i>Racine Ave. & 57th</i> is the station's actual station name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure that each `station_id` has a unique and consistent name.
+It looks like <i>Racine Ave. & 57th</i> is the station's actual name. Our lookup solved the problem of finding the correct station name, however with 83 records of `start_station_id`s having more than one name, we'll need to clean our data to ensure that each `station_id` has a unique and consistent `station_name`.
 
-Let's examine the relationship between `start_station_id` and `start_lat`:
+Now, let's check the relationship between `start_station_id` and `start_lat`:
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
@@ -99,19 +99,20 @@ We now have an idea of the types of data cleansing and data transformation proce
 
 <h3>Data Cleansing</h3>
 
-Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station name, while possible, would not be practical or time-efficient. Instead, what we'll do is aggregate the rows into a single entry to create a one-to-one relationship between `start_station_id` and the station-related data.
+Through our data exploration, we discovered that the expected one-to-one relationship between `start_station_id` and other dimensions such as `start_station_name` and `start_lat` has not been enforced. Performing a lookup for each of the 83 station names, while possible, would not be practical. Instead, we'll aggregate the rows into a single entry to create a one-to-one relationship between `start_station_id` and all other station-related data points.
 
 To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
 <b>Why aggregate our data?</b>
 
-<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. We will also perform the same aggregation on the `end_station` data, and we'll also format the latitude and longitude values by rounding them to 6 decimal places. Finally, we'll use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
+<p>Aggregating will allow us to consolidate multiple rows of data into a single row. Common aggregation functions include SUM(), MIN(), MAX() and AVG(). Since SUM() and AVG() only work with numeric values, we will use MAX() instead to handle our  `start_station_id` and `start_station_name` string types. Aggregating
+the `end_station` data will ensure all related station data is clean. Then we will use `station_id` as the primary key to union the aggregated `start_station` and `end_station` data. 
   
 Creating the new `station_data` table:
 
 ![station_data](https://github.com/user-attachments/assets/1fb42ae3-0d62-4e61-b3d0-9a2f101d84b1)
 
-Now let's run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the differences. On the left, we've returned the original results, while the right shows that we've cleaned up rows with multiple records. 
+Let's run the query we ran before that filtered on `station_id 647`. This time, we will execute it twice: once on our cleaned data and once on the original dataset to see the difference. On the left, we've returned the original result, while the right shows that we've cleaned up rows with multiple records. 
 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
@@ -120,12 +121,12 @@ Now let's run the query we ran before that filtered on `station_id 647`. This ti
 
 ![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
-We can now join the two cleaned tables together on the start and end station ids.
+We can now join the two cleaned tables together on the `start` and `end_station_ids`.
 
 ![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
 <p>
-We've also created new columns which will help us analzye other metrics such as the duration, speed and distance of each group's bike rides. These new column are:
+We will also create the following new columns:
 
 ```
 start_dayofweek,
@@ -145,7 +146,7 @@ After connecting a new Tableau workbook to our Google Big Query server, we can b
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
-The pie chart shows that <b>4,178,369</b> (or 4.18) unique rides were recorded from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or <b>2,708,729</b>) of the total number, and casual riders accounted for 35.2% or <b>1,469,640 rides</b>.
+The pie chart shows that <b>4,178,369</b> (or 4.18 million) unique rides were taken from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides.
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
