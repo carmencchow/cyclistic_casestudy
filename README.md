@@ -146,6 +146,8 @@ After connecting a new Tableau workbook to our Google Big Query server, we can b
 
 <b><i>How do annual members and casual riders use Cyclistic bikes differently?</i></b>
 
+<b>Number of Rides</b>
+
 The pie chart shows that <b>4,178,369</b> (or 4.18 million) unique rides were taken from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides.
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
