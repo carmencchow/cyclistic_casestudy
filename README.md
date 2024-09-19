@@ -226,13 +226,12 @@ With the warmer weather, <b>April is also when both groups start biking longer d
 
 Do casual riders and annual members start their bike trips in the same part of the city? To find out, we'll use the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data) database to plot the latitudes and longitudes of the ten most frequented stations where casual riders and annual members begin their trips. We'll start with a list of the stations most frequented by casual riders: 
 
-![top_10_casual_station](https://github.com/user-attachments/assets/c69c372f-defd-430f-a006-aa245601bb7e)
-
-For casual riders, the most popular bike station was <b>Streeter Dr. & Grand Ave</b> with 46,993 rides, accounting for <b>32% of the total rides</b>. 
-
 ![top_10_casual_station](https://github.com/user-attachments/assets/c102b86f-9452-45fc-b4ad-633ad8885080)
 
-Looking at the map, the <b>10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions</b> like Adler Planetarium and Shedd Aquarium. 
+For casual riders, the most popular bike station was <b>Streeter Dr. & Grand Ave</b> with 46,993 rides, accounting for <b>32% of the total rides</b>. Looking at the map, the <b>10 most popular stations are located close to Chicago's shoreline near tourist and sightseeing attractions</b> like Adler Planetarium and Shedd Aquarium. 
+
+![casual_station_map](https://github.com/user-attachments/assets/7b0fae54-9590-4cc7-9812-c5478c15af39)
+
 
 For annual members, the most popular station was Clinton St & Washington Blvd, followed by Kingsbury St & Kinzie.
 
