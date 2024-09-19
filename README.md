@@ -113,11 +113,12 @@ We'll run the query we ran before that filtered on `station_id 647`. This time, 
 ![cleaned_station](https://github.com/user-attachments/assets/e5285795-9ddd-4a2c-9e96-8e13823bc662)
 
 <b>Ride data table</b>
+
 <p>Let's create a separate table for our ride-related fields. We'll apply the same thinking and use MAX() to aggregate the ride-related fields from our main table. 
 
 ![ride_data](https://github.com/user-attachments/assets/ce608c9b-2fee-4f3b-8fa5-55d9c717596f)
 
-We can now join the two cleaned tables together on the `start` and `end_station_ids`.
+We can now join the two cleaned `station_data` and `ride_data` tables together:
 
 ![finaljoin](https://github.com/user-attachments/assets/41ac54ed-394a-4f45-a0fe-bdf1f3f3947e)
 
@@ -144,7 +145,7 @@ After connecting a new Tableau workbook to our Google Big Query server, we can b
 
 <b>Number of Rides</b>
 
-The pie chart shows that <b>4,178,369</b> (or 4.18 million) unique rides were taken from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides.
+The pie chart shows that a combined <b>4,178,369</b> (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up <b>64.8%</b> (or 2.71 million) of the total number, and casual riders accounted for <b>35.2%</b> or 1.47 million rides.
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
@@ -155,7 +156,7 @@ The pie chart shows that <b>4,178,369</b> (or 4.18 million) unique rides were ta
 
 ![casual_bike](https://github.com/user-attachments/assets/153a551e-ff0c-43fe-98a2-2f27759d9059)
 
-Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
+Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Interestingly, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. It might be worthwhile to ask Cyclistic to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
 
 <p>
 <h3><b> Daily Trends </b></h3>
@@ -166,39 +167,38 @@ We can see that the number of bike rides by annual members was fairly consistent
 
 <b> Duration</b>
 <p>
-In addition to an uptick in the number of casual riders on weekends, casual riders tend to take <i><b>longer</b></i> rides. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For member riders, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Over 12 months, casual riders logged 11,896.32 more hours than their member counterparts on Sundays, the day with the longest average ride time for both groups.
+In addition to an uptick in the number of casual riders on weekends, weekend rides also tend to be <i><b>longer</b></i> rides. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For annual members, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Zooming out, over the course of 12 months, casual riders logged 11,896.32 more hours than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
 ![ride_time (1)](https://github.com/user-attachments/assets/838d5c30-ed62-40e8-96c4-25eb51858f63)
 
 <b> Distance</b>
 
-We know that casual riders take longer rides on weekends, but are they are travelling greater distances? This line graph shows casual riders are indeed travelling longer distances on weekends compared to weekdays. Over the course of a year, casual riders increased their distance travelled from <b>1,150,194</b> on Fridays to <b>1,775,955 kilometres</b> on Sundays. In contrast, annual member's distance decreased from Thursday to Sunday before picking up again at the start of the work week on Monday.
+We know that casual riders take longer rides on weekends, but are they also travelling greater distances? This line graph shows that casual riders are indeed travelling longer distances on weekends compared to weekdays. Over the course of a year, casual riders increased their distance travelled from <b>1,150,194</b> on Fridays to <b>1,775,955 kilometres</b> on Sundays. In contrast, annual members' distance decreased from Thursday to Sunday before picking up again at the start of the work week on Monday.
 
 
 ![km by day](https://github.com/user-attachments/assets/04361783-4c23-4dbd-94b7-e7ee37301cdf)
 
-Let's take a look both groups' activity over a 24-hour period:
+Let's take a look at both groups' activity over a 24-hour period:
 
 ![hourly_rides](https://github.com/user-attachments/assets/6c713975-6ccc-4401-b45d-c566ec18a0c6)
 
-We see two peaks of high activity for annual members between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
+We see two peaks of high activity for annual members between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when annual members are commuting to and from work. For casual riders, the chart shows a steady increase in ridership from 8am to 5pm, suggesting steady bike usage throughout the day.
 
 Do peak hours correspond to longer ride times for casual riders and annual members?
 
 ![ride_time_hour](https://github.com/user-attachments/assets/fca57136-c070-4896-a4e9-61230390db3d)
 
-For annual members, there is no significant change in ride time throughout the day, including the peak hours of 8am and 5pm. This supports the idea that annual members are using Cyclistic bicycles for commuting. For casual members, the longest rides occur between 8am and 5pm, which supports the hypothesis that casual riders use bikes for recreational purposes, perhaps they have flexible work schedules, or they are tourists using the bikes to explore the city during the day. 
-
+For annual members, there is no significant change in time duration throughout the day, including at the peak hours of 8am and 5pm. This supports the idea that annual members are using Cyclistic bicycles for commuting. For casual members, the longest rides occur between 8am and 5pm, which supports the hypothesis that casual riders use bikes for recreational purposes, perhaps they have flexible work schedules, or they are tourists using the bikes to explore the city during the day. 
 
 <b>Speed</b>
 
-Let's see if the each group's average ride speed offers insights into how they use the bikes differently. We'll calculate the average speed of each ride by taking the distance and dividing it by the trip duration. 
+Let's see if the each group's average ride speed offers insights into how bike usage differs. We'll calculate the average speed of each ride by taking the distance and dividing it by the trip duration. 
 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
+
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
 
-We'll compare the average speed of rides on classic bikes, the preferred bike for both groups of riders.  A casual rider's average speed on a classic bike is <b>8.17m/s</b> compared to an annual member's average speed of <b>12.17 m/s</b> on the same type of bike. It appears that casual riders bike at a more leisurely pace, which make sense if they are mainly using bikes for sightseeing and exploring the city.
-
+Let's compare the average speed of bike rides on classic bikes, the preferred bike for both groups of riders.  A casual rider's average speed on a classic bike is <b>8.17m/s</b> compared to an annual member's average speed of <b>12.17 m/s</b>. It appears that casual riders bike at a more leisurely pace, which make sense if they are mainly using bikes for sightseeing and exploration. 
 
 <h3><b>Seasonal Trends</b></h3>
 
