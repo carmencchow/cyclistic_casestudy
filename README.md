@@ -159,7 +159,7 @@ The pie chart shows that <b>4,178,369</b> (or 4.18 million) unique rides were ta
 
 ![casual_bike](https://github.com/user-attachments/assets/153a551e-ff0c-43fe-98a2-2f27759d9059)
 
-Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
+Both casual and annual members prefer classic bikes over electric bikes. For casual riders, <b>65.73%</b> or 966,128 out of 1,469,640 rides were on classic bikes, while annual members used classic bikes for <b>68.50%</b> of their rides, which comes to 1,855,692 out of the 2,708,729 rides. Curiously, docked bikes were used only used by casual riders, and half of these docked bikes were used on rides lasting either more than 24 hours or less than one minute. A followup with Cyclistic's team is needed to explain what a docked bike is and <i><b>why they are not being used by annual members</b></i>.
 
 <p>
 <h3><b> Daily Trends </b></h3>
@@ -187,7 +187,7 @@ Let's take a look both groups' activity over a 24-hour period:
 
 We see two peaks of high activity for annual members between 6-8am and 4-6pm, with the most active hours being 8am and 5pm. These peaks likely reflect when member are commuting to and from work. In contrast, the majority of casual bike rides take place between 8am and 7pm, showing a steady increase in activity from 8am to 5pm.
 
-Do peak hours correspond with longer ride times for casual riders and annual members?
+Do peak hours correspond to longer ride times for casual riders and annual members?
 
 ![ride_time_hour](https://github.com/user-attachments/assets/fca57136-c070-4896-a4e9-61230390db3d)
 
@@ -196,7 +196,7 @@ For annual members, there is no significant change in ride time throughout the d
 
 <b>Speed</b>
 
-Let's see if the average ride speed confirms our hypothesis.   We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
+Let's see if the each groups' average ride speed offers insights into how they use the bikes. We'll calculate average speed of each ride by taking the distance and dividing it by the trip duration. 
 
 ![bike_type_speed](https://github.com/user-attachments/assets/8a23f2fa-0ea9-42d2-b5f7-8cf395c581f3)
 ![avg sped type](https://github.com/user-attachments/assets/8ca80245-9192-4fda-a33e-a370df955c61)
