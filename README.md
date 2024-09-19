@@ -251,7 +251,7 @@ Let's summarize our findings of the key differences in ride trip patterns betwee
 * Average distance: 5.93 kilometres
 * Average speed on a classic bike: 8.17m/s
 
-<b>Member Riders</b>
+<b>Annual Members</b>
 * Most active time: 8am and 5pm
 * Most active day: Monday to Friday 
 * Busiest months: July, August, and September
@@ -261,7 +261,7 @@ Let's summarize our findings of the key differences in ride trip patterns betwee
 * Average distance: 5.39 kilometres
 * Average speed on a classic bike: 12.17m/s
 
-Based on the differences in these metrics, we can confidently conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders are tourists use bikes leisurely to sightsee or visit tourist attractions during the day.
+Based on the differences in user ride pattersn in these metrics, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders are tourists use bikes leisurely to sightsee or visit tourist attractions during the day.
 
 Tableau 
 Google Slides
@@ -271,10 +271,12 @@ Google Slides
 The following recommendations are aimed at boosting annual membership enrollment among casual riders.
 
 <b>1. Spring and Summer Enrollment Campaigns</b>   
-<p>To prepare for an uptick in casual rides in spring and summer, Cyclistic should plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer. Since casual riders are the most active during the summer months, campaigns should launh ahead of the season.
+<p>To prepare for an uptick in casual rides in spring and summer, Cyclistic should plan their marketing campaign in March/April. Their ads should focus on the cost-saving and health benefits of upgrading to an annual membership in time with the summer. Since casual riders are the most active during the summer months, campaigns should launh ahead of the season. Emphasize unlimited access to Cyclistic's bike share program 
 
 <b>2. Pricing Structure</b>
-<p>Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. To further incentive annual memberhips, Cyclistic could introduce a surcharge for casual riders by increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasibale to increase and retain membership.
+<p>Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. To further incentive annual memberhips, Cyclistic could introduce an overcharge fee for casual riders for every additional 30 minutes.  This is important especially for riders who are discouraged by the perceived cost of an annual membership. by increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasibale to increase and retain membership.
+Offer the annual membership at a lower price point than casual rides. 
+  
 
 <b>3. Offer Membership Perks</b></p>
 <p>Cyclistic can incentivize their annual membership by offering sign-up perks to casual riders who are interested in trasnferring to an annual membership. These could be in the form of tickets or discounts to local attractions, restaurants, and shops. Cyclistic can partner with brands and businesss in the vicinity of the 10 most frequented bike stations. Bundling admission passes with
@@ -289,7 +291,7 @@ Most importantly, Cyclistic can grow their number of annual riders by expanidng 
  
 <h2> Final Thoughts</h2>
 
-Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. Key demographic and occupational data could inform future marketing campaigns in targed ways, such as:  
+Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. In the future, Cyclistic could strive to collect a wider range of key demographic and occupational data that could inform future marketing strategies in different ways, such as: 
 
   * Offering a reduced fair program for youth, low-income users, and seniors. 
   
@@ -298,7 +300,5 @@ Collecting a wider spread of demographic data would help Cyclistic better unders
   * Opening new bike stations on university campuses to facilitate student commutes.
   
   * Partnering with the city's largest employers to offer employee corporate passes.
-  
-The recommendations above will help Cyclistic boost conversion rates while continuing to provide affordable, sustainable transportation to all riders. Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base, and that can be achieved through continued data collection and analysis. Part of their strategy to grow and retrain long-term users.  lead to stronger marketing strategies. Evaluate
 
-Through the life cycle of the campaign
+Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base. By considering the occupational and socioecononmic backgrounds of different segments of their ridership, Cyclistic can adapt their pay structure and expansion to serve the needs of their riders. These adjustments, along with recommendations outlined above will help Cyclistic boost conversion rates while continuing to provide affordable, convenient and sustainable mobility option. 
