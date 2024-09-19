@@ -266,35 +266,32 @@ Google Slides
 
 After looking at the trends in how casual rides use Cyclistic bikes, we'll propose the following recommendations which are aimed at boosting Cyclistic's annnual membership enrollment among casual riders. Extend reach and attract more riders
 
-<b>1. Seasonal Enrollment Campaigns</b>   
+<b>1. Seasonal Ad Campaigns</b>   
 <p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To do this, Cyclistic will need to time the launch of future enrollment and advertising campaigns before in March and April to raise awareness of Cyclistics annual membership program and genearte interest among more riders before the signficant 79.4% increase in ride count occurs from April to May. Cyclistic's ads should focus on the benefits of switching to a long-term membership, including savings costs, convenience and unlimited access to Cyclistic's fleet of bikes. 
 
-<b>2. Pricing Structure</b>
-<p>Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. To further incentive annual memberhips, Cyclistic could introduce an overcharge fee for casual riders for every additional 30 minutes.  This is important especially for riders who are discouraged by the perceived cost of an annual membership. by increasing the rental fee after a certain distance quota is reached. Another idea could be to offer a two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasibale to increase and retain membership.
-Offer the annual membership at a lower price point than casual rides. 
+<b>2. New/Flexible Pricing Model</b>
+<p> Cyclistic can remove any perceived costs as barriers to a
+  Cyclistic should implement a new pricing structure to increase enrollment in their annual membership. This could To further incentive annual memberhips, Cyclistic could 
+  * include a tiered membership, such as a monthly plan at a fixed price that could eventually encourage casual riders to become full members. 
+  *  introduce an overcharge fee for casual riders if they reach for every additional 10 or 20 minutes, or kilometres cycled.   
+  *  Offer the annual membership at a lower price point than casual rides. 
+  * two-tiered annual plan, where members have the option to pay up front or in monthly installments, which may be more feasible to increase and retain membership.
+  * Offering a reduced fair program for youth, low-income users, and seniors. 
+  * Providing family discounts bundles for household members. 
+  * Partnering with the city's largest employers to offer employee corporate passes.
   
 
-<b>3. Offer Membership Perks</b></p>
+<b>3. Attractive Member's Benefits</b>
 <p>Cyclistic can incentivize their annual membership by offering sign-up perks to casual riders who are interested in trasnferring to an annual membership. These could be in the form of tickets or discounts to local attractions, restaurants, and shops. Cyclistic can partner with brands and businesss in the vicinity of the 10 most frequented bike stations. Bundling admission passes with
-a membership, as well as offering exclusive deals for members - like chances to win prizes at local restaurants, businesses, or entertainment venues - could be an attractive way to boost membership while partnering with and supporting local businesses.
-* People shop by bike in the area&
+a membership, as well as offering exclusive deals for members - like chances to win prizes at local restaurants, businesses, or entertainment venues - could be an attractive way to boost membership while partnering with and supporting local businesses. Recognizing that people shop by bike in the tourist and attraction sites
 
-<b>4. Strategic Expansion</b>
-<p>To promote a healthier lifestyle particularly in underserved areas,  Cyclistic should expand their network of bikes to locations such as popular gyms and community recreation centres. Below is a list of 10 of the 60? stations that had less than 10 bikes rentals in the past 12 months. Cyclistic should relocate these underused bike stations to more frequented areas, thereby driving more usage.
-Most importantly, Cyclistic can grow their number of annual riders by expanidng network and offering more accessible bike stations across the city. 
-
+<b>4. Expansion & Accessibility</b>
+<p>To promote a healthier lifestyle particularly in underserved areas,  Cyclistic should expand their network of bikes to locations such as popular gyms and community recreation centres. Below is a list of 10 of the 60? stations that had less than 10 bikes rentals in the past 12 months. Cyclistic should relocate these underused bike stations to more frequented areas, thereby driving more usage. Most importantly, Cyclistic can grow their number of annual riders by expanidng network and offering more accessible bike stations across the city. Opening new bike stations on university campuses to facilitate student commutes.
+  
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
  
 <h2> Final Thoughts</h2>
 
-Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. In the future, Cyclistic could strive to collect a wider range of key demographic and occupational data that could inform future marketing strategies in different ways, such as: 
-
-  * Offering a reduced fair program for youth, low-income users, and seniors. 
-  
-  * Providing family discounts bundles for household members. 
-
-  * Opening new bike stations on university campuses to facilitate student commutes.
-  
-  * Partnering with the city's largest employers to offer employee corporate passes.
+Collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert. In the future, Cyclistic could strive to collect a wider range of key demographic and occupational data that could inform future marketing strategies in different ways.
 
 Ultimately, Cyclistic's continued success depends on their ability to stay aware of the needs of its evolving customer base. By considering the occupational and socioecononmic backgrounds of different segments of their ridership, Cyclistic can adapt their pay structure and expansion to serve the needs of their riders. These adjustments, along with recommendations outlined above will help Cyclistic boost conversion rates while continuing to provide affordable, convenient and sustainable mobility option. 
