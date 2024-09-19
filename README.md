@@ -85,11 +85,11 @@ It looks like <i>Racine Ave. & 57th</i> is the station's actual name. While we w
 
 There are 1,588 records where a single `start_station_id` is associated with multiple `start_lat` values. 
 
-![start_lat_results](https://github.com/user-attachments/assets/9a2e8f9b-4927-4812-b2eb-b5b5426bf159)
+![WL](https://github.com/user-attachments/assets/d1e3f144-8bb7-43bd-a8bd-e680e0f0c779)
 
 Let's filter on the first row: station <i>WL-012</i>:
 
-![roundLat](https://github.com/user-attachments/assets/da82099b-8078-4ad9-ae38-52645c7ab0e2)
+![decimals](https://github.com/user-attachments/assets/e16935bd-6a22-4edb-833a-713f89d98251)
 
 We see that the 7,232 different latitudes are the result of inconsistent number formatting. We'll need to clean our data to ensure that each `start_station_id` has only one `start_station_name`, one `start_lat`, and one `start_lng` associated with it.
 
