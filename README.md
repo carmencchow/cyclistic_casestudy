@@ -73,7 +73,7 @@ We see that there are, in fact, <b>83 records of `start_station_id`s linked to m
 
 Let's examine the first result: station `647`.
 
-![station_id](https://github.com/user-attachments/assets/f1706f92-3d36-4174-b864-aef8458818ae)
+![Racine](https://github.com/user-attachments/assets/de4386c2-ed65-4ca6-8a5c-eadf9aba99f3)
 
 This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source - the City of Chicago Data Portal's website (link provided above) - and look up the station id in its database.
 
