@@ -75,7 +75,7 @@ Let's examine the first result: station `647`.
 
 ![Racine](https://github.com/user-attachments/assets/de4386c2-ed65-4ca6-8a5c-eadf9aba99f3)
 
-This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source - the City of Chicago Data Portal's website (link provided above) - and look up the station id in its database.
+This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source - the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data) to look up the station id.
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
