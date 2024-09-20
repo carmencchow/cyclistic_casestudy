@@ -253,7 +253,6 @@ Let's summarize our findings of the key differences in cycling trends between ca
 * Preferred start stations: near tourist attractions on the shoreline
 * Average ride time on weekdays: 22.2 minutes
 * Average ride time on weekends: 27.8 minutes
-* Average ride distance: 5.93 kilometres
 * Average speed on a classic bike: 8.17 m/s
 
 <b>Annual Members</b>
@@ -264,6 +263,7 @@ Let's summarize our findings of the key differences in cycling trends between ca
 * Average ride time on weekdays: 12.2 minutes
 * Average ride time on weekends: 14.2 minutes 
 * Average ride distance: 5.39 kilometres
+* Average ride distance on weekdays: 5.93 kilometres
 * Average speed on a classic bike: 12.17 m/s
 
 Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders tend to use Cyclistic bikes to sightsee and explore the city.
