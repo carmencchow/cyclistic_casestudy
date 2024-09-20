@@ -67,7 +67,7 @@ Let's explore the relationships between some of our columns and see whether they
 
 ![start_station_id_2](https://github.com/user-attachments/assets/93d9394a-9996-46b3-b57d-92b700688292)
 
-We see that there are, in fact, <b>83 records</b> of `start_station_id`s linked to more than one `start_station_name`. 
+We see that there are, in fact, <b>83 records</b> of a single `start_station_id` linked to more than one `start_station_name`. 
 
 ![station_id_83](https://github.com/user-attachments/assets/b5c304d9-e934-4b06-9b19-12aff3ec8f10)
 
@@ -75,13 +75,13 @@ Let's examine the first result: station `647`.
 
 ![Racine](https://github.com/user-attachments/assets/de4386c2-ed65-4ca6-8a5c-eadf9aba99f3)
 
-This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source, the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data), to look up the station id.
+This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source, the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data), to look up the station ID.
 
 <br>
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-It looks like <b>Racine Ave. & 57th</b> is the name of the station. While we were able to retrieve the correct name with this lookup, this would not be an efficient method to repeat with 82 other `start_station_id`s. Let's see if `start_lat` also yields multiple results for any single `start_station_id`:
+It looks like <b>Racine Ave. & 57th</b> is the name of the station. While we were able to retrieve the correct name with this lookup, this would not be an efficient method to repeat with 82 other `start_station_id`s. Let's see if `start_lat` also yields multiple results for any one `start_station_id`:
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
@@ -137,11 +137,11 @@ start_hour,
 trip_duration,
 distance_in_meters
 ```
-our final table has been cleaned with 5 newly created variables:
+Our final table has been cleaned with 5 newly created variables:
 
 ![final](https://github.com/user-attachments/assets/76aefd03-0a3d-45bd-821c-2c21768dabd6)
 
-Our data cleansing is done. Let's see what trends and patterns our analysis will reveal.
+Our data cleansing is done. Let's see what trends and patterns our analysis reveals.
 
 <h2>4. Analyze</h2>
 
@@ -156,7 +156,7 @@ The following visualizations were created in Tableau. The link to my Tableau das
 
 <h3>Number of Rides</h3>
 
-The pie chart shows that a combined 4,178,369 (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or 2.71 million) of the total number, and <b>casual riders accounted for 35.2%</b> or 1.47 million rides. 
+The pie chart shows that a combined 4,178,369 (or 4.18 million) unique rides were taken by both groups from June 2023 to August 2024. Of these, rides by annual members made up 64.8% (or 2.71 million) of the total number, and <b>casual riders accounted for 35.2%</b> or 1.47 million rides <b>of all rides</b>. 
 
 ![ridemembers](https://github.com/user-attachments/assets/f7cb498b-5e06-45d2-8f72-b694ecddbd9e)
 
@@ -177,7 +177,7 @@ We can see that the number of bike rides by annual members was fairly consistent
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
-<b> Duration</b>
+<h4> Duration</h4>
 <p>
 In addition to an uptick in the number of casual riders on weekends, weekend rides also tend to be <i><b>longer rides</b></i>. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For annual members, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Taking a look at the broader picture, over the course of 12 months, <b>casual riders rode 11,896.32 more hours</b> than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
