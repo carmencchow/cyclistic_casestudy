@@ -244,7 +244,7 @@ Annual Members tend to pick up bikes at stations located away from the shoreline
 
 <h2>5. Share</h2>
 
-Let's summarize our findings of the key differences in cycling trends between casual riders and annual members.
+Let's summarize our findings of the key differences in cycling trends between casual riders and annual members. Slide deck is available [here]https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
 
 <b>Casual Riders</b>
 * Most active time: 8am -7pm
