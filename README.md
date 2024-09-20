@@ -77,6 +77,8 @@ Let's examine the first result: station `647`.
 
 This returns three different station names for station `647`. To find the correct name, we will have to use our secondary data source, the [Chicago Data Portal](https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data), to look up the station id.
 
+<br>
+
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
 It looks like <i>Racine Ave. & 57th</i> is the station's actual name. While we were able to retrieve the correct name with this lookup, this would not be an efficient method to repeat with 82 other `start_station_id`s. Let's see if `start_lat` also yields multiple results for any single `start_station_id`:
