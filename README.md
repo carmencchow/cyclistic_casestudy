@@ -81,7 +81,7 @@ This returns three different station names for station `647`. To find the correc
 
 ![647](https://github.com/user-attachments/assets/2d246d9c-5299-4d0c-88f2-43d4792cbadc)
 
-It looks like <i>Racine Ave. & 57th</i> is the station's actual name. While we were able to retrieve the correct name with this lookup, this would not be an efficient method to repeat with 82 other `start_station_id`s. Let's see if `start_lat` also yields multiple results for any single `start_station_id`:
+It looks like <b>Racine Ave. & 57th</b> is the name of the station. While we were able to retrieve the correct name with this lookup, this would not be an efficient method to repeat with 82 other `start_station_id`s. Let's see if `start_lat` also yields multiple results for any single `start_station_id`:
 
 ![start_lat2](https://github.com/user-attachments/assets/4adca5e0-98c6-4caf-bd9c-6abb83edb9c7)
 
@@ -102,7 +102,7 @@ Through our data exploration, we discovered that the expected one-to-one relatio
 
 To do this, we'll create a new table with `start_station_id` as the primary key, and we will bring in only station-related data. After cleaning this data, we will rejoin it with the original main table. 
 
-<b>Why aggregate our data?</b>
+<b>Station data table</b>
 
 <p>Aggregating will allow us to consolidate multiple rows of data into a single row. 
 We can use either `MAX()` or `MIN()` instead of `SUM()` or `AVG()` to handle string types like `start_station_id` and `start_station_name`.   In this case, we'll choose `MAX()`. We will also aggregate the `end_station` data the same way.  Then we will use `station_id` as the primary key to union both of these cleaned tables into a single `station_data` table.
@@ -268,28 +268,28 @@ Let's summarize our findings of the key differences in cycling trends between ca
 * Average ride distance on weekdays: 5.93 kilometres
 * Average speed on a classic bike: 12.17 m/s
 
-Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes to travel to and from work, while casual riders tend to use Cyclistic bikes to sightsee and explore the city.
+Based on these notable differences, we can conclude that annual members are people who use Cyclistic bikes primarily for commuting, while casual riders tend to use Cyclistic bikes for leisurely activities such as  sightseeing.
 
 <h2>6. Act</h2>
 
-After reviewing cycling trends and patterns among casual riders, we can propose the following recommendations aimed at boosting Cyclistic's annnual membership conversion rate among casual riders.
+After reviewing cycling trends and patterns among casual riders, we can propose the following recommendations which are aimed at boosting Cyclistic's annnual membership conversion rate among casual riders.
 
 <b>1. Seasonal Ad Campaigns</b>   
-<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in the number of casual rides from April to May</b>. Launching the campaign well before this influx of rides will raise awareness of Cyclistics annual membership program and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership which include savings costs by offering the annual membership at a lower price point,  convenience, and unlimited access to Cyclistic's fleet of bikes throughout the year. 
+<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in casual rides that occur from April to May and continue throughout the summer months</b>. Launching early ad campaign at the beginning of March, or even late February, will raise awareness and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership: savings costs, convenience, unlimited access to Cyclistic's fleet of bikes throughout the year, and the health benefits of biking. 
 
 <b>2. Flexible Pricing Model</b>
 <p> Cyclistic should implement a new pricing structure to attract and retain more annual members. Here are some ways the company can incentivize casual members to enrol in their annual membership program:
   
-  * <i><b>Tiered membership</b></i>: Offer several plans that provide different benefits to customers based on their needs and interests. These could include offering a monthly plan at a fixed price that could eventually encourage casual riders to become full members.
+  * <i><b>Tiered membership</b></i>: Offer several plans that provide different benefits to customers based on their needs and interests. These could include offering a monthly plan at a fixed price that could eventually encourage casual riders to become full members.  
     
   * <i><b>Overcharge fees</b></i>: Make an annual membership the more cost-effective option by adding a surcharge fee for every additional minute or kilometre cycled as a casual rider. 
     
-  * <i><b>Payment plans</i></b>: Give annual subscribers the option to pay for their annual membership up front in one lump sum pament or in monthly installments. Choice in payment plans can make it more feasible and attractive for casual riders hesistant about switching over.  
+  * <i><b>Payment plans</i></b>: Give annual subscribers the option to pay for their annual membership in full or in monthly installments. Choice in payment plans can make it more feasible and cost-effective for casual riders who see cost as the main barrier of switching.  
     
   *  <i><b>Discounted plans</i></b>:  With more demographic and occupational data, Cyclistic could offer a reduced fair program to specific segments of their customer base, such as youths and low-income users, seniors, and students.
     
 <b>3. Annual membership benefits</b>
-<p>Knowing that casual riders tend to rent bikes near tourist attractions and landmarks, Cyclistic could incentivize annual memberships by offering sign-up perks and discount at restaurants, shops, and other venues that are located near the most frequented bike stations. These perks could include tickets, admission passes, and  discounts to local attractions, restaurants, and shops. They can also consider offering exclusive deals for members such as additional prizes and upgrades.
+<p>Knowing that casual riders tend to rent bikes near tourist attractions and landmarks, Cyclistic could offer sign-up perks and discount at restaurants, shops, and other venues that are located near the most frequented bike stations. These perks could include tickets, admission passes, and  discounts to local attractions, restaurants, and shops. They can also consider offering exclusive deals for members such as additional prizes and upgrades.
 
 <b>4. Expansion & Accessibility</b>
 <p>Although Cyclistic has been expanding its network of bikes since 2016, a number of stations had bikes checked out by riders an astonishingly low 10 times or fewer in the past 12 month. Cyclistic should consider relocatig these underused bike stations to areas with more potential more growth, perhaps in an underserved neighborhood or community. Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. Areas for expansion could include university campuses, community centres or neighborhood parks to make biking more accessible for eveyone.
