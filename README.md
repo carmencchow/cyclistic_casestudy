@@ -293,7 +293,8 @@ After reviewing cycling trends and patterns among casual riders, we can propose 
 
 <b>4. Expansion & Accessibility</b>
 <p> A large number of bike stations experienced a very low record of bike rentals in the past 12 months. Underused stations:
-![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
+  
+![underused_stations](https://github.com/user-attachments/assets/19753318-1e19-4b84-9cae-a822b167e882)
 
 Cyclistic should consider closing these bike stations and identify optimal locations for new bike stations that have more potential for growing and retaining their customers, for example prioritizing more bike coverage along the shoreline to meet the needs of casual riders. Other areas with potential could be near community centres, parks, and university campuses to provide access to people 
 
