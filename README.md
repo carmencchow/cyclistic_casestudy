@@ -301,5 +301,6 @@ Although the data used in this case study was sufficient in completing the busin
 
 <h2> Appendix </h2>
 [Tableau Dashboard]
+
 [Google Slide Presentation](https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
 
