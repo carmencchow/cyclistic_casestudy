@@ -289,11 +289,14 @@ After reviewing cycling trends and patterns among casual riders, we can propose 
   * <i><b>Payment plans</i></b>: Give annual subscribers the option to pay for their annual membership in full or in monthly installments. Choice in payment plans can make it more feasible and cost-effective for casual riders who see cost as the main barrier of switching.  
     
   *  <i><b>Discounted plans</i></b>:  With more demographic and occupational data, Cyclistic could offer a reduced fair program to specific segments of their customer base, such as youths and low-income users, seniors, and students.
+
+    <br>
     
-<b>3. Annual membership benefits</b>
+<h3>3. Annual membership benefits</h3>
 <p>Knowing that casual riders tend to rent bikes near tourist attractions and landmarks, Cyclistic could offer sign-up perks and discount at restaurants, shops, and other venues that are located near the most frequented bike stations. These perks could include tickets, admission passes, and  discounts to local attractions, restaurants, and shops. They can also consider offering exclusive deals for members such as additional prizes and upgrades.
 
-<b>4. Expansion & Accessibility</b>
+<br>
+<h3>4. Expansion & Accessibility</h3>
 <p> A large number of bike stations experienced a very low record of bike rentals in the past 12 months. Underused stations:
   
 ![underused_stations](https://github.com/user-attachments/assets/19753318-1e19-4b84-9cae-a822b167e882)
