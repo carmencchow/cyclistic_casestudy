@@ -244,7 +244,7 @@ Annual Members tend to pick up bikes at stations located away from the shoreline
 
 <h2>5. Share</h2>
 
-Let's summarize our findings of the key differences in cycling trends between casual riders and annual members. Slide deck is available [here]https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
+Let's summarize our findings of the key differences in cycling trends between casual riders and annual members. 
 
 <b>Casual Riders</b>
 * Most active time: 8am -7pm
@@ -298,3 +298,8 @@ Underused stations:
 <h2> Final Thoughts</h2>
 
 Although the data used in this case study was sufficient in completing the business task proposed by Cyclistic, collecting a wider spread of demographic data would help Cyclistic better understand their customer base, especially the casual riders that they aim to convert.  Ultimately, Cyclistic's continued success depends on their ability grow their annual membership by attracting and retaining long-term customers. By following the data-driven recommendations to update their pay structure, expand their network of bikes, partner with key businesses, and time their ad campaigns, Cyclistic can succeed in boosting their conversion rates while continuing to provide an affordable, convenient and sustainable mobility option to locals. 
+
+<h2> Appendix </h2>
+[Tableau Dashboard]
+[Google Slide Presentation](https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
+
