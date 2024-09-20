@@ -292,10 +292,12 @@ After reviewing cycling trends and patterns among casual riders, we can propose 
 <p>Knowing that casual riders tend to rent bikes near tourist attractions and landmarks, Cyclistic could offer sign-up perks and discount at restaurants, shops, and other venues that are located near the most frequented bike stations. These perks could include tickets, admission passes, and  discounts to local attractions, restaurants, and shops. They can also consider offering exclusive deals for members such as additional prizes and upgrades.
 
 <b>4. Expansion & Accessibility</b>
-<p>Although Cyclistic has been expanding its network of bikes since 2016, a number of stations had bikes checked out by riders an astonishingly low 10 times or fewer in the past 12 month. Cyclistic should consider relocatig these underused bike stations to areas with more potential more growth, perhaps in an underserved neighborhood or community. Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. Areas for expansion could include university campuses, community centres or neighborhood parks to make biking more accessible for eveyone.
-
-Underused stations:
+<p> A large number of bike stations experienced a very low record of bike rentals in the past 12 months. Underused stations:
 ![underused_stations](https://github.com/user-attachments/assets/cc461526-1bef-49d1-9216-36f66113491d)
+
+Cyclistic should consider closing these bike stations and identify optimal locations for new bike stations that have more potential for growing and retaining their customers, for example prioritizing more bike coverage along the shoreline to meet the needs of casual riders. Other areas with potential could be near community centres, parks, and university campuses to provide access to people 
+
+perhaps in an underserved neighborhood or community. Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. Areas for expansion could include university campuses, community centres, and neighborhood parks in densely populated areas of Chicago to make biking more accessible for eveyone.
    
 <h2> Final Thoughts</h2>
 
