@@ -274,10 +274,12 @@ Based on these notable differences, we can conclude that annual members are peop
 
 After reviewing cycling trends and patterns among casual riders, we can propose the following recommendations which are aimed at boosting Cyclistic's annnual membership conversion rate among casual riders.
 
-<b>1. Seasonal Ad Campaigns</b>   
+<h3>1. Seasonal Ad Campaigns</h3>   
 <p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in casual rides that occur from April to May and continue throughout the summer months</b>. Launching early ad campaign at the beginning of March, or even late February, will raise awareness and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership: savings costs, convenience, unlimited access to Cyclistic's fleet of bikes throughout the year, and the health benefits of biking. 
 
-<b>2. Flexible Pricing Model</b>
+<br>
+
+<h3>2. Flexible Pricing Model</h3>
 <p> Cyclistic should implement a new pricing structure to attract and retain more annual members. Here are some ways the company can incentivize casual members to enrol in their annual membership program:
   
   * <i><b>Tiered membership</b></i>: Offer several plans that provide different benefits to customers based on their needs and interests. These could include offering a monthly plan at a fixed price that could eventually encourage casual riders to become full members.  
