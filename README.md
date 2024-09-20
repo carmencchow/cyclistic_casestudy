@@ -183,7 +183,7 @@ In addition to an uptick in the number of casual riders on weekends, weekend rid
 
 ![ride_time (1)](https://github.com/user-attachments/assets/838d5c30-ed62-40e8-96c4-25eb51858f63)
 
-<b> Distance</b>
+<h3>Distance</h3>
 
 We know that casual riders take longer rides on weekends, but are they also travelling greater distances? This line graph shows that <b>casual riders are indeed travelling longer distances on weekends</b> compared to weekdays. Over the course of a year, casual riders increased their distance travelled from <b>1,150,194</b> on Fridays to <b>1,775,955 kilometres</b> on Sundays. In contrast, annual members' distance decreased from Thursday to Sunday before picking up again at the start of the work week on Monday.
 
@@ -202,7 +202,7 @@ Do peak hours correspond to longer ride times for casual riders and annual membe
 
 For annual members, there is no significant change in trip duration throughout the day, including at the peak hours of 8am and 5pm. This supports the idea that annual members are using Cyclistic bicycles for commuting. For casual members, the longest rides occur between 8am and 5pm. This observation shows that casual riders are probably using bikes for recreational purposes, either as tourists or locals who have flexible work schedules or work from home.
 
-<b>Speed</b>
+<h3>Speed</h3>
 
 Let's find out if the average ride speed for each group offers any insights into how bike usage differs between them. We'll calculate the average speed of each ride by taking the distance and dividing it by the trip duration. 
 
@@ -218,11 +218,11 @@ Let's compare the average speed of bike rides on classic bikes, the preferred bi
 
 ![monthly_rides](https://github.com/user-attachments/assets/bd62f6c4-ab37-4ff6-bde8-8cd15651444e)
   
-The bar chart above shows that the number of <b>rides by casual riders begins to increase in the April</b> and continues into the summer months, with June, July, and August having the highest number of rides. In fact, <b>from April 2024 to May 2024, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by 34.8%, from 200,293 to 270,000 during the same period. From October 2023 to November 2023, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
-
-With the warmer weather, <b>April is also when both groups start biking longer distances</b>. This trend continues into the summer months before dropping off again in September. Both groups experience a decline in ride distances from October to January.
+The bar chart above shows that the number of <b>rides by casual riders begins to increase in April</b> and continues into the summer months, with June, July, and August having the highest number of rides. In fact, <b>from April 2024 to May 2024, the number of rides increased significantly by 79.4%</b>, rising from 92,111 to 164,316 rides, while the number of rides by annual members only increased by 34.8%, from 200,293 to 270,000 during the same period. From October 2023 to November 2023, <b>casual riders saw a 44% decrease in rides, </b> dropping from 128,289 to 71,053, while annual members experienced a smaller 25.9% decrease, with the number of rides dropping from 268,598 to 199,086. 
 
 ![distance_month](https://github.com/user-attachments/assets/fd17fe7e-87a9-4037-8cd3-95e318dac040)
+
+With the warmer weather, <b>April is also when both groups start biking longer distances</b>. This trend continues into the summer months before dropping off again in September. Both groups experience a decline in ride distances from October to January.
 
 <h3><b>Location</b></h3>
 
@@ -274,8 +274,7 @@ Based on these notable differences, we can conclude that annual members are peop
 
 After reviewing cycling trends and patterns among casual riders, we can propose the following recommendations which are aimed at boosting Cyclistic's annnual membership conversion rate among casual riders.
 
-<h3>1. Seasonal Ad Campaigns</h3>   
-<p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in casual rides that occur from April to May and continue throughout the summer months</b>. Launching early ad campaign at the beginning of March, or even late February, will raise awareness and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership: savings costs, convenience, unlimited access to Cyclistic's fleet of bikes throughout the year, and the health benefits of biking. 
+<h3>1. Seasonal Ad Campaigns</h3>   <p>Cyclistic's future growth depends on growing annual ridership by converting casual members into long-term members. To achieve this, Cyclistic should time the launch of future advertising campaigns to prepare for the <b>79.4% increase in casual rides that occur from April to May and continue throughout the summer months</b>. Launching early ad campaign at the beginning of March, or even late February, will raise awareness and generate interest among more riders. Cyclistic's ads should focus on the benefits of switching to a long-term membership: savings costs, convenience, unlimited access to Cyclistic's fleet of bikes throughout the year, and the health benefits of biking. 
 
 <br>
 
