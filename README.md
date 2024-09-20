@@ -296,14 +296,12 @@ After reviewing cycling trends and patterns among casual riders, we can propose 
 <p>Knowing that casual riders tend to rent bikes near tourist attractions and landmarks, Cyclistic could offer sign-up perks and discount at restaurants, shops, and other venues that are located near the most frequented bike stations. These perks could include tickets, admission passes, and  discounts to local attractions, restaurants, and shops. They can also consider offering exclusive deals for members such as additional prizes and upgrades.
 
 <br>
-<h3>4. Expansion & Accessibility</h3>
+<h3>4. Expansion </h3>
 <p> A large number of bike stations experienced a very low record of bike rentals in the past 12 months. Underused stations:
   
 ![underused_stations](https://github.com/user-attachments/assets/19753318-1e19-4b84-9cae-a822b167e882)
 
-Cyclistic should consider closing these bike stations and identify optimal locations for new bike stations that have more potential for growing and retaining their customers, for example prioritizing more bike coverage along the shoreline to meet the needs of casual riders. Other areas with potential could be near community centres, parks, and university campuses to provide access to people 
-
-perhaps in an underserved neighborhood or community. Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. Areas for expansion could include university campuses, community centres, and neighborhood parks in densely populated areas of Chicago to make biking more accessible for eveyone.
+Cyclistic should consider closing these bike stations and identify optimal locations for new bike stations that have more potential to grow their ridership. Priority for bike coverage could start along the shoreline to meet the needs of casual riders. Other potential areas could be community centres, parks, and university campuses to provide access to people in morely densely populated parts of the city where they are currently underserved. Cyclistic could attract customers by communicating how the bike share program promotes a healthy lifestyle. 
    
 <h2> Final Thoughts</h2>
 
