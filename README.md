@@ -177,7 +177,7 @@ We can see that the number of bike rides by annual members was fairly consistent
 
 ![ride_day](https://github.com/user-attachments/assets/7350ed00-04a7-4482-94ec-4a0c79c907c3)
 
-<h4> Duration</h4>
+<h3> Duration</h3>
 <p>
 In addition to an uptick in the number of casual riders on weekends, weekend rides also tend to be <i><b>longer rides</b></i>. The average ride time from Monday to Friday was <b>22.18 minutes</b> while on weekends it increased to <b>27.75 minutes</b>. For annual members, ride times remained fairly consistent from Monday to Friday, averaging 12.19 minutes per ride. On weekends, there was only a slight increase, with an average ride time of 14.23 minutes. Taking a look at the broader picture, over the course of 12 months, <b>casual riders rode 11,896.32 more hours</b> than their member counterparts on Sundays, the day with the longest average ride time for both groups.
 
