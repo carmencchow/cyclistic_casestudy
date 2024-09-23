@@ -307,6 +307,7 @@ Cyclistic should consider closing these bike stations and identifying optimal lo
 Although the data used in this case study ROCCCed and was sufficient to complete the business task proposed by Cyclistic, collecting a broader range of demographic data would help Cyclistic better understand its customer base, especially the casual riders they aim to convert.  Ultimately, Cyclistic's continued success depends on their ability to grow their annual membership by attracting and retaining long-term customers. By following the data-driven recommendations to update their pricing structure, expand their network of bikes, partner with key businesses, and time their ad campaigns, Cyclistic can boost their conversion rates while continuing to provide a convenient and sustainable way to get around the city. 
 
 <h2> Appendix </h2>
+
 Link to [Tableau Dashboard](https://public.tableau.com/views/CyclisticCaseStudyDashboard_17271156486530/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 Link to [Cyclistic Case Study Google Slide Presentation](https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
