@@ -308,7 +308,7 @@ Although the data used in this case study ROCCCed and was sufficient to complete
 
 <h2> Appendix </h2>
 
-Link to [Tableau Dashboard](https://public.tableau.com/app/profile/carmen.chow/viz/Cyclistic_Case_Study_17273181948530/Dashboard)
+Link to [Tableau Dashboard](https://public.tableau.com/app/profile/carmen.chow/viz/Cyclistic_Case_Study_17273181948530/Dashboard) <i><b>Note:</b> Desktop view only, this Tableau dashboard is not optimized for phones and smaller screens</i>
 
 Link to [Cyclistic Case Study Google Slide Presentation](https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
 
