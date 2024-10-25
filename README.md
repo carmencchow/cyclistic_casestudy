@@ -1,5 +1,4 @@
 # Cyclistic Case Study 🚲 
-**Google Slides Deck**: https://tinyurl.com/yn4ad2m4
 Link to [Google Slides Deck]([https://tinyurl.com/yn4ad2m4])
 
 
