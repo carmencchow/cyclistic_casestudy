@@ -1,5 +1,5 @@
 # Cyclistic Case Study 🚲 
-Link to [Google Slides Deck]([https://tinyurl.com/yn4ad2m4])
+Link to [Google Slides Deck](https://docs.google.com/presentation/d/1hk3Lq-_OHcwSE9KenYIFYsCDVYogub0O3bFcPlVvEzQ/edit?usp=sharing)
 
 <p>Carmen Chow</p> 
 <p>September 2024</p>
